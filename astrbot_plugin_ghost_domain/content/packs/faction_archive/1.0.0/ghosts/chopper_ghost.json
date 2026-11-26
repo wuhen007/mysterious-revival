@@ -1,0 +1,48 @@
+{
+  "id": "chopper_ghost",
+  "schema_version": 1,
+  "name": "砍人鬼",
+  "description": "凯撒大酒店的高大男尸，七老之一李庆之；手持锈迹柴刀，踩中脚印者无论人鬼一律被隔空肢解。",
+  "grade": "A",
+  "stats": {
+    "hp": 170,
+    "attack": 28,
+    "defense": 10,
+    "speed": 5
+  },
+  "capture_threshold": 0.15,
+  "capture_difficulty": 0.65,
+  "base_loyalty": 50,
+  "starter_weight": 1,
+  "skills": [
+    {
+      "id": "chopper_slash",
+      "name": "柴刀劈砍",
+      "type": "attack",
+      "power": 1.55,
+      "cooldown_turns": 1
+    }
+  ],
+  "rules": [
+    {
+      "id": "footprint",
+      "description": "踩中它踩过的脚印即被锁定。",
+      "clues": [
+        "走廊上有一串湿脚印",
+        "身后传来柴刀拖地声"
+      ],
+      "reveal_after": 2,
+      "discovery_san_cost": 5,
+      "counter_method": "靠墙走、避开脚印；或用裹尸布强行压制。",
+      "counteractions": [
+        "damage_resets_counter"
+      ],
+      "story_flag_on_counteraction": "chopper_countered"
+    }
+  ],
+  "behavior": {
+    "kind": "brute",
+    "target_strategy": "weakest",
+    "attack_multiplier": 1.1
+  }
+}

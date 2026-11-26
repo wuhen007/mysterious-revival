@@ -1,0 +1,45 @@
+{
+  "id": "jiang_yan",
+  "schema_version": 1,
+  "name": "江艳",
+  "description": "杨间的代理人，负责黄金收购与产业运作；泼辣、直白。",
+  "domain_ref": "finale",
+  "location_ref": "final_statue",
+  "dialogue_nodes": [
+    {
+      "id": "jiang_yan_first",
+      "text": "江艳站在雕像下，仰着头：“你确定要进去？进去了，就未必还是你。”",
+      "conditions": [],
+      "choices": [
+        {
+          "id": "jy_gold",
+          "label": "取走黄金储备",
+          "text": "她把一只沉甸甸的箱子推给你。",
+          "effects": [
+            {
+              "type": "item_add",
+              "item_ref": "gold_box",
+              "quantity": 2
+            }
+          ]
+        },
+        {
+          "id": "jy_promise",
+          "label": "答应她会回来",
+          "text": "江艳笑了一下，眼睛是红的：“行，我等你。”",
+          "effects": [
+            {
+              "type": "set_story_flag",
+              "flag": "promised_return",
+              "value": true
+            },
+            {
+              "type": "san_change",
+              "amount": 10
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

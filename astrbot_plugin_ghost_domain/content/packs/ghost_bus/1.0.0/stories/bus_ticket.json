@@ -1,0 +1,30 @@
+{
+  "id": "bus_ticket",
+  "schema_version": 1,
+  "name": "褪色的车票",
+  "description": "车票上的终点站被人反复涂改。",
+  "domain_ref": "ghost_bus",
+  "trigger": {
+    "conditions": []
+  },
+  "nodes": [
+    {
+      "id": "bus_clue",
+      "location_ref": "bus_cabin",
+      "text": "你在座位缝里摸到一张车票，终点站被涂改了七次，最后一次写着你的名字。",
+      "once": true,
+      "conditions": [],
+      "effects": [
+        {
+          "type": "san_change",
+          "amount": -5
+        },
+        {
+          "type": "increment_counter",
+          "counter": "clues_found",
+          "amount": 1
+        }
+      ]
+    }
+  ]
+}

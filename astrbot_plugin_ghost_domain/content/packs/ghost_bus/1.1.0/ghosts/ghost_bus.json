@@ -1,0 +1,48 @@
+{
+  "id": "ghost_bus",
+  "schema_version": 1,
+  "name": "鬼车（灵异公交车）",
+  "description": "35 个乘客座位 + 1 个司机位，游荡全国，停站无规律。",
+  "grade": "X",
+  "stats": {
+    "hp": 240,
+    "attack": 22,
+    "defense": 12,
+    "speed": 8
+  },
+  "capture_threshold": 0.1,
+  "capture_difficulty": 0.85,
+  "base_loyalty": 50,
+  "starter_weight": 1,
+  "skills": [
+    {
+      "id": "bus_door",
+      "name": "车门挤压",
+      "type": "attack",
+      "power": 1.4,
+      "cooldown_turns": 2
+    }
+  ],
+  "rules": [
+    {
+      "id": "board_and_off",
+      "description": "上车容易下车难，只有熄火时车门才会打开。",
+      "clues": [
+        "站牌没有名字",
+        "车上多出一个不该存在的乘客"
+      ],
+      "reveal_after": 2,
+      "discovery_san_cost": 5,
+      "counter_method": "抓住熄火窗口下车；不要在多出来的座位上落座。",
+      "counteractions": [
+        "damage_resets_counter"
+      ],
+      "story_flag_on_counteraction": "bus_countered"
+    }
+  ],
+  "behavior": {
+    "kind": "brute",
+    "target_strategy": "random",
+    "attack_multiplier": 1.0
+  }
+}

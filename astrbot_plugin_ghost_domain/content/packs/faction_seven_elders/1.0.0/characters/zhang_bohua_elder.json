@@ -1,0 +1,56 @@
+{
+  "id": "zhang_bohua_elder",
+  "schema_version": 1,
+  "name": "张伯华",
+  "description": "七老中最后去世的一位；药铺老人，药箱可强行压住复苏，药效过后反噬更凶。",
+  "domain_ref": "faction_seven_elders",
+  "location_ref": "herb_shop",
+  "dialogue_nodes": [
+    {
+      "id": "zhang_bohua_elder_first",
+      "text": "老人正在碾药：“药铺要是关了，民国这一代就算彻底过去了。”",
+      "conditions": [],
+      "choices": [
+        {
+          "id": "zbh_suppress",
+          "label": "请教「压制」",
+          "text": "他包了一包药：“压得住，但压不久。”",
+          "effects": [
+            {
+              "type": "unlock_ability",
+              "ability_ref": "legacy_suppress"
+            },
+            {
+              "type": "item_add",
+              "item_ref": "medicine_box",
+              "quantity": 1
+            }
+          ],
+          "conditions": [
+            {
+              "type": "story_flag_matches",
+              "flag": "clue_zhang_bohua",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": "zbh_fourth",
+          "label": "问第四种存在",
+          "text": "“人驾驭鬼，早晚被鬼吃掉。那就让鬼来当人。”",
+          "effects": [
+            {
+              "type": "set_story_flag",
+              "flag": "fourth_way",
+              "value": true
+            },
+            {
+              "type": "san_change",
+              "amount": 10
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

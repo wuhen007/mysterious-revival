@@ -1,0 +1,45 @@
+{
+  "id": "zhang_bohua",
+  "schema_version": 1,
+  "name": "张伯华",
+  "description": "民国药铺老人；那一代驭鬼者的幸存者。",
+  "domain_ref": "faction_republic",
+  "location_ref": "temple_hall",
+  "dialogue_nodes": [
+    {
+      "id": "zhang_bohua_first",
+      "text": "老人正在碾药，头也不抬：“你们这一代，比我们当年强。也比我们急。”",
+      "conditions": [],
+      "choices": [
+        {
+          "id": "zbh_past",
+          "label": "问民国那场失败",
+          "text": "“压下去，不等于解决。我们只是把债推给了后人。”",
+          "effects": [
+            {
+              "type": "set_story_flag",
+              "flag": "republic_lesson",
+              "value": true
+            },
+            {
+              "type": "san_change",
+              "amount": 10
+            }
+          ]
+        },
+        {
+          "id": "zbh_medicine",
+          "label": "讨一副药",
+          "text": "他包了一小包粉末：“压复苏用的，别多吃。”",
+          "effects": [
+            {
+              "type": "item_add",
+              "item_ref": "yellow_paper",
+              "quantity": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

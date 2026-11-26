@@ -1,0 +1,16 @@
+{
+  "pack_id": "wang_mansion",
+  "version": "1.1.0",
+  "schema_version": 1,
+  "requires_engine_version": ">=0.3.0",
+  "name": "大东市·王家古宅",
+  "description": "钟声一响，时间就回到原点。王家每一代都背着同一个诅咒。",
+  "chapter": 10,
+  "optional": false,
+  "starter_ghost_pool": [
+    {
+      "ghost_ref": "pendulum_clock",
+      "weight": 1
+    }
+  ]
+}

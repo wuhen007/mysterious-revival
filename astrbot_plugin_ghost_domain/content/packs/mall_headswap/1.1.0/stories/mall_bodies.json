@@ -1,0 +1,26 @@
+{
+  "id": "mall_bodies",
+  "schema_version": 1,
+  "name": "假模特下的尸体",
+  "description": "模特底座里塞着失踪者的衣物。",
+  "domain_ref": "mall_headswap",
+  "trigger": {
+    "conditions": []
+  },
+  "nodes": [
+    {
+      "id": "mall_clue",
+      "location_ref": "mall_atrium",
+      "text": "你掀开一个模特底座，里面塞着一件校服，口袋里有一张学生证。",
+      "once": true,
+      "conditions": [],
+      "effects": [
+        {
+          "type": "increment_counter",
+          "counter": "clues_found",
+          "amount": 1
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "pack_id": "faction_headquarters",
+  "version": "1.0.0",
+  "schema_version": 1,
+  "requires_engine_version": ">=0.3.0",
+  "name": "国际刑警总部",
+  "description": "地下基地、钢门与黄金夹层。十二队长的会议室下面就是灵异物品库。",
+  "chapter": 91,
+  "optional": true,
+  "starter_ghost_pool": [
+    {
+      "ghost_ref": "ghost_hand",
+      "weight": 1
+    }
+  ]
+}

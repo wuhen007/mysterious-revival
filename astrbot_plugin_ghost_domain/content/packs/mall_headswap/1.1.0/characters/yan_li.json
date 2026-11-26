@@ -1,0 +1,45 @@
+{
+  "id": "yan_li",
+  "schema_version": 1,
+  "name": "严力",
+  "description": "驭鬼者，代号鬼血；血能压制任何一只鬼。",
+  "domain_ref": "mall_headswap",
+  "location_ref": "mall_backroom",
+  "dialogue_nodes": [
+    {
+      "id": "yan_li_first",
+      "text": "严力甩了甩手上的血：“我的血能压它一次，只有一次。你负责找真身。”",
+      "conditions": [],
+      "choices": [
+        {
+          "id": "yl_accept",
+          "label": "接下压制时机",
+          "text": "严力把手按在你肩上，血渗进你的袖口。",
+          "effects": [
+            {
+              "type": "set_story_flag",
+              "flag": "yan_li_support",
+              "value": true
+            },
+            {
+              "type": "item_add",
+              "item_ref": "holy_water",
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "id": "yl_ask",
+          "label": "追问换头鬼的破绽",
+          "text": "严力说：它只有一个真身，混在假模特里；一群人背对它躺下，它就会失去目标。",
+          "effects": [
+            {
+              "type": "reveal_rule",
+              "rule_ref": "alone_target"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

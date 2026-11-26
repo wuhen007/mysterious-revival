@@ -1,0 +1,16 @@
+{
+  "pack_id": "faction_king",
+  "version": "1.0.0",
+  "schema_version": 1,
+  "requires_engine_version": ">=0.3.0",
+  "name": "国王组织·方舟",
+  "description": "港口的货轮、封死的货舱，以及一份叫诺亚方舟的计划。",
+  "chapter": 94,
+  "optional": true,
+  "starter_ghost_pool": [
+    {
+      "ghost_ref": "ghost_call",
+      "weight": 1
+    }
+  ]
+}

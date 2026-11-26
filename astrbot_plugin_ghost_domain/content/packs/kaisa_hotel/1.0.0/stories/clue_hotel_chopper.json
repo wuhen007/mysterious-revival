@@ -1,0 +1,30 @@
+{
+  "id": "clue_hotel_chopper",
+  "schema_version": 1,
+  "name": "刀背上的名字",
+  "description": "柴刀上刻着三个字。",
+  "domain_ref": "kaisa_hotel",
+  "trigger": {
+    "conditions": []
+  },
+  "nodes": [
+    {
+      "id": "clue_hotel_chopper",
+      "location_ref": "hotel_kitchen",
+      "text": "后厨的柴刀刀背刻着「李庆之」，血迹沿着刻痕渗进去。",
+      "once": true,
+      "conditions": [],
+      "effects": [
+        {
+          "type": "set_story_flag",
+          "flag": "clue_li_qingzhi",
+          "value": true
+        },
+        {
+          "type": "san_change",
+          "amount": -5
+        }
+      ]
+    }
+  ]
+}

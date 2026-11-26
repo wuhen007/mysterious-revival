@@ -1,0 +1,30 @@
+{
+  "id": "clue_post_first_keeper",
+  "schema_version": 1,
+  "name": "首任管理者",
+  "description": "邮局墙上有一块旧木牌。",
+  "domain_ref": "post_office",
+  "trigger": {
+    "conditions": []
+  },
+  "nodes": [
+    {
+      "id": "clue_post_keeper",
+      "location_ref": "post_lobby",
+      "text": "木牌上刻着历任管理者，第一行是「罗文松」，字迹被反复描过。",
+      "once": true,
+      "conditions": [],
+      "effects": [
+        {
+          "type": "set_story_flag",
+          "flag": "clue_luo_wensong",
+          "value": true
+        },
+        {
+          "type": "san_change",
+          "amount": -5
+        }
+      ]
+    }
+  ]
+}

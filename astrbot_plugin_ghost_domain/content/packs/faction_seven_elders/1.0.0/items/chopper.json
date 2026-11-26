@@ -1,0 +1,16 @@
+{
+  "id": "chopper",
+  "schema_version": 1,
+  "name": "柴刀",
+  "description": "砍人鬼的锈迹柴刀，被砍者一刀两断。",
+  "target_types": [
+    "ghost"
+  ],
+  "uses": 1,
+  "effects": [
+    {
+      "type": "damage",
+      "amount": 25
+    }
+  ]
+}

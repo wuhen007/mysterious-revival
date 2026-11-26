@@ -1,0 +1,17 @@
+{
+  "id": "seven_school_incident",
+  "schema_version": 1,
+  "name": "七中失踪事件",
+  "description": "调查学生失踪与走廊敲门声之间的关联。",
+  "domain_ref": "seven_school",
+  "trigger": {
+    "conditions": [{"type": "counter_at_least", "counter": "clues_found", "value": 1}]
+  },
+  "nodes": [
+    {
+      "id": "incident_lead",
+      "text": "幸存者提到，敲门声总在走廊尽头响起。",
+      "effects": [{"type": "reveal_rule", "rule_ref": "three_knocks"}]
+    }
+  ]
+}

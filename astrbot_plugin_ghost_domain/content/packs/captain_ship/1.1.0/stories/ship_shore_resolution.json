@@ -1,0 +1,59 @@
+{
+  "id": "ship_shore_resolution",
+  "schema_version": 1,
+  "name": "救生艇上的回声",
+  "description": "驶离幽灵船后，岸上的人仍在等消息。",
+  "domain_ref": "captain_ship",
+  "trigger": {
+    "conditions": []
+  },
+  "nodes": [
+    {
+      "id": "sea_blocked_epilogue",
+      "location_ref": "ship_shore",
+      "text": "海面亮起红色的封锁灯。总部已经封锁海域，这艘船再也没有靠岸的机会。",
+      "once": true,
+      "conditions": [
+        {
+          "type": "story_flag_matches",
+          "flag": "sea_blocked",
+          "value": true
+        }
+      ],
+      "effects": []
+    },
+    {
+      "id": "qin_lao_epilogue",
+      "location_ref": "ship_shore",
+      "text": "码头石阶已经空了。秦老最终没有登船；他抬起又放下的那只手，仍留在你的记忆里。",
+      "once": true,
+      "conditions": [
+        {
+          "type": "story_flag_matches",
+          "flag": "qin_lao_ready",
+          "value": true
+        }
+      ],
+      "effects": []
+    },
+    {
+      "id": "ship_countered_reward",
+      "location_ref": "ship_shore",
+      "text": "船的鬼域规则被压制后，雾里漂来一枚魂晶。",
+      "once": true,
+      "conditions": [
+        {
+          "type": "rule_countered",
+          "rule_ref": "ship_domain"
+        }
+      ],
+      "effects": [
+        {
+          "type": "resource_reward",
+          "resource": "soul_shards",
+          "amount": 1
+        }
+      ]
+    }
+  ]
+}

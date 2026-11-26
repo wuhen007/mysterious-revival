@@ -1,0 +1,29 @@
+{
+  "id": "hotel_checkin",
+  "schema_version": 1,
+  "name": "登记簿上的名字",
+  "description": "最后一页写着你。",
+  "domain_ref": "kaisa_hotel",
+  "trigger": {
+    "conditions": []
+  },
+  "nodes": [
+    {
+      "id": "hotel_book",
+      "location_ref": "hotel_lobby",
+      "text": "登记簿最后一页是你的名字，入住时间是一九八七年。",
+      "once": true,
+      "conditions": [],
+      "effects": [
+        {
+          "type": "san_change",
+          "amount": -5
+        },
+        {
+          "type": "reveal_rule",
+          "rule_ref": "memory_edit"
+        }
+      ]
+    }
+  ]
+}

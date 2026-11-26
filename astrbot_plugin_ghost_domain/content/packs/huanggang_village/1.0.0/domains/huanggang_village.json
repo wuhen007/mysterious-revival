@@ -1,0 +1,244 @@
+{
+  "id": "huanggang_village",
+  "schema_version": 1,
+  "name": "黄岗村",
+  "aliases": [
+    "黄岗村"
+  ],
+  "description": "会模仿人的村子，病鬼在咳嗽，停棺棚里少了一具尸体。",
+  "chapter": 3,
+  "supported_modes": [
+    "solo",
+    "party"
+  ],
+  "party_size": {
+    "min": 2,
+    "max": 4
+  },
+  "mission_kit": [
+    {
+      "item_ref": "holy_water",
+      "quantity": 1
+    },
+    {
+      "item_ref": "grave_soil",
+      "quantity": 1
+    },
+    {
+      "item_ref": "ghost_candle",
+      "quantity": 1
+    },
+    {
+      "item_ref": "coffin_nail",
+      "quantity": 1
+    }
+  ],
+  "nodes": [
+    {
+      "id": "village_gate",
+      "name": "村口",
+      "tags": [
+        "入口"
+      ],
+      "environment": {
+        "light": "dark",
+        "distance": "close"
+      },
+      "clues": [
+        "村口的石碑被人用指甲刻满了同一个字。"
+      ]
+    },
+    {
+      "id": "village_road",
+      "name": "村道",
+      "tags": [
+        "线索"
+      ],
+      "environment": {
+        "light": "dark",
+        "distance": "close"
+      },
+      "clues": [
+        "每家每户门口都摆着一碗没动过的饭。"
+      ]
+    },
+    {
+      "id": "village_house",
+      "name": "老屋",
+      "tags": [
+        "遭遇"
+      ],
+      "environment": {
+        "light": "dark",
+        "distance": "close"
+      },
+      "clues": [
+        "屋里有人咳嗽，咳声停一下，就靠近一步。"
+      ]
+    },
+    {
+      "id": "coffin_shed",
+      "name": "停棺棚",
+      "tags": [
+        "遭遇"
+      ],
+      "environment": {
+        "light": "dark",
+        "distance": "close"
+      },
+      "clues": [
+        "六口棺材，五口钉死，最里面那口是开的。"
+      ]
+    },
+    {
+      "id": "village_well",
+      "name": "井台",
+      "tags": [
+        "线索"
+      ],
+      "environment": {
+        "light": "dark",
+        "distance": "close"
+      },
+      "clues": [
+        "井水照不出你的脸，只照出一具没有头的影子。"
+      ]
+    },
+    {
+      "id": "village_exit",
+      "name": "村后山道",
+      "tags": [
+        "撤离"
+      ],
+      "environment": {
+        "light": "lit",
+        "distance": "far"
+      },
+      "clues": [
+        "山道尽头有车灯，雾气正在散。"
+      ]
+    }
+  ],
+  "encounters": [
+    {
+      "id": "village_sick",
+      "location_ref": "village_house",
+      "enemy_refs": [
+        {
+          "ghost_ref": "sick_ghost",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "village_coffin",
+      "location_ref": "coffin_shed",
+      "enemy_refs": [
+        {
+          "ghost_ref": "ghost_coffin",
+          "quantity": 1
+        },
+        {
+          "ghost_ref": "headless_shadow",
+          "quantity": 1
+        }
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "id": "huanggang_village_rule",
+      "description": "发现病鬼的杀人规律。",
+      "conditions": [
+        {
+          "type": "rule_discovered",
+          "rule_ref": "sick_infection"
+        }
+      ]
+    },
+    {
+      "id": "huanggang_village_clues",
+      "description": "调查至少 2 条地点线索。",
+      "conditions": [
+        {
+          "type": "counter_at_least",
+          "counter": "clues_found",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "id": "huanggang_village_exit",
+      "description": "抵达撤离点。",
+      "conditions": [
+        {
+          "type": "location_is",
+          "location_ref": "village_exit"
+        }
+      ]
+    }
+  ],
+  "difficulty_levels": {
+    "normal": {
+      "unlocked_by_default": true,
+      "minimum_party_actions": 2,
+      "rewards": [
+        {
+          "type": "resource_reward",
+          "resource": "soul_shards",
+          "amount": 2
+        }
+      ],
+      "unlocks": [
+        "hard"
+      ]
+    },
+    "hard": {
+      "unlocked_by_default": false,
+      "minimum_party_actions": 2,
+      "rewards": [
+        {
+          "type": "resource_reward",
+          "resource": "soul_shards",
+          "amount": 4
+        }
+      ],
+      "unlocks": []
+    }
+  },
+  "difficulty_variants": {
+    "hard": {
+      "mission_kit_remove": [],
+      "extra_encounters": [
+        {
+          "id": "village_coffin_hard",
+          "location_ref": "coffin_shed",
+          "enemy_refs": [
+            {
+              "ghost_ref": "ghost_coffin",
+              "quantity": 1
+            },
+            {
+              "ghost_ref": "headless_shadow",
+              "quantity": 1
+            }
+          ]
+        }
+      ],
+      "enemy_behavior_overrides": {}
+    }
+  },
+  "unlock": {
+    "optional": false,
+    "requires_completed": [
+      "mall_headswap"
+    ],
+    "unlocks": [
+      "hungry_ghost_city"
+    ],
+    "requires_clues": 0
+  },
+  "extraction": {
+    "location_ref": "village_exit"
+  }
+}

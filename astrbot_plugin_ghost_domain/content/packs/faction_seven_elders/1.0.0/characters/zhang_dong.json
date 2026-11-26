@@ -1,0 +1,55 @@
+{
+  "id": "zhang_dong",
+  "schema_version": 1,
+  "name": "张洞",
+  "description": "民国七老之首，古宅老人；能力是「抹除」，让鬼直接沉睡。",
+  "domain_ref": "faction_seven_elders",
+  "location_ref": "manor_shadow",
+  "dialogue_nodes": [
+    {
+      "id": "zhang_dong_first",
+      "text": "老人坐在红棺边，没有抬头：“你们这一代，总想赢。我们当年只想让它停下来。”",
+      "conditions": [],
+      "choices": [
+        {
+          "id": "zd_erase",
+          "label": "请教「抹除」",
+          "text": "他抬手，指向你身后——那里原本什么都没有，现在也什么都没有。",
+          "effects": [
+            {
+              "type": "unlock_ability",
+              "ability_ref": "legacy_erase"
+            },
+            {
+              "type": "san_change",
+              "amount": -10
+            }
+          ],
+          "conditions": [
+            {
+              "type": "story_flag_matches",
+              "flag": "clue_zhang_dong",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": "zd_price",
+          "label": "问代价",
+          "text": "“抹掉的东西，不会回来。包括你自己的一部分。”",
+          "effects": [
+            {
+              "type": "set_story_flag",
+              "flag": "zhang_dong_met",
+              "value": true
+            },
+            {
+              "type": "san_change",
+              "amount": 10
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

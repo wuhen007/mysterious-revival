@@ -1,0 +1,215 @@
+{
+  "id": "baishui_town",
+  "schema_version": 1,
+  "name": "白水镇",
+  "aliases": [
+    "白水镇"
+  ],
+  "description": "雨落在皮肤上没有凉意。镇上的人都在等一场不会停的雨。",
+  "chapter": 13,
+  "supported_modes": [
+    "solo",
+    "party"
+  ],
+  "party_size": {
+    "min": 2,
+    "max": 4
+  },
+  "mission_kit": [
+    {
+      "item_ref": "holy_water",
+      "quantity": 1
+    },
+    {
+      "item_ref": "ghost_candle",
+      "quantity": 1
+    },
+    {
+      "item_ref": "black_umbrella",
+      "quantity": 1
+    },
+    {
+      "item_ref": "oil_lamp",
+      "quantity": 1
+    }
+  ],
+  "nodes": [
+    {
+      "id": "town_gate",
+      "name": "镇口",
+      "tags": [
+        "入口"
+      ],
+      "environment": {
+        "light": "dark",
+        "distance": "close"
+      },
+      "clues": [
+        "镇口的牌坊被雨泡得发白，字却更清楚了。"
+      ]
+    },
+    {
+      "id": "town_rain",
+      "name": "雨巷",
+      "tags": [
+        "遭遇"
+      ],
+      "environment": {
+        "light": "dark",
+        "distance": "close"
+      },
+      "clues": [
+        "雨只下在巷子里，巷外是干的。"
+      ]
+    },
+    {
+      "id": "town_clinic",
+      "name": "卫生所",
+      "tags": [
+        "线索"
+      ],
+      "environment": {
+        "light": "dark",
+        "distance": "close"
+      },
+      "clues": [
+        "卫生所的病例全是同一种症状：看见第三只眼。"
+      ]
+    },
+    {
+      "id": "town_well",
+      "name": "古井",
+      "tags": [
+        "遭遇"
+      ],
+      "environment": {
+        "light": "dark",
+        "distance": "close"
+      },
+      "clues": [
+        "井口的辘轳自己在转，井绳上拴着头发。"
+      ]
+    },
+    {
+      "id": "town_exit",
+      "name": "出镇路",
+      "tags": [
+        "撤离"
+      ],
+      "environment": {
+        "light": "lit",
+        "distance": "far"
+      },
+      "clues": [
+        "出镇的路被水淹了一半，还能走。"
+      ]
+    }
+  ],
+  "encounters": [
+    {
+      "id": "town_rain",
+      "location_ref": "town_rain",
+      "enemy_refs": [
+        {
+          "ghost_ref": "ghost_rain",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "town_eye",
+      "location_ref": "town_well",
+      "enemy_refs": [
+        {
+          "ghost_ref": "third_eye",
+          "quantity": 1
+        },
+        {
+          "ghost_ref": "ghost_face",
+          "quantity": 1
+        }
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "id": "baishui_town_rule",
+      "description": "发现鬼雨的杀人规律。",
+      "conditions": [
+        {
+          "type": "rule_discovered",
+          "rule_ref": "rain_domain"
+        }
+      ]
+    },
+    {
+      "id": "baishui_town_clues",
+      "description": "调查至少 2 条地点线索。",
+      "conditions": [
+        {
+          "type": "counter_at_least",
+          "counter": "clues_found",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "id": "baishui_town_exit",
+      "description": "抵达撤离点。",
+      "conditions": [
+        {
+          "type": "location_is",
+          "location_ref": "town_exit"
+        }
+      ]
+    }
+  ],
+  "difficulty_levels": {
+    "normal": {
+      "unlocked_by_default": true,
+      "minimum_party_actions": 2,
+      "rewards": [
+        {
+          "type": "resource_reward",
+          "resource": "soul_shards",
+          "amount": 2
+        }
+      ],
+      "unlocks": [
+        "hard"
+      ]
+    },
+    "hard": {
+      "unlocked_by_default": false,
+      "minimum_party_actions": 2,
+      "rewards": [
+        {
+          "type": "resource_reward",
+          "resource": "soul_shards",
+          "amount": 4
+        }
+      ],
+      "unlocks": []
+    }
+  },
+  "difficulty_variants": {
+    "hard": {
+      "mission_kit_remove": [],
+      "extra_encounters": [],
+      "enemy_behavior_overrides": {}
+    }
+  },
+  "unlock": {
+    "optional": false,
+    "requires_completed": [
+      "room_301"
+    ],
+    "unlocks": [
+      "captain_ship"
+    ],
+    "requires_clues": 0
+  },
+  "extraction": {
+    "location_ref": "town_exit"
+  }
+}

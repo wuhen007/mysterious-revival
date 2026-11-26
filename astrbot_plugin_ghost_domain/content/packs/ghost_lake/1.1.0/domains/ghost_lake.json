@@ -1,0 +1,219 @@
+{
+  "id": "ghost_lake",
+  "schema_version": 1,
+  "name": "中州市·鬼湖",
+  "aliases": [
+    "鬼湖"
+  ],
+  "description": "闭上眼碰到湖水就会被拉下去。湖的源头在太平古镇。",
+  "chapter": 11,
+  "supported_modes": [
+    "solo",
+    "party"
+  ],
+  "party_size": {
+    "min": 2,
+    "max": 4
+  },
+  "mission_kit": [
+    {
+      "item_ref": "holy_water",
+      "quantity": 1
+    },
+    {
+      "item_ref": "ghost_candle",
+      "quantity": 1
+    },
+    {
+      "item_ref": "ghost_money",
+      "quantity": 1
+    },
+    {
+      "item_ref": "black_umbrella",
+      "quantity": 1
+    }
+  ],
+  "nodes": [
+    {
+      "id": "lake_shore",
+      "name": "湖岸",
+      "tags": [
+        "入口"
+      ],
+      "environment": {
+        "light": "dark",
+        "distance": "close"
+      },
+      "clues": [
+        "湖面浮着一层纸钱，风向却吹不动它们。"
+      ]
+    },
+    {
+      "id": "town_street",
+      "name": "太平古镇·鬼街",
+      "tags": [
+        "线索"
+      ],
+      "environment": {
+        "light": "dark",
+        "distance": "close"
+      },
+      "clues": [
+        "鬼街的摊主都用同一张脸，只有摊子不同。"
+      ]
+    },
+    {
+      "id": "town_coffin_shop",
+      "name": "棺材铺",
+      "tags": [
+        "遭遇"
+      ],
+      "environment": {
+        "light": "dark",
+        "distance": "close"
+      },
+      "clues": [
+        "棺材铺老板在给一口空棺量尺寸，量的是你的身高。"
+      ]
+    },
+    {
+      "id": "lake_ferry",
+      "name": "渡口",
+      "tags": [
+        "遭遇"
+      ],
+      "environment": {
+        "light": "dark",
+        "distance": "close"
+      },
+      "clues": [
+        "黑色渡船无声靠岸，船夫伸手却不说话。"
+      ]
+    },
+    {
+      "id": "lake_source",
+      "name": "湖源",
+      "tags": [
+        "撤离"
+      ],
+      "environment": {
+        "light": "dim",
+        "distance": "far"
+      },
+      "clues": [
+        "湖源是一口倒流的泉，泉水往天上走。"
+      ]
+    }
+  ],
+  "encounters": [
+    {
+      "id": "lake_coffin",
+      "location_ref": "town_coffin_shop",
+      "enemy_refs": [
+        {
+          "ghost_ref": "paper_man",
+          "quantity": 2
+        },
+        {
+          "ghost_ref": "ghost_lake",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "lake_ferryman",
+      "location_ref": "lake_ferry",
+      "enemy_refs": [
+        {
+          "ghost_ref": "ferryman",
+          "quantity": 1
+        },
+        {
+          "ghost_ref": "ghost_choke",
+          "quantity": 1
+        }
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "id": "ghost_lake_rule",
+      "description": "发现纸人的杀人规律。",
+      "conditions": [
+        {
+          "type": "rule_discovered",
+          "rule_ref": "closed_eyes"
+        }
+      ]
+    },
+    {
+      "id": "ghost_lake_clues",
+      "description": "调查至少 2 条地点线索。",
+      "conditions": [
+        {
+          "type": "counter_at_least",
+          "counter": "clues_found",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "id": "ghost_lake_exit",
+      "description": "抵达撤离点。",
+      "conditions": [
+        {
+          "type": "location_is",
+          "location_ref": "lake_source"
+        }
+      ]
+    }
+  ],
+  "difficulty_levels": {
+    "normal": {
+      "unlocked_by_default": true,
+      "minimum_party_actions": 2,
+      "rewards": [
+        {
+          "type": "resource_reward",
+          "resource": "soul_shards",
+          "amount": 2
+        }
+      ],
+      "unlocks": [
+        "hard"
+      ]
+    },
+    "hard": {
+      "unlocked_by_default": false,
+      "minimum_party_actions": 2,
+      "rewards": [
+        {
+          "type": "resource_reward",
+          "resource": "soul_shards",
+          "amount": 4
+        }
+      ],
+      "unlocks": []
+    }
+  },
+  "difficulty_variants": {
+    "hard": {
+      "mission_kit_remove": [],
+      "extra_encounters": [],
+      "enemy_behavior_overrides": {}
+    }
+  },
+  "unlock": {
+    "optional": false,
+    "requires_completed": [
+      "wang_mansion"
+    ],
+    "unlocks": [
+      "room_301"
+    ],
+    "requires_clues": 0
+  },
+  "extraction": {
+    "location_ref": "lake_source"
+  }
+}

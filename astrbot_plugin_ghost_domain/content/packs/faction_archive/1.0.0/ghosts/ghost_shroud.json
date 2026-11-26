@@ -1,0 +1,47 @@
+{
+  "id": "ghost_shroud",
+  "schema_version": 1,
+  "name": "鬼寿衣",
+  "description": "叶枫持有的防御型灵异。",
+  "grade": "A",
+  "stats": {
+    "hp": 110,
+    "attack": 8,
+    "defense": 20,
+    "speed": 4
+  },
+  "capture_threshold": 0.25,
+  "capture_difficulty": 0.5,
+  "base_loyalty": 50,
+  "starter_weight": 1,
+  "skills": [
+    {
+      "id": "shroud_wrap",
+      "name": "覆身",
+      "type": "attack",
+      "power": 1.05,
+      "cooldown_turns": 2
+    }
+  ],
+  "rules": [
+    {
+      "id": "isolate_attack",
+      "description": "隔绝其他厉鬼的攻击，相当于绝对防御。",
+      "clues": [
+        "衣柜里多出一件寿衣",
+        "穿寿衣的人从不说话"
+      ],
+      "reveal_after": 2,
+      "discovery_san_cost": 5,
+      "counter_method": "防不了规则型必死与物理攻击。",
+      "counteractions": [
+        "damage_resets_counter"
+      ]
+    }
+  ],
+  "behavior": {
+    "kind": "brute",
+    "target_strategy": "random",
+    "attack_multiplier": 1.0
+  }
+}

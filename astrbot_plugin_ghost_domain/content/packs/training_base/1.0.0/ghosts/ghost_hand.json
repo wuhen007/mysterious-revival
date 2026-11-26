@@ -1,0 +1,47 @@
+{
+  "id": "ghost_hand",
+  "schema_version": 1,
+  "name": "鬼手",
+  "description": "棺材钉的本体，可压制三只鬼的名额；名额固定为三。",
+  "grade": "A",
+  "stats": {
+    "hp": 160,
+    "attack": 24,
+    "defense": 12,
+    "speed": 7
+  },
+  "capture_threshold": 0.1,
+  "capture_difficulty": 0.75,
+  "base_loyalty": 50,
+  "starter_weight": 1,
+  "skills": [
+    {
+      "id": "hand_suppress",
+      "name": "压制",
+      "type": "attack",
+      "power": 1.35,
+      "cooldown_turns": 2
+    }
+  ],
+  "rules": [
+    {
+      "id": "suppress_three",
+      "description": "被它压制的鬼相当于被占掉一个名额，无法动用能力。",
+      "clues": [
+        "一对惨白的右手手掌",
+        "被抓住的鬼突然安静"
+      ],
+      "reveal_after": 2,
+      "discovery_san_cost": 5,
+      "counter_method": "先以鬼域或黄金切断其接触。",
+      "counteractions": [
+        "golden_seal"
+      ]
+    }
+  ],
+  "behavior": {
+    "kind": "brute",
+    "target_strategy": "ghost_first",
+    "attack_multiplier": 1.0
+  }
+}

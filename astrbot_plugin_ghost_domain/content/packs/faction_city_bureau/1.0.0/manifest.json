@@ -1,0 +1,16 @@
+{
+  "pack_id": "faction_city_bureau",
+  "version": "1.0.0",
+  "schema_version": 1,
+  "requires_engine_version": ">=0.3.0",
+  "name": "大昌市分局",
+  "description": "一城之主的分局。拘留室里关着不该关的东西，档案室的灯从不关。",
+  "chapter": 89,
+  "optional": true,
+  "starter_ghost_pool": [
+    {
+      "ghost_ref": "ghost_newspaper",
+      "weight": 1
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "id": "ferryman",
+  "schema_version": 1,
+  "name": "渡船",
+  "description": "摆渡活人与鬼，河心回头者会被留下。",
+  "grade": "A",
+  "stats": {
+    "hp": 160,
+    "attack": 18,
+    "defense": 12,
+    "speed": 5
+  },
+  "capture_threshold": 0.15,
+  "capture_difficulty": 0.6,
+  "base_loyalty": 50,
+  "starter_weight": 1,
+  "skills": [
+    {
+      "id": "ferry_cross",
+      "name": "摆渡",
+      "type": "attack",
+      "power": 1.25,
+      "cooldown_turns": 2
+    }
+  ],
+  "rules": [
+    {
+      "id": "ferry_rule",
+      "description": "上船者必须付船资，不得在河心回头。",
+      "clues": [
+        "黑色的渡船无声靠岸",
+        "船夫伸出手却不说话"
+      ],
+      "reveal_after": 2,
+      "discovery_san_cost": 5,
+      "counter_method": "付鬼钱；或不上船。",
+      "counteractions": [
+        "damage_resets_counter"
+      ]
+    }
+  ],
+  "behavior": {
+    "kind": "brute",
+    "target_strategy": "random",
+    "attack_multiplier": 1.0
+  }
+}

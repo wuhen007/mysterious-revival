@@ -1,0 +1,47 @@
+{
+  "id": "ghost_head_pat",
+  "schema_version": 1,
+  "name": "鬼摸头",
+  "description": "裴东的鬼，近身必死。",
+  "grade": "B",
+  "stats": {
+    "hp": 140,
+    "attack": 26,
+    "defense": 10,
+    "speed": 7
+  },
+  "capture_threshold": 0.2,
+  "capture_difficulty": 0.55,
+  "base_loyalty": 50,
+  "starter_weight": 1,
+  "skills": [
+    {
+      "id": "head_pat",
+      "name": "摸顶",
+      "type": "attack",
+      "power": 1.45,
+      "cooldown_turns": 1
+    }
+  ],
+  "rules": [
+    {
+      "id": "pat_death",
+      "description": "被摸到头顶即死，防不胜防。",
+      "clues": [
+        "有人在你身后抬手",
+        "头顶突然一阵冰凉"
+      ],
+      "reveal_after": 2,
+      "discovery_san_cost": 5,
+      "counter_method": "低头、戴帽、遮挡可规避。",
+      "counteractions": [
+        "damage_resets_counter"
+      ]
+    }
+  ],
+  "behavior": {
+    "kind": "brute",
+    "target_strategy": "weakest",
+    "attack_multiplier": 1.0
+  }
+}

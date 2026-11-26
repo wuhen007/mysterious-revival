@@ -1,0 +1,183 @@
+{
+  "id": "mall_headswap",
+  "schema_version": 1,
+  "name": "大昌市·新世界商场",
+  "aliases": [
+    "新世界商场"
+  ],
+  "description": "商场里出现会换头的鬼，尸体被摆成假模特的姿势。",
+  "chapter": 2,
+  "supported_modes": [
+    "solo",
+    "party"
+  ],
+  "party_size": {
+    "min": 2,
+    "max": 4
+  },
+  "mission_kit": [
+    {
+      "item_ref": "holy_water",
+      "quantity": 1
+    },
+    {
+      "item_ref": "grave_soil",
+      "quantity": 1
+    },
+    {
+      "item_ref": "ghost_candle",
+      "quantity": 1
+    }
+  ],
+  "nodes": [
+    {
+      "id": "mall_entrance",
+      "name": "商场入口",
+      "tags": [
+        "入口"
+      ],
+      "environment": {
+        "light": "dim",
+        "distance": "close"
+      },
+      "clues": [
+        "卷帘门只落下了一半，门缝里透出冷气。"
+      ]
+    },
+    {
+      "id": "mall_atrium",
+      "name": "中庭模特区",
+      "tags": [
+        "线索"
+      ],
+      "environment": {
+        "light": "dark",
+        "distance": "close"
+      },
+      "clues": [
+        "假模特全都朝着同一个方向，只有一个背对着你。"
+      ]
+    },
+    {
+      "id": "mall_backroom",
+      "name": "仓库后间",
+      "tags": [
+        "遭遇"
+      ],
+      "environment": {
+        "light": "dark",
+        "distance": "close"
+      },
+      "clues": [
+        "后间堆着没有头的假模特，地上有拖拽痕迹。"
+      ]
+    },
+    {
+      "id": "mall_fire_exit",
+      "name": "消防通道",
+      "tags": [
+        "撤离"
+      ],
+      "environment": {
+        "light": "lit",
+        "distance": "far"
+      },
+      "clues": [
+        "消防门通向卸货区，外面有路灯。"
+      ]
+    }
+  ],
+  "encounters": [
+    {
+      "id": "mall_swapper",
+      "location_ref": "mall_backroom",
+      "enemy_refs": [
+        {
+          "ghost_ref": "head_swapper",
+          "quantity": 1
+        }
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "id": "mall_headswap_rule",
+      "description": "发现换头鬼的杀人规律。",
+      "conditions": [
+        {
+          "type": "rule_discovered",
+          "rule_ref": "alone_target"
+        }
+      ]
+    },
+    {
+      "id": "mall_headswap_clues",
+      "description": "调查至少 2 条地点线索。",
+      "conditions": [
+        {
+          "type": "counter_at_least",
+          "counter": "clues_found",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "id": "mall_headswap_exit",
+      "description": "抵达撤离点。",
+      "conditions": [
+        {
+          "type": "location_is",
+          "location_ref": "mall_fire_exit"
+        }
+      ]
+    }
+  ],
+  "difficulty_levels": {
+    "normal": {
+      "unlocked_by_default": true,
+      "minimum_party_actions": 2,
+      "rewards": [
+        {
+          "type": "resource_reward",
+          "resource": "soul_shards",
+          "amount": 2
+        }
+      ],
+      "unlocks": [
+        "hard"
+      ]
+    },
+    "hard": {
+      "unlocked_by_default": false,
+      "minimum_party_actions": 2,
+      "rewards": [
+        {
+          "type": "resource_reward",
+          "resource": "soul_shards",
+          "amount": 4
+        }
+      ],
+      "unlocks": []
+    }
+  },
+  "difficulty_variants": {
+    "hard": {
+      "mission_kit_remove": [],
+      "extra_encounters": [],
+      "enemy_behavior_overrides": {}
+    }
+  },
+  "unlock": {
+    "optional": false,
+    "requires_completed": [
+      "seven_school"
+    ],
+    "unlocks": [
+      "huanggang_village"
+    ],
+    "requires_clues": 0
+  },
+  "extraction": {
+    "location_ref": "mall_fire_exit"
+  }
+}

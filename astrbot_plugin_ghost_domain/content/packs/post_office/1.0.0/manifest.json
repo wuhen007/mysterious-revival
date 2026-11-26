@@ -1,0 +1,16 @@
+{
+  "pack_id": "post_office",
+  "version": "1.0.0",
+  "schema_version": 1,
+  "requires_engine_version": ">=0.3.0",
+  "name": "鬼邮局",
+  "description": "五层、35 个房间。晚六点熄灯，没回房间的信使会被游荡的鬼杀死。",
+  "chapter": 9,
+  "optional": false,
+  "starter_ghost_pool": [
+    {
+      "ghost_ref": "paper_man",
+      "weight": 1
+    }
+  ]
+}

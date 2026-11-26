@@ -1,0 +1,47 @@
+{
+  "id": "nightmare",
+  "schema_version": 1,
+  "name": "梦魇（鬼梦）",
+  "description": "全球厉鬼排行榜第二，可读取、篡改记忆。",
+  "grade": "A",
+  "stats": {
+    "hp": 180,
+    "attack": 24,
+    "defense": 10,
+    "speed": 9
+  },
+  "capture_threshold": 0.15,
+  "capture_difficulty": 0.7,
+  "base_loyalty": 50,
+  "starter_weight": 1,
+  "skills": [
+    {
+      "id": "dream_kill",
+      "name": "梦中杀",
+      "type": "attack",
+      "power": 1.45,
+      "cooldown_turns": 2
+    }
+  ],
+  "rules": [
+    {
+      "id": "sleep_kill",
+      "description": "入睡即被杀；梦中受伤会带到现实。",
+      "clues": [
+        "你梦见自己醒着",
+        "梦里的人知道你在做梦"
+      ],
+      "reveal_after": 2,
+      "discovery_san_cost": 5,
+      "counter_method": "不睡觉即可避免；进入梦境后所有人都是普通人。",
+      "counteractions": [
+        "damage_resets_counter"
+      ]
+    }
+  ],
+  "behavior": {
+    "kind": "brute",
+    "target_strategy": "weakest",
+    "attack_multiplier": 1.0
+  }
+}

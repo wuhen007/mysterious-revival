@@ -1,0 +1,47 @@
+{
+  "id": "ghost_voice",
+  "schema_version": 1,
+  "name": "鬼音",
+  "description": "以声音搜索活人、传播灵异。",
+  "grade": "B",
+  "stats": {
+    "hp": 90,
+    "attack": 12,
+    "defense": 5,
+    "speed": 9
+  },
+  "capture_threshold": 0.3,
+  "capture_difficulty": 0.5,
+  "base_loyalty": 50,
+  "starter_weight": 1,
+  "skills": [
+    {
+      "id": "voice_pierce",
+      "name": "声波穿刺",
+      "type": "attack",
+      "power": 1.1,
+      "cooldown_turns": 1
+    }
+  ],
+  "rules": [
+    {
+      "id": "sound_search",
+      "description": "以声音为媒介搜索活人，可隔墙定位。",
+      "clues": [
+        "走廊里有人在叫你的名字",
+        "声音从墙壁里面传来"
+      ],
+      "reveal_after": 2,
+      "discovery_san_cost": 5,
+      "counter_method": "切断声音传播（关门、隔层、封耳）。",
+      "counteractions": [
+        "damage_resets_counter"
+      ]
+    }
+  ],
+  "behavior": {
+    "kind": "brute",
+    "target_strategy": "random",
+    "attack_multiplier": 1.0
+  }
+}

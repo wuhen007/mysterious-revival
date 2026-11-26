@@ -1,0 +1,16 @@
+{
+  "pack_id": "room_301",
+  "version": "1.0.0",
+  "schema_version": 1,
+  "requires_engine_version": ">=0.3.0",
+  "name": "301 室",
+  "description": "门牌号会变，屋里的钟比外面慢两小时。这里不止一只鬼。",
+  "chapter": 12,
+  "optional": false,
+  "starter_ghost_pool": [
+    {
+      "ghost_ref": "ghost_newspaper",
+      "weight": 1
+    }
+  ]
+}

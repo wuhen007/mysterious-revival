@@ -1,0 +1,16 @@
+{
+  "pack_id": "faction_forum",
+  "version": "1.0.0",
+  "schema_version": 1,
+  "requires_engine_version": ">=0.3.0",
+  "name": "灵异论坛·大海市",
+  "description": "民间驭鬼者的据点，有排行榜、有擂台，也有替死鬼。",
+  "chapter": 93,
+  "optional": true,
+  "starter_ghost_pool": [
+    {
+      "ghost_ref": "substitute_ghost",
+      "weight": 1
+    }
+  ]
+}

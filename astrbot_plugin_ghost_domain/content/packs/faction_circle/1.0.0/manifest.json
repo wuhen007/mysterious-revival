@@ -1,0 +1,16 @@
+{
+  "pack_id": "faction_circle",
+  "version": "1.0.0",
+  "schema_version": 1,
+  "requires_engine_version": ">=0.3.0",
+  "name": "朋友圈·平安大厦",
+  "description": "资本与灵异勾连的会所。这里的每个人都笑得像同一个人。",
+  "chapter": 92,
+  "optional": true,
+  "starter_ghost_pool": [
+    {
+      "ghost_ref": "ghost_liar",
+      "weight": 1
+    }
+  ]
+}

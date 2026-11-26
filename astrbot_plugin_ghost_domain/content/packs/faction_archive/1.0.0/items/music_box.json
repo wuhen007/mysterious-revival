@@ -1,0 +1,18 @@
+{
+  "id": "music_box",
+  "schema_version": 1,
+  "name": "八音盒",
+  "description": "音乐期间持有人绝对不会死，但不保证不被袭击。",
+  "target_types": [
+    "player",
+    "controlled_ghost"
+  ],
+  "uses": 1,
+  "effects": [
+    {
+      "type": "apply_status",
+      "status": "undying",
+      "turns": 3
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "id": "jiang_shangbai",
+  "schema_version": 1,
+  "name": "姜尚白",
+  "description": "朋友圈扶持的队长，代号鬼踩人。",
+  "domain_ref": "faction_circle",
+  "location_ref": "circle_room",
+  "dialogue_nodes": [
+    {
+      "id": "jiang_shangbai_first",
+      "text": "姜尚白靠在墙边：“踩过的地方，别踩第二次。”",
+      "conditions": [],
+      "choices": [
+        {
+          "id": "jsb_rule",
+          "label": "问鬼踩人的范围",
+          "text": "“脚够得着的地方。”",
+          "effects": [
+            {
+              "type": "reveal_rule",
+              "rule_ref": "stomp_range"
+            }
+          ]
+        },
+        {
+          "id": "jsb_test",
+          "label": "试探他的底线",
+          "text": "他抬脚，地板陷下去一块。",
+          "effects": [
+            {
+              "type": "san_change",
+              "amount": -10
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

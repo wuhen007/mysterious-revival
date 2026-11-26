@@ -1,0 +1,48 @@
+{
+  "id": "headless_shadow",
+  "schema_version": 1,
+  "name": "无头鬼影",
+  "description": "李庆之死后分裂出的无头鬼影，后被杨间驾驭；可夺取其他鬼的身体部件拼凑全鬼之躯。",
+  "grade": "A",
+  "stats": {
+    "hp": 130,
+    "attack": 20,
+    "defense": 10,
+    "speed": 8
+  },
+  "capture_threshold": 0.15,
+  "capture_difficulty": 0.7,
+  "base_loyalty": 50,
+  "starter_weight": 1,
+  "skills": [
+    {
+      "id": "shadow_grab",
+      "name": "夺躯",
+      "type": "attack",
+      "power": 1.3,
+      "cooldown_turns": 1
+    }
+  ],
+  "rules": [
+    {
+      "id": "shadow_takeover",
+      "description": "影子形态无视物理攻击，会反噬宿主。",
+      "clues": [
+        "棺材里的尸体没有头",
+        "影子比人先动"
+      ],
+      "reveal_after": 2,
+      "discovery_san_cost": 5,
+      "counter_method": "以更强的灵异（鬼眼/鬼手）压制其复苏。",
+      "counteractions": [
+        "damage_resets_counter"
+      ],
+      "story_flag_on_counteraction": "shadow_countered"
+    }
+  ],
+  "behavior": {
+    "kind": "brute",
+    "target_strategy": "ghost_first",
+    "attack_multiplier": 1.0
+  }
+}

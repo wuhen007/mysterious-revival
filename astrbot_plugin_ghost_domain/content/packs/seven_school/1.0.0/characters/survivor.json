@@ -1,0 +1,22 @@
+{
+  "id": "seven_school_survivor",
+  "schema_version": 1,
+  "name": "留在教室的人",
+  "description": "在教室里等待救援的事件相关者。",
+  "domain_ref": "seven_school",
+  "location_ref": "school_classroom",
+  "dialogue_nodes": [
+    {
+      "id": "survivor_first_contact",
+      "text": "你们也是总部派来调查的人吗？",
+      "choices": [
+        {
+          "id": "offer_help",
+          "label": "带他去出口",
+          "effects": [{"type": "set_story_flag", "flag": "survivor_helped", "value": true}]
+        },
+        {"id": "ask_about_knocks", "label": "询问敲门声"}
+      ]
+    }
+  ]
+}

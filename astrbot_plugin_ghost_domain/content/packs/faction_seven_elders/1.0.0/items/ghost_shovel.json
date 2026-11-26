@@ -1,0 +1,17 @@
+{
+  "id": "ghost_shovel",
+  "schema_version": 1,
+  "name": "鬼铁锹",
+  "description": "罗千的器物，锹头粘着永远干不了的泥土。",
+  "target_types": [
+    "ghost"
+  ],
+  "uses": 1,
+  "effects": [
+    {
+      "type": "damage",
+      "amount": 20
+    }
+  ],
+  "canon": "明确"
+}

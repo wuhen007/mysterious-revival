@@ -1,0 +1,17 @@
+{
+  "id": "corpse_shroud",
+  "schema_version": 1,
+  "name": "裹尸布",
+  "description": "包裹厉鬼可彻底压制其行动，至今无失败记录。",
+  "target_types": [
+    "ghost"
+  ],
+  "uses": 1,
+  "effects": [
+    {
+      "type": "apply_status",
+      "status": "bound",
+      "turns": 2
+    }
+  ]
+}

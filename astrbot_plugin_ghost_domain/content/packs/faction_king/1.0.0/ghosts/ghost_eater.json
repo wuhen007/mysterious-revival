@@ -1,0 +1,47 @@
+{
+  "id": "ghost_eater",
+  "schema_version": 1,
+  "name": "鬼食人",
+  "description": "全球厉鬼排行榜第三；原文只列代号。",
+  "grade": "S",
+  "stats": {
+    "hp": 110,
+    "attack": 26,
+    "defense": 8,
+    "speed": 7
+  },
+  "capture_threshold": 0.2,
+  "capture_difficulty": 0.6,
+  "base_loyalty": 50,
+  "starter_weight": 1,
+  "skills": [
+    {
+      "id": "eat_bite",
+      "name": "吞食",
+      "type": "attack",
+      "power": 1.5,
+      "cooldown_turns": 2
+    }
+  ],
+  "rules": [
+    {
+      "id": "devour_all",
+      "description": "全球级无差别杀人，具体能力原文未展开（待补充）。",
+      "clues": [
+        "名单上的人一个个消失",
+        "餐厅后厨传来咀嚼声"
+      ],
+      "reveal_after": 2,
+      "discovery_san_cost": 5,
+      "counter_method": "原文未明示（待补充）。",
+      "counteractions": [
+        "damage_resets_counter"
+      ]
+    }
+  ],
+  "behavior": {
+    "kind": "brute",
+    "target_strategy": "random",
+    "attack_multiplier": 1.0
+  }
+}

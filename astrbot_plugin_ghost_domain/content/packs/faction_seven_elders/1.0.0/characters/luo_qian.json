@@ -1,0 +1,57 @@
+{
+  "id": "luo_qian",
+  "schema_version": 1,
+  "name": "罗千",
+  "description": "坟场主；埋葬现世，被埋之物无法重启。留下媒介，可被招魂出手一次。",
+  "domain_ref": "faction_seven_elders",
+  "location_ref": "graveyard",
+  "dialogue_nodes": [
+    {
+      "id": "luo_qian_first",
+      "text": "坟场主把铁锹插进土里：“埋下去的东西，就别再挖出来。”",
+      "conditions": [],
+      "choices": [
+        {
+          "id": "lq_bury",
+          "label": "请教埋葬",
+          "text": "“坟土不挑对象。人、鬼、时代，都能埋。”",
+          "effects": [
+            {
+              "type": "unlock_ability",
+              "ability_ref": "legacy_bury"
+            },
+            {
+              "type": "item_add",
+              "item_ref": "ghost_shovel",
+              "quantity": 1
+            }
+          ],
+          "conditions": [
+            {
+              "type": "story_flag_matches",
+              "flag": "clue_luo_qian",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": "lq_medium",
+          "label": "要一份媒介",
+          "text": "他从土里摸出一小袋坟土，递给你。",
+          "effects": [
+            {
+              "type": "item_add",
+              "item_ref": "grave_soil",
+              "quantity": 2
+            },
+            {
+              "type": "set_story_flag",
+              "flag": "luo_qian_medium",
+              "value": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

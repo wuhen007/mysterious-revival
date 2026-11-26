@@ -1,0 +1,17 @@
+{
+  "id": "embroidered_shoes",
+  "schema_version": 1,
+  "name": "绣花鞋",
+  "description": "一双会自己走动的鞋，穿上会被带走。",
+  "target_types": [
+    "ghost"
+  ],
+  "uses": 1,
+  "effects": [
+    {
+      "type": "apply_status",
+      "status": "carried",
+      "turns": 1
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "id": "li_qingzhi",
+  "schema_version": 1,
+  "name": "李庆之",
+  "description": "凯撒酒店的高大男尸；完整鬼影与柴刀的原主，以媒介隔空肢解。",
+  "domain_ref": "faction_seven_elders",
+  "location_ref": "elder_hall",
+  "dialogue_nodes": [
+    {
+      "id": "li_qingzhi_first",
+      "text": "男尸站在牌位厅角落，尸水在地面积成一小滩：“刀给你，命也给你。想清楚。”",
+      "conditions": [],
+      "choices": [
+        {
+          "id": "lqz_cut",
+          "label": "接过柴刀",
+          "text": "刀柄是湿的。你握住它时，听见很远的地方有东西被切开。",
+          "effects": [
+            {
+              "type": "unlock_ability",
+              "ability_ref": "legacy_cut"
+            },
+            {
+              "type": "item_add",
+              "item_ref": "chopper",
+              "quantity": 1
+            }
+          ],
+          "conditions": [
+            {
+              "type": "story_flag_matches",
+              "flag": "clue_li_qingzhi",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": "lqz_shadow",
+          "label": "问鬼影的去向",
+          "text": "“头在大川，身子在商场。剩下的，看你运气。”",
+          "effects": [
+            {
+              "type": "reveal_rule",
+              "rule_ref": "shadow_takeover"
+            },
+            {
+              "type": "san_change",
+              "amount": -5
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "id": "zhou_zheng",
+  "schema_version": 1,
+  "name": "周正",
+  "description": "大昌市负责人，七中事件的亲历者；死后体内的鬼婴逃出。",
+  "domain_ref": "huanggang_village",
+  "location_ref": "village_road",
+  "dialogue_nodes": [
+    {
+      "id": "zhou_zheng_first",
+      "text": "周正的脸色灰得不像活人：“我压不住它了。你们要是看见一个婴儿……别睁眼。”",
+      "conditions": [],
+      "choices": [
+        {
+          "id": "zz_promise",
+          "label": "答应替他收尾",
+          "text": "周正把配枪和一份档案交给你。",
+          "effects": [
+            {
+              "type": "item_add",
+              "item_ref": "red_paper",
+              "quantity": 1
+            },
+            {
+              "type": "set_story_flag",
+              "flag": "zhou_zheng_entrusted",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": "zz_ask",
+          "label": "问鬼婴的四个阶段",
+          "text": "他只说了三句：看见、碰到、听见。第四句没说完，人已经倒下。",
+          "effects": [
+            {
+              "type": "reveal_rule",
+              "rule_ref": "hungry_phases"
+            },
+            {
+              "type": "san_change",
+              "amount": -5
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

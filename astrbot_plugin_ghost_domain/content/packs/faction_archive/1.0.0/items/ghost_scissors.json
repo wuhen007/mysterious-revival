@@ -1,0 +1,16 @@
+{
+  "id": "ghost_scissors",
+  "schema_version": 1,
+  "name": "鬼剪刀",
+  "description": "可看见并剪断诅咒的线；只能剪联系，不能杀鬼（剪断判定待补充）。",
+  "target_types": [
+    "ghost"
+  ],
+  "uses": 1,
+  "effects": [
+    {
+      "type": "damage",
+      "amount": 12
+    }
+  ]
+}

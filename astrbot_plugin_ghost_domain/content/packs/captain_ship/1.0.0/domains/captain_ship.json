@@ -1,0 +1,219 @@
+{
+  "id": "captain_ship",
+  "schema_version": 1,
+  "name": "船",
+  "aliases": [
+    "船"
+  ],
+  "description": "海上有一艘不该存在的船。上船的人会变成人偶。",
+  "chapter": 14,
+  "supported_modes": [
+    "solo",
+    "party"
+  ],
+  "party_size": {
+    "min": 2,
+    "max": 4
+  },
+  "mission_kit": [
+    {
+      "item_ref": "holy_water",
+      "quantity": 1
+    },
+    {
+      "item_ref": "ghost_candle",
+      "quantity": 1
+    },
+    {
+      "item_ref": "satellite_phone",
+      "quantity": 1
+    },
+    {
+      "item_ref": "gold_box",
+      "quantity": 1
+    }
+  ],
+  "nodes": [
+    {
+      "id": "ship_dock",
+      "name": "码头",
+      "tags": [
+        "入口"
+      ],
+      "environment": {
+        "light": "dark",
+        "distance": "close"
+      },
+      "clues": [
+        "码头的潮汐表停在同一天，已经停了很多年。"
+      ]
+    },
+    {
+      "id": "ship_deck",
+      "name": "甲板",
+      "tags": [
+        "遭遇"
+      ],
+      "environment": {
+        "light": "dark",
+        "distance": "close"
+      },
+      "clues": [
+        "甲板上的人偶都朝着舵室，姿势一模一样。"
+      ]
+    },
+    {
+      "id": "ship_cabin",
+      "name": "船舱",
+      "tags": [
+        "线索"
+      ],
+      "environment": {
+        "light": "dark",
+        "distance": "close"
+      },
+      "clues": [
+        "航海图指向一个不存在的港口，坐标被改过。"
+      ]
+    },
+    {
+      "id": "ship_wheel",
+      "name": "舵室",
+      "tags": [
+        "遭遇"
+      ],
+      "environment": {
+        "light": "dark",
+        "distance": "close"
+      },
+      "clues": [
+        "舵轮上缠着干枯的手指，还在轻轻转动。"
+      ]
+    },
+    {
+      "id": "ship_shore",
+      "name": "救生艇",
+      "tags": [
+        "撤离"
+      ],
+      "environment": {
+        "light": "dim",
+        "distance": "far"
+      },
+      "clues": [
+        "救生艇的绳子是新的，海面开始起雾。"
+      ]
+    }
+  ],
+  "encounters": [
+    {
+      "id": "ship_doll",
+      "location_ref": "ship_deck",
+      "enemy_refs": [
+        {
+          "ghost_ref": "ghost_embrace",
+          "quantity": 1
+        },
+        {
+          "ghost_ref": "ghost_ram",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "ship_captain",
+      "location_ref": "ship_wheel",
+      "enemy_refs": [
+        {
+          "ghost_ref": "captain",
+          "quantity": 1
+        },
+        {
+          "ghost_ref": "ghost_teeth",
+          "quantity": 1
+        }
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "id": "captain_ship_rule",
+      "description": "发现鬼抱人的杀人规律。",
+      "conditions": [
+        {
+          "type": "rule_discovered",
+          "rule_ref": "ship_domain"
+        }
+      ]
+    },
+    {
+      "id": "captain_ship_clues",
+      "description": "调查至少 2 条地点线索。",
+      "conditions": [
+        {
+          "type": "counter_at_least",
+          "counter": "clues_found",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "id": "captain_ship_exit",
+      "description": "抵达撤离点。",
+      "conditions": [
+        {
+          "type": "location_is",
+          "location_ref": "ship_shore"
+        }
+      ]
+    }
+  ],
+  "difficulty_levels": {
+    "normal": {
+      "unlocked_by_default": true,
+      "minimum_party_actions": 2,
+      "rewards": [
+        {
+          "type": "resource_reward",
+          "resource": "soul_shards",
+          "amount": 2
+        }
+      ],
+      "unlocks": [
+        "hard"
+      ]
+    },
+    "hard": {
+      "unlocked_by_default": false,
+      "minimum_party_actions": 2,
+      "rewards": [
+        {
+          "type": "resource_reward",
+          "resource": "soul_shards",
+          "amount": 4
+        }
+      ],
+      "unlocks": []
+    }
+  },
+  "difficulty_variants": {
+    "hard": {
+      "mission_kit_remove": [],
+      "extra_encounters": [],
+      "enemy_behavior_overrides": {}
+    }
+  },
+  "unlock": {
+    "optional": false,
+    "requires_completed": [
+      "baishui_town"
+    ],
+    "unlocks": [
+      "finale"
+    ],
+    "requires_clues": 0
+  },
+  "extraction": {
+    "location_ref": "ship_shore"
+  }
+}

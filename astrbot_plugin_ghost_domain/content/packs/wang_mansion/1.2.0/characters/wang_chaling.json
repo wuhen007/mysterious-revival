@@ -1,0 +1,40 @@
+{
+  "id": "wang_chaling",
+  "schema_version": 1,
+  "name": "王察灵",
+  "description": "王家这一代的守宅人；身边跟着父母、爷爷、奶奶四只鬼。",
+  "domain_ref": "wang_mansion",
+  "location_ref": "mansion_hall",
+  "dialogue_nodes": [
+    {
+      "id": "wang_chaling_first",
+      "text": "王察灵背对着摆钟：“钟响三次之前离开。第三次之后，你走不掉。”",
+      "conditions": [],
+      "choices": [
+        {
+          "id": "wcl_photo",
+          "label": "索要全家福",
+          "text": "他犹豫了一下，从怀里掏出一张折过的照片。",
+          "effects": [
+            {
+              "type": "set_story_flag",
+              "flag": "family_photo_taken",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": "wcl_clock",
+          "label": "问摆钟的规律",
+          "text": "“只能倒退固定的一段时间。打破钟，或者离开宅子。”",
+          "effects": [
+            {
+              "type": "reveal_rule",
+              "rule_ref": "time_rewind"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

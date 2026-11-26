@@ -1,0 +1,47 @@
+{
+  "id": "door_opener",
+  "schema_version": 1,
+  "name": "开门鬼",
+  "description": "开门必死，属规则型必死。",
+  "grade": "A",
+  "stats": {
+    "hp": 160,
+    "attack": 30,
+    "defense": 12,
+    "speed": 7
+  },
+  "capture_threshold": 0.15,
+  "capture_difficulty": 0.7,
+  "base_loyalty": 50,
+  "starter_weight": 1,
+  "skills": [
+    {
+      "id": "door_cut",
+      "name": "门后一击",
+      "type": "attack",
+      "power": 1.55,
+      "cooldown_turns": 2
+    }
+  ],
+  "rules": [
+    {
+      "id": "wrong_door",
+      "description": "打开错误的门必死，无反抗余地。",
+      "clues": [
+        "走廊多出一扇没有编号的门",
+        "门把手是温的"
+      ],
+      "reveal_after": 2,
+      "discovery_san_cost": 5,
+      "counter_method": "不打开即安全；用门牌号识别。",
+      "counteractions": [
+        "damage_resets_counter"
+      ]
+    }
+  ],
+  "behavior": {
+    "kind": "brute",
+    "target_strategy": "random",
+    "attack_multiplier": 1.0
+  }
+}

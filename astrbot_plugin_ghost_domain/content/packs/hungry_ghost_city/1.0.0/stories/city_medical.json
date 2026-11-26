@@ -1,0 +1,25 @@
+{
+  "id": "city_medical",
+  "schema_version": 1,
+  "name": "医院产房记录",
+  "description": "记录停在同一页。",
+  "domain_ref": "hungry_ghost_city",
+  "trigger": {
+    "conditions": []
+  },
+  "nodes": [
+    {
+      "id": "city_record",
+      "location_ref": "city_hospital",
+      "text": "产房记录停在同一页：同一个时间，同一个名字，重复了十七次。",
+      "once": true,
+      "conditions": [],
+      "effects": [
+        {
+          "type": "reveal_rule",
+          "rule_ref": "hungry_phases"
+        }
+      ]
+    }
+  ]
+}

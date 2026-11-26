@@ -1,0 +1,49 @@
+{
+  "id": "bus_ticket",
+  "schema_version": 1,
+  "name": "褪色的车票",
+  "description": "车票上的终点站被人反复涂改。",
+  "domain_ref": "ghost_bus",
+  "trigger": {
+    "conditions": []
+  },
+  "nodes": [
+    {
+      "id": "bus_clue",
+      "location_ref": "bus_cabin",
+      "text": "你在座位缝里摸到一张车票，终点站被涂改了七次，最后一次写着你的名字。",
+      "once": true,
+      "conditions": [],
+      "effects": [
+        {
+          "type": "san_change",
+          "amount": -5
+        },
+        {
+          "type": "increment_counter",
+          "counter": "clues_found",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "bus_cry_rule_exit",
+      "location_ref": "bus_off",
+      "text": "熄火后，杨间确认车尾的哭声已经停了。车票上被涂改的终点终于显出一行新的字：安全下车。",
+      "once": true,
+      "conditions": [
+        {
+          "type": "rule_discovered",
+          "rule_ref": "cry_death"
+        }
+      ],
+      "effects": [
+        {
+          "type": "resource_reward",
+          "resource": "soul_shards",
+          "amount": 1
+        }
+      ]
+    }
+  ]
+}

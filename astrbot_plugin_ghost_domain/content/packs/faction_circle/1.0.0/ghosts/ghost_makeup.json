@@ -1,0 +1,47 @@
+{
+  "id": "ghost_makeup",
+  "schema_version": 1,
+  "name": "鬼妆",
+  "description": "被画者本质是一张鬼皮。",
+  "grade": "A",
+  "stats": {
+    "hp": 110,
+    "attack": 14,
+    "defense": 6,
+    "speed": 6
+  },
+  "capture_threshold": 0.25,
+  "capture_difficulty": 0.55,
+  "base_loyalty": 50,
+  "starter_weight": 1,
+  "skills": [
+    {
+      "id": "makeup_paint",
+      "name": "画皮",
+      "type": "attack",
+      "power": 1.2,
+      "cooldown_turns": 2
+    }
+  ],
+  "rules": [
+    {
+      "id": "paint_person",
+      "description": "用妆容把一个人画成另一个人，从而彻底替代。",
+      "clues": [
+        "同伴的妆容厚得不像话",
+        "镜子里的人对不上"
+      ],
+      "reveal_after": 2,
+      "discovery_san_cost": 5,
+      "counter_method": "破坏妆容即失效。",
+      "counteractions": [
+        "damage_resets_counter"
+      ]
+    }
+  ],
+  "behavior": {
+    "kind": "brute",
+    "target_strategy": "random",
+    "attack_multiplier": 1.0
+  }
+}

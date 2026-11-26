@@ -1,0 +1,26 @@
+{
+  "id": "ship_chart",
+  "schema_version": 1,
+  "name": "被改过的坐标",
+  "description": "航海图上的港口不存在。",
+  "domain_ref": "captain_ship",
+  "trigger": {
+    "conditions": []
+  },
+  "nodes": [
+    {
+      "id": "ship_chart",
+      "location_ref": "ship_cabin",
+      "text": "航海图上的港口不存在，坐标被人用红笔改过，笔迹和船长日志一样。",
+      "once": true,
+      "conditions": [],
+      "effects": [
+        {
+          "type": "increment_counter",
+          "counter": "clues_found",
+          "amount": 1
+        }
+      ]
+    }
+  ]
+}

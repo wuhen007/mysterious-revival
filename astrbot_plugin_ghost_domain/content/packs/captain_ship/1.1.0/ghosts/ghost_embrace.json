@@ -1,0 +1,47 @@
+{
+  "id": "ghost_embrace",
+  "schema_version": 1,
+  "name": "鬼抱人",
+  "description": "许峰的鬼，拥抱式压制。",
+  "grade": "A",
+  "stats": {
+    "hp": 150,
+    "attack": 22,
+    "defense": 12,
+    "speed": 5
+  },
+  "capture_threshold": 0.2,
+  "capture_difficulty": 0.55,
+  "base_loyalty": 50,
+  "starter_weight": 1,
+  "skills": [
+    {
+      "id": "embrace_lock",
+      "name": "锁死",
+      "type": "attack",
+      "power": 1.35,
+      "cooldown_turns": 2
+    }
+  ],
+  "rules": [
+    {
+      "id": "embrace_suppress",
+      "description": "被抱住者无法动弹，灵异力量被压制。",
+      "clues": [
+        "背后有人环住你的腰",
+        "你突然抬不起手"
+      ],
+      "reveal_after": 2,
+      "discovery_san_cost": 5,
+      "counter_method": "以更强的灵异解除；不要被近身。",
+      "counteractions": [
+        "set_distance_far"
+      ]
+    }
+  ],
+  "behavior": {
+    "kind": "brute",
+    "target_strategy": "player_first",
+    "attack_multiplier": 1.0
+  }
+}

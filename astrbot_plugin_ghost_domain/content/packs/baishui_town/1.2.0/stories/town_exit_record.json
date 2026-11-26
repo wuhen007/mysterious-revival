@@ -1,0 +1,45 @@
+{
+  "id": "town_exit_record",
+  "schema_version": 1,
+  "name": "封锁记录的最后一页",
+  "description": "白水镇旧档案在出镇路上显出最后一行。",
+  "domain_ref": "baishui_town",
+  "trigger": {
+    "conditions": []
+  },
+  "nodes": [
+    {
+      "id": "town_archive_followup",
+      "location_ref": "town_exit",
+      "text": "档案最后一页的字迹被雨水晕开：白水镇的雨不是天气，而是整座镇子的边界。你沿着干燥的路离开封锁区。",
+      "once": true,
+      "conditions": [
+        {
+          "type": "story_flag_matches",
+          "flag": "baishui_archive",
+          "value": true
+        }
+      ],
+      "effects": []
+    },
+    {
+      "id": "town_rain_countered_reward",
+      "location_ref": "town_exit",
+      "text": "雨域在身后收拢，终于没再追上来。你在路边拾到一枚被雨水冲出的魂晶。",
+      "once": true,
+      "conditions": [
+        {
+          "type": "rule_countered",
+          "rule_ref": "rain_domain"
+        }
+      ],
+      "effects": [
+        {
+          "type": "resource_reward",
+          "resource": "soul_shards",
+          "amount": 1
+        }
+      ]
+    }
+  ]
+}

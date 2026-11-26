@@ -1,0 +1,44 @@
+{
+  "id": "shen_lin",
+  "schema_version": 1,
+  "name": "沈林",
+  "description": "大夏市负责人，代号鬼相；可从他人记忆中进入现实。",
+  "domain_ref": "ghost_lake",
+  "location_ref": "lake_shore",
+  "dialogue_nodes": [
+    {
+      "id": "shen_lin_first",
+      "text": "沈林盯着湖面：“湖不是鬼，源头才是。你要找的不是水，是那条河。”",
+      "conditions": [],
+      "choices": [
+        {
+          "id": "sl_source",
+          "label": "问湖源的位置",
+          "text": "他指向古镇方向：“逆流而上。别闭眼。”",
+          "effects": [
+            {
+              "type": "reveal_rule",
+              "rule_ref": "closed_eyes"
+            },
+            {
+              "type": "set_story_flag",
+              "flag": "lake_source_known",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": "sl_memory",
+          "label": "请他清掉一段记忆",
+          "text": "“清掉记忆，就再也找不回来。确定？”",
+          "effects": [
+            {
+              "type": "san_change",
+              "amount": 15
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

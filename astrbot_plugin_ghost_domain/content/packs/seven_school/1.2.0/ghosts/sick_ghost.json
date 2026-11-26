@@ -1,0 +1,34 @@
+{
+  "id": "sick_ghost",
+  "schema_version": 1,
+  "name": "病鬼",
+  "description": "咳嗽预告感染袭击，近距离攻击会造成持续伤害。",
+  "stats": {"hp": 105, "attack": 14, "defense": 6, "speed": 6},
+  "capture_threshold": 0.3,
+  "capture_difficulty": 0.5,
+  "base_loyalty": 50,
+  "starter_weight": 1,
+  "skills": [
+    {"id": "sick_grasp", "name": "病躯缠绕", "type": "attack", "power": 1.2, "cooldown_turns": 1}
+  ],
+  "rules": [
+    {
+      "id": "sick_infection",
+      "description": "病鬼咳嗽后会在近距离发动感染袭击。",
+      "clues": ["病鬼咳嗽，像是在积蓄力量", "近距离接触后出现持续感染"],
+      "reveal_after": 2,
+      "discovery_san_cost": 5,
+      "counter_method": "指挥当前行动鬼护送后撤到远距，避开下一次近身感染。",
+      "counteractions": ["set_distance_far"]
+    }
+  ],
+  "behavior": {
+    "kind": "infection_hunter",
+    "target_strategy": "player_first",
+    "required_distance": "close",
+    "infection_damage": 5,
+    "infection_san_damage": 4,
+    "infection_rounds": 2,
+    "attack_multiplier": 1.0
+  }
+}

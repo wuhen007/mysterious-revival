@@ -1,0 +1,201 @@
+{
+  "id": "ghost_bus",
+  "schema_version": 1,
+  "name": "灵异公交车",
+  "aliases": [
+    "灵异公交车"
+  ],
+  "description": "一辆没有线路的公交车，35 个座位，熄火时才能下车。",
+  "chapter": 5,
+  "supported_modes": [
+    "solo",
+    "party"
+  ],
+  "party_size": {
+    "min": 2,
+    "max": 4
+  },
+  "mission_kit": [
+    {
+      "item_ref": "holy_water",
+      "quantity": 1
+    },
+    {
+      "item_ref": "ghost_candle",
+      "quantity": 1
+    },
+    {
+      "item_ref": "red_paper",
+      "quantity": 1
+    }
+  ],
+  "nodes": [
+    {
+      "id": "bus_stop",
+      "name": "无名站牌",
+      "tags": [
+        "入口"
+      ],
+      "environment": {
+        "light": "dark",
+        "distance": "close"
+      },
+      "clues": [
+        "站牌上没有字，只有一道被反复擦掉的血指印。"
+      ]
+    },
+    {
+      "id": "bus_cabin",
+      "name": "车厢",
+      "tags": [
+        "遭遇"
+      ],
+      "environment": {
+        "light": "dark",
+        "distance": "close"
+      },
+      "clues": [
+        "车厢里坐满了人，没有一个人在呼吸。"
+      ]
+    },
+    {
+      "id": "bus_rear",
+      "name": "车尾",
+      "tags": [
+        "遭遇"
+      ],
+      "environment": {
+        "light": "dark",
+        "distance": "close"
+      },
+      "clues": [
+        "车尾传来压低的哭声，越靠近越像在耳边。"
+      ]
+    },
+    {
+      "id": "bus_off",
+      "name": "熄火点",
+      "tags": [
+        "撤离"
+      ],
+      "environment": {
+        "light": "dim",
+        "distance": "far"
+      },
+      "clues": [
+        "发动机抖了两下，车门嗤地打开。"
+      ]
+    }
+  ],
+  "encounters": [
+    {
+      "id": "bus_bride",
+      "location_ref": "bus_cabin",
+      "enemy_refs": [
+        {
+          "ghost_ref": "dry_bride",
+          "quantity": 1
+        },
+        {
+          "ghost_ref": "ghost_stomp",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "bus_cry",
+      "location_ref": "bus_rear",
+      "enemy_refs": [
+        {
+          "ghost_ref": "crying_grave",
+          "quantity": 1
+        },
+        {
+          "ghost_ref": "ghost_bus",
+          "quantity": 1
+        }
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "id": "ghost_bus_rule",
+      "description": "发现干尸新娘的杀人规律。",
+      "conditions": [
+        {
+          "type": "rule_discovered",
+          "rule_ref": "cry_death"
+        }
+      ]
+    },
+    {
+      "id": "ghost_bus_clues",
+      "description": "调查至少 2 条地点线索。",
+      "conditions": [
+        {
+          "type": "counter_at_least",
+          "counter": "clues_found",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "id": "ghost_bus_exit",
+      "description": "抵达撤离点。",
+      "conditions": [
+        {
+          "type": "location_is",
+          "location_ref": "bus_off"
+        }
+      ]
+    }
+  ],
+  "difficulty_levels": {
+    "normal": {
+      "unlocked_by_default": true,
+      "minimum_party_actions": 2,
+      "rewards": [
+        {
+          "type": "resource_reward",
+          "resource": "soul_shards",
+          "amount": 2
+        }
+      ],
+      "unlocks": [
+        "hard"
+      ]
+    },
+    "hard": {
+      "unlocked_by_default": false,
+      "minimum_party_actions": 2,
+      "rewards": [
+        {
+          "type": "resource_reward",
+          "resource": "soul_shards",
+          "amount": 4
+        }
+      ],
+      "unlocks": []
+    }
+  },
+  "difficulty_variants": {
+    "hard": {
+      "mission_kit_remove": [],
+      "extra_encounters": [],
+      "enemy_behavior_overrides": {}
+    }
+  },
+  "unlock": {
+    "optional": false,
+    "requires_completed": [
+      "hungry_ghost_city"
+    ],
+    "unlocks": [
+      "kaisa_hotel"
+    ],
+    "requires_clues": 0
+  },
+  "extraction": {
+    "location_ref": "bus_off"
+  }
+}

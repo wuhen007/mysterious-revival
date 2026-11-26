@@ -1,0 +1,17 @@
+{
+  "id": "red_paper",
+  "schema_version": 1,
+  "name": "红纸",
+  "description": "贴在鬼眼上可压制厉鬼复苏（杨间早期靠它续命）。",
+  "target_types": [
+    "controlled_ghost",
+    "player"
+  ],
+  "uses": 1,
+  "effects": [
+    {
+      "type": "san_change",
+      "amount": 10
+    }
+  ]
+}

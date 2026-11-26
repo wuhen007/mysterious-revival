@@ -1,0 +1,48 @@
+{
+  "id": "crying_grave",
+  "schema_version": 1,
+  "name": "哭坟鬼",
+  "description": "哭声所及之处活人死亡，第一层鬼域几乎无法阻挡。",
+  "grade": "A",
+  "stats": {
+    "hp": 130,
+    "attack": 20,
+    "defense": 8,
+    "speed": 7
+  },
+  "capture_threshold": 0.2,
+  "capture_difficulty": 0.6,
+  "base_loyalty": 50,
+  "starter_weight": 1,
+  "skills": [
+    {
+      "id": "cry_wail",
+      "name": "哭声穿脑",
+      "type": "attack",
+      "power": 1.35,
+      "cooldown_turns": 1
+    }
+  ],
+  "rules": [
+    {
+      "id": "cry_death",
+      "description": "听到哭声者七窍流血而死，哭声可穿透鬼域。",
+      "clues": [
+        "车尾传来压低的哭声",
+        "有人开始跟着哭"
+      ],
+      "reveal_after": 2,
+      "discovery_san_cost": 5,
+      "counter_method": "以鬼域层数削弱哭声，且不可回应。",
+      "counteractions": [
+        "damage_resets_counter"
+      ],
+      "story_flag_on_counteraction": "cry_countered"
+    }
+  ],
+  "behavior": {
+    "kind": "brute",
+    "target_strategy": "weakest",
+    "attack_multiplier": 1.0
+  }
+}

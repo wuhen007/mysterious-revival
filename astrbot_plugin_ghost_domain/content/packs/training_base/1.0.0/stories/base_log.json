@@ -1,0 +1,26 @@
+{
+  "id": "base_log",
+  "schema_version": 1,
+  "name": "基地门禁日志",
+  "description": "三十七人进入，零人离开。",
+  "domain_ref": "training_base",
+  "trigger": {
+    "conditions": []
+  },
+  "nodes": [
+    {
+      "id": "base_log",
+      "location_ref": "base_gate",
+      "text": "门禁日志显示昨夜 37 人进入，无人离开；最后一屏是卫景的卡。",
+      "once": true,
+      "conditions": [],
+      "effects": [
+        {
+          "type": "increment_counter",
+          "counter": "clues_found",
+          "amount": 1
+        }
+      ]
+    }
+  ]
+}

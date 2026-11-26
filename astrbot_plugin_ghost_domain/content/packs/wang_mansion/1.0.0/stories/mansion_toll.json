@@ -1,0 +1,29 @@
+{
+  "id": "mansion_toll",
+  "schema_version": 1,
+  "name": "第一次钟响",
+  "description": "钟声响了第一次。",
+  "domain_ref": "wang_mansion",
+  "trigger": {
+    "conditions": []
+  },
+  "nodes": [
+    {
+      "id": "mansion_toll1",
+      "location_ref": "mansion_hall",
+      "text": "钟声响了第一次。你回头，发现刚才走过的门不见了。",
+      "once": true,
+      "conditions": [],
+      "effects": [
+        {
+          "type": "san_change",
+          "amount": -6
+        },
+        {
+          "type": "reveal_rule",
+          "rule_ref": "time_rewind"
+        }
+      ]
+    }
+  ]
+}

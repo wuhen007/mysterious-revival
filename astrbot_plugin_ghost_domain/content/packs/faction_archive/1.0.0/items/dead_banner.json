@@ -1,0 +1,17 @@
+{
+  "id": "dead_banner",
+  "schema_version": 1,
+  "name": "死人幡",
+  "description": "招魂引路，插在坟头可暂时安抚游魂。",
+  "target_types": [
+    "ghost"
+  ],
+  "uses": 1,
+  "effects": [
+    {
+      "type": "apply_status",
+      "status": "pacified",
+      "turns": 1
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "post_deadline",
+  "schema_version": 1,
+  "name": "六点熄灯",
+  "description": "走廊的灯在六点整同时熄灭。",
+  "domain_ref": "post_office",
+  "trigger": {
+    "conditions": []
+  },
+  "nodes": [
+    {
+      "id": "post_lights",
+      "location_ref": "post_floor2",
+      "text": "六点整，走廊的灯同时熄灭，只有门缝里还有光。",
+      "once": true,
+      "conditions": [],
+      "effects": [
+        {
+          "type": "san_change",
+          "amount": -8
+        },
+        {
+          "type": "increment_counter",
+          "counter": "clues_found",
+          "amount": 1
+        }
+      ]
+    }
+  ]
+}

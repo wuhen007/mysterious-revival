@@ -1,0 +1,41 @@
+{
+  "id": "zhang_wei",
+  "schema_version": 1,
+  "name": "张伟",
+  "description": "杨间发小，嘴贱、怂、讲义气；本书的普通人视角锚点。",
+  "domain_ref": "mall_headswap",
+  "location_ref": "mall_atrium",
+  "dialogue_nodes": [
+    {
+      "id": "zhang_wei_first",
+      "text": "张伟缩在模特堆后面：“别过来！这些模特……刚才有一个转头了。”",
+      "conditions": [],
+      "choices": [
+        {
+          "id": "zw_follow",
+          "label": "让他跟着你",
+          "text": "张伟咽了口唾沫，跟在你身后半步的位置。",
+          "effects": [
+            {
+              "type": "set_story_flag",
+              "flag": "zhang_wei_following",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": "zw_hide",
+          "label": "让他躲进仓库",
+          "text": "张伟点头，钻进了最近的仓库，把门留了一条缝。",
+          "effects": [
+            {
+              "type": "set_story_flag",
+              "flag": "zhang_wei_hidden",
+              "value": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

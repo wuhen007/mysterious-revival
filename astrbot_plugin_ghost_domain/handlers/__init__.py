@@ -1,0 +1,1 @@
+"""AstrBot message adapters."""

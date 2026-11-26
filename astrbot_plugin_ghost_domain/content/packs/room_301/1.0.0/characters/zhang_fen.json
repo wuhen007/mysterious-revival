@@ -1,0 +1,45 @@
+{
+  "id": "zhang_fen",
+  "schema_version": 1,
+  "name": "张芬",
+  "description": "杨间的母亲；普通人的锚点。",
+  "domain_ref": "room_301",
+  "location_ref": "room_living",
+  "dialogue_nodes": [
+    {
+      "id": "zhang_fen_first",
+      "text": "母亲坐在沙发上，手里捏着一张旧照片：“这屋子……你小时候不是这样的。”",
+      "conditions": [],
+      "choices": [
+        {
+          "id": "zf_photo",
+          "label": "接过照片",
+          "text": "照片上是年轻时的父亲，背后写着一行字。",
+          "effects": [
+            {
+              "type": "set_story_flag",
+              "flag": "father_photo",
+              "value": true
+            },
+            {
+              "type": "san_change",
+              "amount": 10
+            }
+          ]
+        },
+        {
+          "id": "zf_leave",
+          "label": "让她先离开",
+          "text": "她摇头：“你先走。我等你。”",
+          "effects": [
+            {
+              "type": "set_story_flag",
+              "flag": "mother_safe",
+              "value": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

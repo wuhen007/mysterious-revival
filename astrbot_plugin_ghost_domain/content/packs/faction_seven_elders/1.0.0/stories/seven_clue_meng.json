@@ -1,0 +1,35 @@
+{
+  "id": "seven_clue_meng",
+  "schema_version": 1,
+  "name": "菜篮与画像",
+  "description": "药铺柜台下有一只旧菜篮，篮底压着一张年轻男人的画像——眉眼像张洞。",
+  "domain_ref": "faction_seven_elders",
+  "trigger": {
+    "conditions": []
+  },
+  "nodes": [
+    {
+      "id": "seven_clue_meng_node",
+      "location_ref": "herb_shop",
+      "text": "药铺柜台下有一只旧菜篮，篮底压着一张年轻男人的画像——眉眼像张洞。",
+      "once": true,
+      "conditions": [],
+      "effects": [
+        {
+          "type": "set_story_flag",
+          "flag": "clue_meng_xiaodong",
+          "value": true
+        },
+        {
+          "type": "increment_counter",
+          "counter": "clues_found",
+          "amount": 1
+        },
+        {
+          "type": "san_change",
+          "amount": -5
+        }
+      ]
+    }
+  ]
+}

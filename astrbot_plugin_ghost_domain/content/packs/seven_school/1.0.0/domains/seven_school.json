@@ -1,0 +1,128 @@
+{
+  "id": "seven_school",
+  "schema_version": 1,
+  "name": "七中学校",
+  "aliases": [
+    "七中",
+    "第七中学"
+  ],
+  "description": "调查七中学校的灵异事件，利用规律并从操场出口撤离。",
+  "chapter": 1,
+  "supported_modes": [
+    "solo",
+    "party"
+  ],
+  "party_size": {
+    "min": 2,
+    "max": 4
+  },
+  "mission_kit": [
+    {
+      "item_ref": "holy_water",
+      "quantity": 1
+    },
+    {
+      "item_ref": "grave_soil",
+      "quantity": 1
+    },
+    {
+      "item_ref": "ghost_candle",
+      "quantity": 1
+    }
+  ],
+  "nodes": [
+    {
+      "id": "school_gate",
+      "name": "校门",
+      "tags": [
+        "入口"
+      ],
+      "environment": {
+        "light": "dark",
+        "distance": "close"
+      },
+      "clues": [
+        "校门旁留有刚被拖过的痕迹，方向指向走廊。"
+      ]
+    },
+    {
+      "id": "school_corridor",
+      "name": "走廊",
+      "tags": [
+        "黑暗",
+        "线索"
+      ],
+      "environment": {
+        "light": "dark",
+        "distance": "close"
+      },
+      "clues": [
+        "走廊尽头的第三间教室里，传来不规则的敲门声。"
+      ]
+    },
+    {
+      "id": "school_classroom",
+      "name": "教室",
+      "tags": [
+        "遭遇"
+      ],
+      "environment": {
+        "light": "dark",
+        "distance": "close"
+      },
+      "clues": [
+        "黑板上的字迹被反复擦去，只留下“第三次不要回应”。"
+      ]
+    },
+    {
+      "id": "school_playground_exit",
+      "name": "操场出口",
+      "tags": [
+        "撤离"
+      ],
+      "environment": {
+        "light": "lit",
+        "distance": "far"
+      },
+      "clues": [
+        "操场边的雾气正在散去，出口暂时安全。"
+      ]
+    }
+  ],
+  "encounters": [
+    {
+      "id": "classroom_knocker",
+      "location_ref": "school_classroom",
+      "enemy_refs": [
+        {
+          "ghost_ref": "door_knocker",
+          "quantity": 1
+        }
+      ],
+      "mode_variants": {
+        "party": {
+          "enemy_refs": [
+            {
+              "ghost_ref": "door_knocker",
+              "quantity": 1
+            },
+            {
+              "ghost_ref": "ghost_baby",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "goals": [
+    {
+      "id": "investigate_incident",
+      "description": "查明学校灵异事件"
+    },
+    {
+      "id": "escape_school",
+      "description": "从操场出口安全撤离"
+    }
+  ]
+}

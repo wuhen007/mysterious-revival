@@ -1,0 +1,47 @@
+{
+  "id": "spirit_child",
+  "schema_version": 1,
+  "name": "灵童",
+  "description": "熊文文的鬼，预知一小时。",
+  "grade": "A",
+  "stats": {
+    "hp": 90,
+    "attack": 10,
+    "defense": 6,
+    "speed": 9
+  },
+  "capture_threshold": 0.25,
+  "capture_difficulty": 0.6,
+  "base_loyalty": 50,
+  "starter_weight": 1,
+  "skills": [
+    {
+      "id": "child_foresee",
+      "name": "预知",
+      "type": "attack",
+      "power": 1.1,
+      "cooldown_turns": 3
+    }
+  ],
+  "rules": [
+    {
+      "id": "foresee_hour",
+      "description": "可预知未来一小时内发生的一切，但只能预知、不能改变。",
+      "clues": [
+        "你提前看见了同伴的死状",
+        "时间像被剪掉了一段"
+      ],
+      "reveal_after": 2,
+      "discovery_san_cost": 5,
+      "counter_method": "预知不能改结果，只能试错；每用一次加速复苏。",
+      "counteractions": [
+        "damage_resets_counter"
+      ]
+    }
+  ],
+  "behavior": {
+    "kind": "brute",
+    "target_strategy": "random",
+    "attack_multiplier": 1.0
+  }
+}

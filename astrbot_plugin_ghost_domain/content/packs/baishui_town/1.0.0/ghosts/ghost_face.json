@@ -1,0 +1,47 @@
+{
+  "id": "ghost_face",
+  "schema_version": 1,
+  "name": "鬼脸",
+  "description": "童倩的鬼，哭笑杀人。",
+  "grade": "A",
+  "stats": {
+    "hp": 150,
+    "attack": 24,
+    "defense": 8,
+    "speed": 7
+  },
+  "capture_threshold": 0.15,
+  "capture_difficulty": 0.6,
+  "base_loyalty": 50,
+  "starter_weight": 1,
+  "skills": [
+    {
+      "id": "face_cry",
+      "name": "哭笑",
+      "type": "attack",
+      "power": 1.4,
+      "cooldown_turns": 2
+    }
+  ],
+  "rules": [
+    {
+      "id": "cry_laugh",
+      "description": "笑声/哭声达到某个界限，听到的人必死。",
+      "clues": [
+        "有人在哭，但脸上在笑",
+        "声音像是从自己喉咙里发出来的"
+      ],
+      "reveal_after": 2,
+      "discovery_san_cost": 5,
+      "counter_method": "以鬼域层层削弱；第三层仍挡不住。",
+      "counteractions": [
+        "damage_resets_counter"
+      ]
+    }
+  ],
+  "behavior": {
+    "kind": "brute",
+    "target_strategy": "weakest",
+    "attack_multiplier": 1.0
+  }
+}

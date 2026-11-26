@@ -1,0 +1,9 @@
+{
+  "id": "coffin_nail",
+  "schema_version": 1,
+  "name": "棺材钉",
+  "description": "强力封印工具，提高 35% 捕获成功率。",
+  "target_types": ["ghost"],
+  "uses": 1,
+  "effects": [{"type": "capture_bonus", "amount": 0.35}]
+}

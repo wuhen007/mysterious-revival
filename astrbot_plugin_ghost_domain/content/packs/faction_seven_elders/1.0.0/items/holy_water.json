@@ -1,0 +1,16 @@
+{
+  "id": "holy_water",
+  "schema_version": 1,
+  "name": "符水",
+  "description": "总部配发的恢复补给。",
+  "target_types": [
+    "player"
+  ],
+  "uses": 2,
+  "effects": [
+    {
+      "type": "heal",
+      "amount": 10
+    }
+  ]
+}

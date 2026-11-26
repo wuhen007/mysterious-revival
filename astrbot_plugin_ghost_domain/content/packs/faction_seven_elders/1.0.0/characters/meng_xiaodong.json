@@ -1,0 +1,51 @@
+{
+  "id": "meng_xiaodong",
+  "schema_version": 1,
+  "name": "孟小董",
+  "description": "301 室提菜篮的老婆婆；无限入侵，替死娃娃的制作者。",
+  "domain_ref": "faction_seven_elders",
+  "location_ref": "herb_shop",
+  "dialogue_nodes": [
+    {
+      "id": "meng_xiaodong_first",
+      "text": "老婆婆把菜篮放在柜台上：“你要几个我？一个不够，就多来几个。”",
+      "conditions": [],
+      "choices": [
+        {
+          "id": "mxd_replace",
+          "label": "请教「替换」",
+          "text": "她眨了眨眼，你发现自己站在了她的位置。",
+          "effects": [
+            {
+              "type": "unlock_ability",
+              "ability_ref": "legacy_replace"
+            },
+            {
+              "type": "san_change",
+              "amount": -10
+            }
+          ],
+          "conditions": [
+            {
+              "type": "story_flag_matches",
+              "flag": "clue_meng_xiaodong",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": "mxd_doll",
+          "label": "讨一个替死娃娃",
+          "text": "“用完就没了。别省，也别乱用。”",
+          "effects": [
+            {
+              "type": "item_add",
+              "item_ref": "substitute_doll",
+              "quantity": 2
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "pack_id": "training_base",
+  "version": "1.0.0",
+  "schema_version": 1,
+  "requires_engine_version": ">=0.3.0",
+  "name": "大京市·培训基地",
+  "description": "培训基地一夜团灭，地下多了一口不该被打开的棺材。",
+  "chapter": 7,
+  "optional": false,
+  "starter_ghost_pool": [
+    {
+      "ghost_ref": "ghost_coffin",
+      "weight": 1
+    }
+  ]
+}

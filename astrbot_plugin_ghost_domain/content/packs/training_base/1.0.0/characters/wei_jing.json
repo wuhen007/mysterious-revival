@@ -1,0 +1,48 @@
+{
+  "id": "wei_jing",
+  "schema_version": 1,
+  "name": "卫景",
+  "description": "国际驭鬼者；被鬼棺入侵后，鬼占据上风，成为 S 级鬼差。",
+  "domain_ref": "training_base",
+  "location_ref": "base_underground",
+  "dialogue_nodes": [
+    {
+      "id": "wei_jing_first",
+      "text": "卫景站在棺边，动作有一瞬间的僵硬：“……走。现在的我，不一定是‘我’。”",
+      "conditions": [],
+      "choices": [
+        {
+          "id": "wj_leave",
+          "label": "立刻撤离",
+          "text": "你没有回头。身后的棺盖合上了。",
+          "effects": [
+            {
+              "type": "set_story_flag",
+              "flag": "weijing_warned",
+              "value": true
+            },
+            {
+              "type": "san_change",
+              "amount": -5
+            }
+          ]
+        },
+        {
+          "id": "wj_ask",
+          "label": "追问鬼差的判定条件",
+          "text": "他艰难地吐出几个字：“少于……三只。”",
+          "effects": [
+            {
+              "type": "reveal_rule",
+              "rule_ref": "less_than_three"
+            },
+            {
+              "type": "san_change",
+              "amount": -8
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

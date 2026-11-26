@@ -1,0 +1,45 @@
+{
+  "id": "li_yang",
+  "schema_version": 1,
+  "name": "李阳",
+  "description": "总部驭鬼者，杨间的副手，长于配合、堵门、防守。",
+  "domain_ref": "art_gallery",
+  "location_ref": "gallery_entrance",
+  "dialogue_nodes": [
+    {
+      "id": "li_yang_first",
+      "text": "李阳把展厅的门一扇扇关上：“我把出口守住。你只有一次机会，别回忆那幅画。”",
+      "conditions": [],
+      "choices": [
+        {
+          "id": "ly_guard",
+          "label": "让他守出口",
+          "text": "李阳背靠门站定，手里握着一卷胶带。",
+          "effects": [
+            {
+              "type": "set_story_flag",
+              "flag": "exit_guarded",
+              "value": true
+            },
+            {
+              "type": "item_add",
+              "item_ref": "gold_box",
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "id": "ly_painting",
+          "label": "问画的来历",
+          "text": "“国外的艺术馆。看过画的人，只要回忆一次，就会被拉进去。”",
+          "effects": [
+            {
+              "type": "reveal_rule",
+              "rule_ref": "recall_painting"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

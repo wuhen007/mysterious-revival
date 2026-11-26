@@ -1,0 +1,16 @@
+{
+  "pack_id": "baishui_town",
+  "version": "1.2.0",
+  "schema_version": 1,
+  "requires_engine_version": ">=0.3.0",
+  "name": "白水镇",
+  "description": "雨落在皮肤上没有凉意。镇上的人都在等一场不会停的雨。",
+  "chapter": 13,
+  "optional": false,
+  "starter_ghost_pool": [
+    {
+      "ghost_ref": "ghost_rain",
+      "weight": 1
+    }
+  ]
+}

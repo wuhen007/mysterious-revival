@@ -1,0 +1,16 @@
+{
+  "pack_id": "ghost_lake",
+  "version": "1.1.0",
+  "schema_version": 1,
+  "requires_engine_version": ">=0.3.0",
+  "name": "中州市·鬼湖",
+  "description": "闭上眼碰到湖水就会被拉下去。湖的源头在太平古镇。",
+  "chapter": 11,
+  "optional": false,
+  "starter_ghost_pool": [
+    {
+      "ghost_ref": "paper_man",
+      "weight": 1
+    }
+  ]
+}

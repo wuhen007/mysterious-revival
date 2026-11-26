@@ -1,0 +1,26 @@
+{
+  "id": "lake_money",
+  "schema_version": 1,
+  "name": "鬼街的找零",
+  "description": "摊主找给你一张鬼钱。",
+  "domain_ref": "ghost_lake",
+  "trigger": {
+    "conditions": []
+  },
+  "nodes": [
+    {
+      "id": "lake_money",
+      "location_ref": "town_street",
+      "text": "你买了一张纸符，摊主找给你一张鬼钱，纸币上的人脸在动。",
+      "once": true,
+      "conditions": [],
+      "effects": [
+        {
+          "type": "item_add",
+          "item_ref": "ghost_money",
+          "quantity": 1
+        }
+      ]
+    }
+  ]
+}

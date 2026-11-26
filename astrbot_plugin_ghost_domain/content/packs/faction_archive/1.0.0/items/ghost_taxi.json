@@ -1,0 +1,17 @@
+{
+  "id": "ghost_taxi",
+  "schema_version": 1,
+  "name": "鬼出租车",
+  "description": "车内隔绝厉鬼袭击，可逃生；行驶路线不受控制。",
+  "target_types": [
+    "player"
+  ],
+  "uses": 1,
+  "effects": [
+    {
+      "type": "apply_status",
+      "status": "safe_ride",
+      "turns": 2
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "pack_id": "faction_japan",
+  "version": "1.0.0",
+  "schema_version": 1,
+  "requires_engine_version": ">=0.3.0",
+  "name": "除灵社·神户",
+  "description": "岛国除灵社的本堂。那扇被黄金封住的门后，关着一位民国的老鬼。",
+  "chapter": 95,
+  "optional": true,
+  "starter_ghost_pool": [
+    {
+      "ghost_ref": "door_knocker",
+      "weight": 1
+    }
+  ]
+}

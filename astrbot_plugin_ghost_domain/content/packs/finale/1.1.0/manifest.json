@@ -1,0 +1,16 @@
+{
+  "pack_id": "finale",
+  "version": "1.1.0",
+  "schema_version": 1,
+  "requires_engine_version": ">=0.3.0",
+  "name": "终局·黄金雕像",
+  "description": "灵异时代走到尽头。是成为第四种存在，还是让一切再来一次。",
+  "chapter": 15,
+  "optional": false,
+  "starter_ghost_pool": [
+    {
+      "ghost_ref": "ghost_child",
+      "weight": 1
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "clue_room_basket",
+  "schema_version": 1,
+  "name": "菜篮与画像",
+  "description": "客厅角落有一只菜篮。",
+  "domain_ref": "room_301",
+  "trigger": {
+    "conditions": []
+  },
+  "nodes": [
+    {
+      "id": "clue_room_basket",
+      "location_ref": "room_living",
+      "text": "菜篮底下压着一张画像，画的是年轻时的张洞；背面写着一个「孟」字。",
+      "once": true,
+      "conditions": [],
+      "effects": [
+        {
+          "type": "set_story_flag",
+          "flag": "clue_meng_xiaodong",
+          "value": true
+        },
+        {
+          "type": "san_change",
+          "amount": -5
+        }
+      ]
+    }
+  ]
+}

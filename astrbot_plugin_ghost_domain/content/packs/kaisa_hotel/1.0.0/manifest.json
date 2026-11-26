@@ -1,0 +1,16 @@
+{
+  "pack_id": "kaisa_hotel",
+  "version": "1.0.0",
+  "schema_version": 1,
+  "requires_engine_version": ">=0.3.0",
+  "name": "中山市·凯撒酒店",
+  "description": "酒店走廊上有一串湿脚印，踩中的人会被柴刀砍成两段。",
+  "chapter": 6,
+  "optional": false,
+  "starter_ghost_pool": [
+    {
+      "ghost_ref": "chopper_ghost",
+      "weight": 1
+    }
+  ]
+}

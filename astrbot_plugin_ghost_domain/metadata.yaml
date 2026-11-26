@@ -1,0 +1,11 @@
+name: astrbot_plugin_ghost_domain
+display_name: 鬼域求生（2.0开发版）
+desc: QQ/OneBot 11 文字冒险：产品1.0基线升级至2.0，包含15章主线、11个可选副本与持续迭代的存档成长玩法。
+version: 2.0.0.dev1
+author: wuhen007
+repo: https://github.com/wuhen007/mysterious-revival
+support_platforms:
+  - qq_official
+  - qq_official_webhook
+  - aiocqhttp
+astrbot_version: ">=4.16,<5"

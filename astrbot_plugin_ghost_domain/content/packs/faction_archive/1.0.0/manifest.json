@@ -1,0 +1,16 @@
+{
+  "pack_id": "faction_archive",
+  "version": "1.0.0",
+  "schema_version": 1,
+  "requires_engine_version": ">=0.3.0",
+  "name": "总部档案室·全图鉴",
+  "description": "总部最深处的档案与封存库。这里收着已知的每一只鬼、每一件灵异物品。",
+  "chapter": 90,
+  "optional": true,
+  "starter_ghost_pool": [
+    {
+      "ghost_ref": "door_knocker",
+      "weight": 1
+    }
+  ]
+}

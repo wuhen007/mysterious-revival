@@ -1,0 +1,47 @@
+{
+  "id": "ghost_teeth",
+  "schema_version": 1,
+  "name": "鬼牙",
+  "description": "王小强的鬼，近身吞噬。",
+  "grade": "B",
+  "stats": {
+    "hp": 120,
+    "attack": 24,
+    "defense": 6,
+    "speed": 9
+  },
+  "capture_threshold": 0.2,
+  "capture_difficulty": 0.55,
+  "base_loyalty": 50,
+  "starter_weight": 1,
+  "skills": [
+    {
+      "id": "teeth_bite",
+      "name": "撕咬",
+      "type": "attack",
+      "power": 1.45,
+      "cooldown_turns": 1
+    }
+  ],
+  "rules": [
+    {
+      "id": "bite_close",
+      "description": "近身撕咬极强，脱离距离即失效。",
+      "clues": [
+        "黑暗里有牙齿摩擦声",
+        "尸体上的伤口是咬痕"
+      ],
+      "reveal_after": 2,
+      "discovery_san_cost": 5,
+      "counter_method": "保持距离或以压制型灵异控制。",
+      "counteractions": [
+        "set_distance_far"
+      ]
+    }
+  ],
+  "behavior": {
+    "kind": "brute",
+    "target_strategy": "ghost_first",
+    "attack_multiplier": 1.0
+  }
+}

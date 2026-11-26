@@ -1,0 +1,47 @@
+{
+  "id": "ghost_fog",
+  "schema_version": 1,
+  "name": "鬼雾",
+  "description": "冯全的鬼，雾之鬼域。",
+  "grade": "A",
+  "stats": {
+    "hp": 140,
+    "attack": 16,
+    "defense": 10,
+    "speed": 5
+  },
+  "capture_threshold": 0.2,
+  "capture_difficulty": 0.55,
+  "base_loyalty": 50,
+  "starter_weight": 1,
+  "skills": [
+    {
+      "id": "fog_lost",
+      "name": "迷途",
+      "type": "attack",
+      "power": 1.2,
+      "cooldown_turns": 2
+    }
+  ],
+  "rules": [
+    {
+      "id": "fog_domain",
+      "description": "雾气笼罩之处方向感丧失、灵异被隔绝。",
+      "clues": [
+        "十步外看不见同伴",
+        "地图上的路开始重复"
+      ],
+      "reveal_after": 2,
+      "discovery_san_cost": 5,
+      "counter_method": "雾散即失效；以风或照明驱散。",
+      "counteractions": [
+        "damage_resets_counter"
+      ]
+    }
+  ],
+  "behavior": {
+    "kind": "brute",
+    "target_strategy": "random",
+    "attack_multiplier": 1.0
+  }
+}

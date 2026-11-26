@@ -1,0 +1,16 @@
+{
+  "id": "soul_incense",
+  "schema_version": 1,
+  "name": "招魂香",
+  "description": "点燃后可招来亡魂、接引过去与未来的人。",
+  "target_types": [
+    "player"
+  ],
+  "uses": 1,
+  "effects": [
+    {
+      "type": "san_change",
+      "amount": 15
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "ghost_door",
+  "schema_version": 1,
+  "name": "鬼门",
+  "description": "完全打开会有厉鬼从门后走出；开一条缝不会触发。",
+  "target_types": [
+    "ghost"
+  ],
+  "uses": 1,
+  "effects": [
+    {
+      "type": "damage",
+      "amount": 30
+    }
+  ]
+}

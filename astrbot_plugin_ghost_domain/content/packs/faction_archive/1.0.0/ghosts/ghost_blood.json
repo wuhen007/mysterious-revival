@@ -1,0 +1,47 @@
+{
+  "id": "ghost_blood",
+  "schema_version": 1,
+  "name": "鬼血",
+  "description": "严力的鬼，压制任何一只鬼的能力。",
+  "grade": "A",
+  "stats": {
+    "hp": 130,
+    "attack": 14,
+    "defense": 10,
+    "speed": 5
+  },
+  "capture_threshold": 0.2,
+  "capture_difficulty": 0.55,
+  "base_loyalty": 50,
+  "starter_weight": 1,
+  "skills": [
+    {
+      "id": "blood_press",
+      "name": "血压制",
+      "type": "attack",
+      "power": 1.15,
+      "cooldown_turns": 2
+    }
+  ],
+  "rules": [
+    {
+      "id": "suppress_ghost",
+      "description": "血接触到的鬼会被压制、失去行动力。",
+      "clues": [
+        "地面渗出不干的血",
+        "你的鬼突然不肯动"
+      ],
+      "reveal_after": 2,
+      "discovery_san_cost": 5,
+      "counter_method": "保持距离；对鬼域无效。",
+      "counteractions": [
+        "set_distance_far"
+      ]
+    }
+  ],
+  "behavior": {
+    "kind": "brute",
+    "target_strategy": "ghost_first",
+    "attack_multiplier": 1.0
+  }
+}

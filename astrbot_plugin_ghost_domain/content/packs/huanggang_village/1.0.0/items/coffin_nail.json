@@ -1,0 +1,16 @@
+{
+  "id": "coffin_nail",
+  "schema_version": 1,
+  "name": "棺材钉",
+  "description": "钉住 S 级厉鬼的封印钉，大幅提高捕获成功率；取出即释放。",
+  "target_types": [
+    "ghost"
+  ],
+  "uses": 1,
+  "effects": [
+    {
+      "type": "capture_bonus",
+      "amount": 0.35
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "id": "cao_yang",
+  "schema_version": 1,
+  "name": "曹洋",
+  "description": "十二队长之一；能力与来历在原著中着墨较少。",
+  "domain_ref": "faction_headquarters",
+  "location_ref": "hq_hall",
+  "dialogue_nodes": [
+    {
+      "id": "cao_yang_first",
+      "text": "曹洋靠在门边：“总部开会，从来不是为了解决问题，是为了分配问题。”",
+      "conditions": [],
+      "choices": [
+        {
+          "id": "cy_intel",
+          "label": "交换一份情报",
+          "text": "他递来一张写着三个代号的纸条。",
+          "effects": [
+            {
+              "type": "set_story_flag",
+              "flag": "captain_intel",
+              "value": true
+            },
+            {
+              "type": "resource_reward",
+              "resource": "soul_shards",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "id": "cy_later",
+          "label": "问十二队长的格局",
+          "text": "“有人守城，有人守人，有人守着自己那点东西。”",
+          "effects": [
+            {
+              "type": "san_change",
+              "amount": 5
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

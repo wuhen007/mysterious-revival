@@ -1,0 +1,16 @@
+{
+  "id": "ghost_camera",
+  "schema_version": 1,
+  "name": "鬼相机",
+  "description": "拍到鬼的全身即可把它关进照片；失败则拍摄者被关进去。",
+  "target_types": [
+    "ghost"
+  ],
+  "uses": 1,
+  "effects": [
+    {
+      "type": "capture_bonus",
+      "amount": 0.45
+    }
+  ]
+}

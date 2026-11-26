@@ -1,0 +1,191 @@
+{
+  "id": "faction_japan",
+  "schema_version": 1,
+  "name": "除灵社·神户",
+  "aliases": [
+    "神户"
+  ],
+  "description": "岛国除灵社的本堂。那扇被黄金封住的门后，关着一位民国的老鬼。",
+  "chapter": 95,
+  "supported_modes": [
+    "solo",
+    "party"
+  ],
+  "party_size": {
+    "min": 2,
+    "max": 4
+  },
+  "mission_kit": [
+    {
+      "item_ref": "holy_water",
+      "quantity": 1
+    },
+    {
+      "item_ref": "ghost_candle",
+      "quantity": 1
+    },
+    {
+      "item_ref": "coffin_nail",
+      "quantity": 1
+    },
+    {
+      "item_ref": "gold_box",
+      "quantity": 1
+    }
+  ],
+  "nodes": [
+    {
+      "id": "jp_shrine",
+      "name": "神社",
+      "tags": [
+        "入口"
+      ],
+      "environment": {
+        "light": "dark",
+        "distance": "close"
+      },
+      "clues": [
+        "鸟居上挂着新的注连绳，绳结是反的。"
+      ]
+    },
+    {
+      "id": "jp_hall",
+      "name": "本堂",
+      "tags": [
+        "线索"
+      ],
+      "environment": {
+        "light": "dark",
+        "distance": "close"
+      },
+      "clues": [
+        "本堂的地板下有一层夹板，踩上去是空的。"
+      ]
+    },
+    {
+      "id": "jp_cellar",
+      "name": "地下",
+      "tags": [
+        "遭遇"
+      ],
+      "environment": {
+        "light": "dark",
+        "distance": "close"
+      },
+      "clues": [
+        "地下室里立着一口贴满符纸的棺材，符纸是中文。"
+      ]
+    },
+    {
+      "id": "jp_exit",
+      "name": "侧门",
+      "tags": [
+        "撤离"
+      ],
+      "environment": {
+        "light": "dim",
+        "distance": "far"
+      },
+      "clues": [
+        "侧门通向竹林，雨声很大。"
+      ]
+    }
+  ],
+  "encounters": [
+    {
+      "id": "jp_boss",
+      "location_ref": "jp_cellar",
+      "enemy_refs": [
+        {
+          "ghost_ref": "door_knocker",
+          "quantity": 1
+        },
+        {
+          "ghost_ref": "ghost_face",
+          "quantity": 1
+        }
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "id": "faction_japan_rule",
+      "description": "发现敲门鬼的杀人规律。",
+      "conditions": [
+        {
+          "type": "rule_discovered",
+          "rule_ref": "three_knocks"
+        }
+      ]
+    },
+    {
+      "id": "faction_japan_clues",
+      "description": "调查至少 2 条地点线索。",
+      "conditions": [
+        {
+          "type": "counter_at_least",
+          "counter": "clues_found",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "id": "faction_japan_exit",
+      "description": "抵达撤离点。",
+      "conditions": [
+        {
+          "type": "location_is",
+          "location_ref": "jp_exit"
+        }
+      ]
+    }
+  ],
+  "difficulty_levels": {
+    "normal": {
+      "unlocked_by_default": true,
+      "minimum_party_actions": 2,
+      "rewards": [
+        {
+          "type": "resource_reward",
+          "resource": "soul_shards",
+          "amount": 2
+        }
+      ],
+      "unlocks": [
+        "hard"
+      ]
+    },
+    "hard": {
+      "unlocked_by_default": false,
+      "minimum_party_actions": 2,
+      "rewards": [
+        {
+          "type": "resource_reward",
+          "resource": "soul_shards",
+          "amount": 4
+        }
+      ],
+      "unlocks": []
+    }
+  },
+  "difficulty_variants": {
+    "hard": {
+      "mission_kit_remove": [],
+      "extra_encounters": [],
+      "enemy_behavior_overrides": {}
+    }
+  },
+  "unlock": {
+    "optional": true,
+    "requires_completed": [],
+    "unlocks": [],
+    "requires_clues": 0
+  },
+  "extraction": {
+    "location_ref": "jp_exit"
+  },
+  "ending": {
+    "text": "你确认了敲门鬼的来历：一个死在烂尾楼顶的民国人。",
+    "title": "第四种存在"
+  }
+}

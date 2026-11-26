@@ -1,0 +1,18 @@
+{
+  "id": "red_heels",
+  "schema_version": 1,
+  "name": "红色高跟鞋",
+  "description": "免疫以脚印为媒介的灵异，并留下脚印反复召唤尸体。",
+  "target_types": [
+    "player"
+  ],
+  "uses": 1,
+  "effects": [
+    {
+      "type": "apply_status",
+      "status": "footprint_immune",
+      "turns": 2
+    }
+  ],
+  "canon": "明确"
+}

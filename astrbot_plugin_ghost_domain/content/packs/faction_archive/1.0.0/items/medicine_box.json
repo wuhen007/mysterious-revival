@@ -1,0 +1,17 @@
+{
+  "id": "medicine_box",
+  "schema_version": 1,
+  "name": "药箱",
+  "description": "产出压制复苏的中药，无使用风险但有保质期；药效一过反噬更凶（反噬数值待补充）。",
+  "target_types": [
+    "player"
+  ],
+  "uses": 1,
+  "effects": [
+    {
+      "type": "heal",
+      "amount": 20
+    }
+  ],
+  "canon": "明确"
+}

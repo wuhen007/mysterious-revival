@@ -1,0 +1,62 @@
+{
+  "id": "mansion_toll",
+  "schema_version": 1,
+  "name": "第一次钟响",
+  "description": "钟声响了第一次。",
+  "domain_ref": "wang_mansion",
+  "trigger": {
+    "conditions": []
+  },
+  "nodes": [
+    {
+      "id": "mansion_toll1",
+      "location_ref": "mansion_hall",
+      "text": "钟声响了第一次。你回头，发现刚才走过的门不见了。",
+      "once": true,
+      "conditions": [],
+      "effects": [
+        {
+          "type": "san_change",
+          "amount": -6
+        },
+        {
+          "type": "reveal_rule",
+          "rule_ref": "time_rewind"
+        }
+      ]
+    },
+    {
+      "id": "mansion_photo_reveal",
+      "location_ref": "mansion_shrine",
+      "text": "空白牌位上浮出一行字，和全家福背面的笔迹一模一样。王察灵说过，这一代的名字不该出现在这里。",
+      "once": true,
+      "conditions": [
+        {
+          "type": "story_flag_matches",
+          "flag": "family_photo_taken",
+          "value": true
+        }
+      ],
+      "effects": []
+    },
+    {
+      "id": "mansion_countered_reward",
+      "location_ref": "mansion_back",
+      "text": "摆钟不再倒转时间。你在后院墙根发现一枚被压在钟摆碎片下的魂晶。",
+      "once": true,
+      "conditions": [
+        {
+          "type": "rule_countered",
+          "rule_ref": "time_rewind"
+        }
+      ],
+      "effects": [
+        {
+          "type": "resource_reward",
+          "resource": "soul_shards",
+          "amount": 1
+        }
+      ]
+    }
+  ]
+}

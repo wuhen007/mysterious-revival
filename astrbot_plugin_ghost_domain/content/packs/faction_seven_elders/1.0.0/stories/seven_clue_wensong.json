@@ -1,0 +1,35 @@
+{
+  "id": "seven_clue_wensong",
+  "schema_version": 1,
+  "name": "首任管理者名册",
+  "description": "邮局旧址的墙上钉着一块木牌，首任管理者一栏写着：罗文松。",
+  "domain_ref": "faction_seven_elders",
+  "trigger": {
+    "conditions": []
+  },
+  "nodes": [
+    {
+      "id": "seven_clue_wensong_node",
+      "location_ref": "post_office_ruin",
+      "text": "邮局旧址的墙上钉着一块木牌，首任管理者一栏写着：罗文松。",
+      "once": true,
+      "conditions": [],
+      "effects": [
+        {
+          "type": "set_story_flag",
+          "flag": "clue_luo_wensong",
+          "value": true
+        },
+        {
+          "type": "increment_counter",
+          "counter": "clues_found",
+          "amount": 1
+        },
+        {
+          "type": "san_change",
+          "amount": -5
+        }
+      ]
+    }
+  ]
+}

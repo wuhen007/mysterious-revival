@@ -1,0 +1,48 @@
+{
+  "id": "ghost_painting",
+  "schema_version": 1,
+  "name": "鬼画",
+  "description": "可从任何一幅画中走出，画中世界会改写进入者。",
+  "grade": "S",
+  "stats": {
+    "hp": 260,
+    "attack": 26,
+    "defense": 14,
+    "speed": 7
+  },
+  "capture_threshold": 0.08,
+  "capture_difficulty": 0.9,
+  "base_loyalty": 50,
+  "starter_weight": 1,
+  "skills": [
+    {
+      "id": "painting_pull",
+      "name": "入画",
+      "type": "attack",
+      "power": 1.5,
+      "cooldown_turns": 2
+    }
+  ],
+  "rules": [
+    {
+      "id": "recall_painting",
+      "description": "看过画并在脑内回忆画面即被盯上。",
+      "clues": [
+        "墙上多出一幅没见过的人像",
+        "你发现自己记得画里的细节"
+      ],
+      "reveal_after": 2,
+      "discovery_san_cost": 5,
+      "counter_method": "黄金可阻断其入画；不回忆画面等于未触发。",
+      "counteractions": [
+        "golden_seal"
+      ],
+      "story_flag_on_counteraction": "painting_countered"
+    }
+  ],
+  "behavior": {
+    "kind": "brute",
+    "target_strategy": "random",
+    "attack_multiplier": 1.05
+  }
+}

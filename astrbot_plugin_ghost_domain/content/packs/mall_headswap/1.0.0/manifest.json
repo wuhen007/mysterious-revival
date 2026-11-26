@@ -1,0 +1,16 @@
+{
+  "pack_id": "mall_headswap",
+  "version": "1.0.0",
+  "schema_version": 1,
+  "requires_engine_version": ">=0.3.0",
+  "name": "大昌市·新世界商场",
+  "description": "商场里出现会换头的鬼，尸体被摆成假模特的姿势。",
+  "chapter": 2,
+  "optional": false,
+  "starter_ghost_pool": [
+    {
+      "ghost_ref": "head_swapper",
+      "weight": 1
+    }
+  ]
+}

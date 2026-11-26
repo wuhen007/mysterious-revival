@@ -1,0 +1,48 @@
+{
+  "id": "ghost_official",
+  "schema_version": 1,
+  "name": "鬼差",
+  "description": "本质是一片棺材形状的鬼域，继承卫景的智慧；杀死驭鬼者后压制数 +1。",
+  "grade": "S",
+  "stats": {
+    "hp": 400,
+    "attack": 34,
+    "defense": 22,
+    "speed": 9
+  },
+  "capture_threshold": 0.05,
+  "capture_difficulty": 0.95,
+  "base_loyalty": 50,
+  "starter_weight": 1,
+  "skills": [
+    {
+      "id": "official_press",
+      "name": "官威压制",
+      "type": "attack",
+      "power": 1.7,
+      "cooldown_turns": 2
+    }
+  ],
+  "rules": [
+    {
+      "id": "less_than_three",
+      "description": "区域内鬼的数量少于三只时，目标必死。",
+      "clues": [
+        "同行的人一个接一个落单",
+        "走廊尽头出现一口竖立的棺材"
+      ],
+      "reveal_after": 2,
+      "discovery_san_cost": 5,
+      "counter_method": "保持三只以上的鬼同处一室；用另一片更强的鬼域把它挤进棺材大小的空间。",
+      "counteractions": [
+        "damage_resets_counter"
+      ],
+      "story_flag_on_counteraction": "official_countered"
+    }
+  ],
+  "behavior": {
+    "kind": "brute",
+    "target_strategy": "weakest",
+    "attack_multiplier": 1.15
+  }
+}

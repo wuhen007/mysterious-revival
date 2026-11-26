@@ -1,0 +1,16 @@
+{
+  "id": "soul_bottle",
+  "schema_version": 1,
+  "name": "魂瓶",
+  "description": "民国老宅流出的收纳型灵异，可暂存魂魄与灵异。",
+  "target_types": [
+    "ghost"
+  ],
+  "uses": 1,
+  "effects": [
+    {
+      "type": "capture_bonus",
+      "amount": 0.25
+    }
+  ]
+}

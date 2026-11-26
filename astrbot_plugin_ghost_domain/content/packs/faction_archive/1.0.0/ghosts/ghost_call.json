@@ -1,0 +1,47 @@
+{
+  "id": "ghost_call",
+  "schema_version": 1,
+  "name": "鬼来电",
+  "description": "因果律打击，全球范围；危害度评为 B。",
+  "grade": "B",
+  "stats": {
+    "hp": 90,
+    "attack": 40,
+    "defense": 2,
+    "speed": 12
+  },
+  "capture_threshold": 0.2,
+  "capture_difficulty": 0.6,
+  "base_loyalty": 50,
+  "starter_weight": 1,
+  "skills": [
+    {
+      "id": "call_death",
+      "name": "铃响",
+      "type": "attack",
+      "power": 1.7,
+      "cooldown_turns": 3
+    }
+  ],
+  "rules": [
+    {
+      "id": "ring_death",
+      "description": "电话铃声响起，无论接不接都必死；一次只杀一人。",
+      "clues": [
+        "没有插线的电话响了",
+        "你自己的手机在关机状态下响"
+      ],
+      "reveal_after": 2,
+      "discovery_san_cost": 5,
+      "counter_method": "以黄金隔绝；剪断媒介。",
+      "counteractions": [
+        "golden_seal"
+      ]
+    }
+  ],
+  "behavior": {
+    "kind": "brute",
+    "target_strategy": "random",
+    "attack_multiplier": 1.0
+  }
+}

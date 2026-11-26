@@ -1,0 +1,30 @@
+{
+  "id": "final_name",
+  "schema_version": 1,
+  "name": "有人在喊你的名字",
+  "description": "声音越来越整齐。",
+  "domain_ref": "finale",
+  "trigger": {
+    "conditions": []
+  },
+  "nodes": [
+    {
+      "id": "final_call",
+      "location_ref": "final_city",
+      "text": "街上的人都在喊同一个名字。你听了很久，才发现那是你的名字。",
+      "once": true,
+      "conditions": [],
+      "effects": [
+        {
+          "type": "san_change",
+          "amount": -15
+        },
+        {
+          "type": "set_story_flag",
+          "flag": "name_called",
+          "value": true
+        }
+      ]
+    }
+  ]
+}

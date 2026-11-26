@@ -1,0 +1,9 @@
+{
+  "id": "ghost_rope",
+  "schema_version": 1,
+  "name": "鬼绳",
+  "description": "约束己方驭鬼，使其忠诚度恢复 20。",
+  "target_types": ["controlled_ghost"],
+  "uses": 1,
+  "effects": [{"type": "loyalty_change", "amount": 20}]
+}

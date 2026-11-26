@@ -1,0 +1,18 @@
+{
+  "id": "substitute_doll",
+  "schema_version": 1,
+  "name": "替死娃娃",
+  "description": "把厉鬼的袭击转移到娃娃身上，替持有者死一次。",
+  "target_types": [
+    "player",
+    "controlled_ghost"
+  ],
+  "uses": 1,
+  "effects": [
+    {
+      "type": "apply_status",
+      "status": "substitute",
+      "turns": 2
+    }
+  ]
+}

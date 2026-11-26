@@ -1,0 +1,191 @@
+{
+  "id": "faction_republic",
+  "schema_version": 1,
+  "name": "民国线·弘法寺地下室",
+  "aliases": [
+    "弘法寺地下室"
+  ],
+  "description": "民国年间修建的地下室，关着一道高大的黑影。",
+  "chapter": 98,
+  "supported_modes": [
+    "solo",
+    "party"
+  ],
+  "party_size": {
+    "min": 2,
+    "max": 4
+  },
+  "mission_kit": [
+    {
+      "item_ref": "holy_water",
+      "quantity": 1
+    },
+    {
+      "item_ref": "ghost_candle",
+      "quantity": 1
+    },
+    {
+      "item_ref": "yellow_paper",
+      "quantity": 1
+    },
+    {
+      "item_ref": "soul_incense",
+      "quantity": 1
+    }
+  ],
+  "nodes": [
+    {
+      "id": "temple_hall",
+      "name": "大殿",
+      "tags": [
+        "入口"
+      ],
+      "environment": {
+        "light": "dark",
+        "distance": "close"
+      },
+      "clues": [
+        "佛像的脸被凿掉了，凿痕很新。"
+      ]
+    },
+    {
+      "id": "temple_stairs",
+      "name": "地宫入口",
+      "tags": [
+        "线索"
+      ],
+      "environment": {
+        "light": "dark",
+        "distance": "close"
+      },
+      "clues": [
+        "石阶上刻着民国二十年的字样，还有一排抓痕。"
+      ]
+    },
+    {
+      "id": "temple_cellar",
+      "name": "地下室",
+      "tags": [
+        "遭遇"
+      ],
+      "environment": {
+        "light": "dark",
+        "distance": "close"
+      },
+      "clues": [
+        "地下室里没有灯，黑影比黑暗更黑。"
+      ]
+    },
+    {
+      "id": "temple_out",
+      "name": "寺后小门",
+      "tags": [
+        "撤离"
+      ],
+      "environment": {
+        "light": "lit",
+        "distance": "far"
+      },
+      "clues": [
+        "小门外是山道，晨钟刚好响。"
+      ]
+    }
+  ],
+  "encounters": [
+    {
+      "id": "republic_boss",
+      "location_ref": "temple_cellar",
+      "enemy_refs": [
+        {
+          "ghost_ref": "headless_shadow",
+          "quantity": 1
+        },
+        {
+          "ghost_ref": "third_eye",
+          "quantity": 1
+        }
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "id": "faction_republic_rule",
+      "description": "发现无头鬼影的杀人规律。",
+      "conditions": [
+        {
+          "type": "rule_discovered",
+          "rule_ref": "shadow_takeover"
+        }
+      ]
+    },
+    {
+      "id": "faction_republic_clues",
+      "description": "调查至少 2 条地点线索。",
+      "conditions": [
+        {
+          "type": "counter_at_least",
+          "counter": "clues_found",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "id": "faction_republic_exit",
+      "description": "抵达撤离点。",
+      "conditions": [
+        {
+          "type": "location_is",
+          "location_ref": "temple_out"
+        }
+      ]
+    }
+  ],
+  "difficulty_levels": {
+    "normal": {
+      "unlocked_by_default": true,
+      "minimum_party_actions": 2,
+      "rewards": [
+        {
+          "type": "resource_reward",
+          "resource": "soul_shards",
+          "amount": 2
+        }
+      ],
+      "unlocks": [
+        "hard"
+      ]
+    },
+    "hard": {
+      "unlocked_by_default": false,
+      "minimum_party_actions": 2,
+      "rewards": [
+        {
+          "type": "resource_reward",
+          "resource": "soul_shards",
+          "amount": 4
+        }
+      ],
+      "unlocks": []
+    }
+  },
+  "difficulty_variants": {
+    "hard": {
+      "mission_kit_remove": [],
+      "extra_encounters": [],
+      "enemy_behavior_overrides": {}
+    }
+  },
+  "unlock": {
+    "optional": true,
+    "requires_completed": [],
+    "unlocks": [],
+    "requires_clues": 0
+  },
+  "extraction": {
+    "location_ref": "temple_out"
+  },
+  "ending": {
+    "text": "你带出了民国那一代人失败的证据。",
+    "title": "第四种存在"
+  }
+}

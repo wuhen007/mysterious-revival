@@ -1,0 +1,50 @@
+{
+  "id": "grave_field",
+  "schema_version": 1,
+  "name": "无尽坟场",
+  "description": "罗千的坟场：范围最大的镇压型灵异，专克复活流。",
+  "grade": "S",
+  "stats": {
+    "hp": 360,
+    "attack": 28,
+    "defense": 20,
+    "speed": 3
+  },
+  "capture_threshold": 0.08,
+  "capture_difficulty": 0.9,
+  "base_loyalty": 50,
+  "starter_weight": 1,
+  "skills": [
+    {
+      "id": "grave_bury",
+      "name": "坟土埋葬",
+      "type": "attack",
+      "power": 1.4,
+      "cooldown_turns": 2
+    }
+  ],
+  "rules": [
+    {
+      "id": "bury_live",
+      "description": "坟土自地下涌出，埋葬被入侵的一切，被埋之物无法重启。",
+      "clues": [
+        "脚下的地面开始松软",
+        "鞋底沾上了不属于这里的湿土"
+      ],
+      "reveal_after": 2,
+      "discovery_san_cost": 5,
+      "counter_method": "离开坟场范围；或用黄金隔绝坟土。",
+      "counteractions": [
+        "damage_resets_counter"
+      ],
+      "story_flag_on_counteraction": "grave_countered"
+    }
+  ],
+  "behavior": {
+    "kind": "brute",
+    "target_strategy": "weakest",
+    "attack_multiplier": 1.0
+  },
+  "canon": "明确",
+  "canon_note": "「具体鬼名」原著未明确，此处以现象命名。"
+}

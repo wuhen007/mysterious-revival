@@ -1,0 +1,56 @@
+{
+  "id": "zhang_youhong",
+  "schema_version": 1,
+  "name": "张幼红（红姐）",
+  "description": "七老之一，死得最早；借柳青青之身苏醒，木偶人可复制六老六成灵异。",
+  "domain_ref": "faction_seven_elders",
+  "location_ref": "post_office_ruin",
+  "dialogue_nodes": [
+    {
+      "id": "zhang_youhong_first",
+      "text": "红姐坐在邮局台阶上补妆：“红姐。既不是张幼红，也不是柳青青。”",
+      "conditions": [],
+      "choices": [
+        {
+          "id": "zyh_copy",
+          "label": "请教「复制」",
+          "text": "她打了个响指，身后站出六个模糊的人影。",
+          "effects": [
+            {
+              "type": "unlock_ability",
+              "ability_ref": "legacy_copy"
+            },
+            {
+              "type": "item_add",
+              "item_ref": "cheongsam",
+              "quantity": 1
+            }
+          ],
+          "conditions": [
+            {
+              "type": "story_flag_matches",
+              "flag": "clue_zhang_youhong",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": "zyh_price",
+          "label": "问雇佣的价码",
+          "text": "“二十块鬼钱，一个国王。你有吗？”",
+          "effects": [
+            {
+              "type": "set_story_flag",
+              "flag": "hong_jie_hired",
+              "value": true
+            },
+            {
+              "type": "san_change",
+              "amount": 5
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

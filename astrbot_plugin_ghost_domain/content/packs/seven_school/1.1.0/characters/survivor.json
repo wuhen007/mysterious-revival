@@ -1,0 +1,50 @@
+{
+  "id": "seven_school_survivor",
+  "schema_version": 1,
+  "name": "留在教室的人",
+  "description": "七中学校失踪事件中躲在教室里的幸存者。",
+  "domain_ref": "seven_school",
+  "location_ref": "school_classroom",
+  "dialogue_nodes": [
+    {
+      "id": "survivor_first_contact",
+      "text": "幸存者压低声音说：“敲门声数到第三次就会有人消失。我知道侧门怎么开，但我不敢一个人走。”",
+      "conditions": [],
+      "choices": [
+        {
+          "id": "help_survivor",
+          "label": "带他去操场出口",
+          "text": "你答应护送幸存者。他告诉你，出口旁的储物柜里还有一份补给。",
+          "effects": [
+            {
+              "type": "set_story_flag",
+              "flag": "survivor_helped",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": "ask_knocks",
+          "label": "继续询问敲门规律",
+          "text": "幸存者确认：第三次敲门前的短暂停顿，是打断强攻的时机。",
+          "effects": [
+            {
+              "type": "set_story_flag",
+              "flag": "survivor_helped",
+              "value": false
+            },
+            {
+              "type": "set_story_flag",
+              "flag": "survivor_warned",
+              "value": true
+            },
+            {
+              "type": "reveal_rule",
+              "rule_ref": "three_knocks"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

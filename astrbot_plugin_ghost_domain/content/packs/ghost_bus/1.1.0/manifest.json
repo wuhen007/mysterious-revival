@@ -1,0 +1,16 @@
+{
+  "pack_id": "ghost_bus",
+  "version": "1.1.0",
+  "schema_version": 1,
+  "requires_engine_version": ">=0.3.0",
+  "name": "灵异公交车",
+  "description": "一辆没有线路的公交车，35 个座位，熄火时才能下车。",
+  "chapter": 5,
+  "optional": false,
+  "starter_ghost_pool": [
+    {
+      "ghost_ref": "dry_bride",
+      "weight": 1
+    }
+  ]
+}

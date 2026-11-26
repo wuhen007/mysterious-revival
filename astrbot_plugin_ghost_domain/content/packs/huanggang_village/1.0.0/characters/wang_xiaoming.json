@@ -1,0 +1,44 @@
+{
+  "id": "wang_xiaoming",
+  "schema_version": 1,
+  "name": "王小明",
+  "description": "总部研究员，习惯用数据和实验解释鬼；也是鬼差事件的始作俑者。",
+  "domain_ref": "huanggang_village",
+  "location_ref": "village_gate",
+  "dialogue_nodes": [
+    {
+      "id": "wang_xiaoming_first",
+      "text": "王小明推了推眼镜：“病鬼不主动杀人。它在维持平衡——一旦它被关起来，另一只就会失控。”",
+      "conditions": [],
+      "choices": [
+        {
+          "id": "wxm_data",
+          "label": "索要病鬼的观察数据",
+          "text": "他递给你一张纸，上面是咳嗽间隔与感染半径的对应表。",
+          "effects": [
+            {
+              "type": "reveal_rule",
+              "rule_ref": "sick_infection"
+            },
+            {
+              "type": "san_change",
+              "amount": -3
+            }
+          ]
+        },
+        {
+          "id": "wxm_warn",
+          "label": "警告他鬼棺实验的风险",
+          "text": "王小明沉默了两秒：“我知道。但总得有人试。”",
+          "effects": [
+            {
+              "type": "set_story_flag",
+              "flag": "coffin_warned",
+              "value": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

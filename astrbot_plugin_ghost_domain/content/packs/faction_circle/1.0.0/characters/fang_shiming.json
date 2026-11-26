@@ -1,0 +1,46 @@
+{
+  "id": "fang_shiming",
+  "schema_version": 1,
+  "name": "方世明",
+  "description": "朋友圈核心成员，财阀代理人；擅长用资源换命。",
+  "domain_ref": "faction_circle",
+  "location_ref": "circle_floor",
+  "dialogue_nodes": [
+    {
+      "id": "fang_shiming_first",
+      "text": "方世明端着酒杯：“开个价。你这样的人，不该替总部白干。”",
+      "conditions": [],
+      "choices": [
+        {
+          "id": "fsm_deal",
+          "label": "假意接受",
+          "text": "他递来一张卡，你收下了。",
+          "effects": [
+            {
+              "type": "set_story_flag",
+              "flag": "circle_deal",
+              "value": true
+            },
+            {
+              "type": "item_add",
+              "item_ref": "gold_box",
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "id": "fsm_refuse",
+          "label": "当场拒绝",
+          "text": "酒杯裂了一道缝，他的笑没变。",
+          "effects": [
+            {
+              "type": "set_story_flag",
+              "flag": "circle_enemy",
+              "value": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

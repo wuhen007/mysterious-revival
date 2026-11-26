@@ -1,0 +1,16 @@
+{
+  "pack_id": "faction_seven_elders",
+  "version": "1.0.0",
+  "schema_version": 1,
+  "requires_engine_version": ">=0.3.0",
+  "name": "七老祠堂·终局前传",
+  "description": "七个人，七种把灵异关回去的办法。他们没能根治，只把债推给了后人。",
+  "chapter": 97,
+  "optional": true,
+  "starter_ghost_pool": [
+    {
+      "ghost_ref": "grave_field",
+      "weight": 1
+    }
+  ]
+}

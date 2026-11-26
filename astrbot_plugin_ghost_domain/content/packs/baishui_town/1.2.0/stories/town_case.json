@@ -1,0 +1,25 @@
+{
+  "id": "town_case",
+  "schema_version": 1,
+  "name": "卫生所病例",
+  "description": "同一种症状，十七份。",
+  "domain_ref": "baishui_town",
+  "trigger": {
+    "conditions": []
+  },
+  "nodes": [
+    {
+      "id": "town_case",
+      "location_ref": "town_clinic",
+      "text": "十七份病例，症状完全相同：患者声称自己看见了第三只眼。",
+      "once": true,
+      "conditions": [],
+      "effects": [
+        {
+          "type": "reveal_rule",
+          "rule_ref": "see_truth"
+        }
+      ]
+    }
+  ]
+}

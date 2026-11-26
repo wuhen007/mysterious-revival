@@ -1,0 +1,47 @@
+{
+  "id": "wang_ancestor",
+  "schema_version": 1,
+  "name": "王家亡魂",
+  "description": "王家历代死者化作亡魂守护下一代，代价是每一代都背负诅咒。",
+  "grade": "A",
+  "stats": {
+    "hp": 150,
+    "attack": 20,
+    "defense": 10,
+    "speed": 6
+  },
+  "capture_threshold": 0.15,
+  "capture_difficulty": 0.65,
+  "base_loyalty": 50,
+  "starter_weight": 1,
+  "skills": [
+    {
+      "id": "ancestor_grip",
+      "name": "亡魂缠身",
+      "type": "attack",
+      "power": 1.3,
+      "cooldown_turns": 1
+    }
+  ],
+  "rules": [
+    {
+      "id": "family_photo",
+      "description": "亡魂不得伤害家人，全家福为凭证。",
+      "clues": [
+        "身后多出几个脚步声",
+        "照片里的人多了一位"
+      ],
+      "reveal_after": 2,
+      "discovery_san_cost": 5,
+      "counter_method": "出示全家福可暂时止步；否则只能以灵异硬压。",
+      "counteractions": [
+        "damage_resets_counter"
+      ]
+    }
+  ],
+  "behavior": {
+    "kind": "brute",
+    "target_strategy": "player_first",
+    "attack_multiplier": 1.0
+  }
+}

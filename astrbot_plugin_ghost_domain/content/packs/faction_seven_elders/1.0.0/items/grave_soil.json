@@ -1,0 +1,16 @@
+{
+  "id": "grave_soil",
+  "schema_version": 1,
+  "name": "坟土",
+  "description": "黄岗村坟土，用于临时压制刚死不久的灵异。",
+  "target_types": [
+    "ghost"
+  ],
+  "uses": 1,
+  "effects": [
+    {
+      "type": "capture_bonus",
+      "amount": 0.2
+    }
+  ]
+}

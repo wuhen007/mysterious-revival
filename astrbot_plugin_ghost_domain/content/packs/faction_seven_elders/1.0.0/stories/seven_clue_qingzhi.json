@@ -1,0 +1,35 @@
+{
+  "id": "seven_clue_qingzhi",
+  "schema_version": 1,
+  "name": "牌位后的柴刀",
+  "description": "最右侧牌位后面藏着一把锈柴刀，刀背刻着「李庆之」。",
+  "domain_ref": "faction_seven_elders",
+  "trigger": {
+    "conditions": []
+  },
+  "nodes": [
+    {
+      "id": "seven_clue_qingzhi_node",
+      "location_ref": "elder_hall",
+      "text": "最右侧牌位后面藏着一把锈柴刀，刀背刻着「李庆之」。",
+      "once": true,
+      "conditions": [],
+      "effects": [
+        {
+          "type": "set_story_flag",
+          "flag": "clue_li_qingzhi",
+          "value": true
+        },
+        {
+          "type": "increment_counter",
+          "counter": "clues_found",
+          "amount": 1
+        },
+        {
+          "type": "san_change",
+          "amount": -5
+        }
+      ]
+    }
+  ]
+}

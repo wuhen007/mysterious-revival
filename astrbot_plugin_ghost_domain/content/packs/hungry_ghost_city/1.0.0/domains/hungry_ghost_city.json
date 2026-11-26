@@ -1,0 +1,226 @@
+{
+  "id": "hungry_ghost_city",
+  "schema_version": 1,
+  "name": "大昌市·封锁区",
+  "aliases": [
+    "封锁区"
+  ],
+  "description": "整座城市被鬼域封锁，饿死鬼在大街小巷里长大。",
+  "chapter": 4,
+  "supported_modes": [
+    "solo",
+    "party"
+  ],
+  "party_size": {
+    "min": 2,
+    "max": 4
+  },
+  "mission_kit": [
+    {
+      "item_ref": "holy_water",
+      "quantity": 1
+    },
+    {
+      "item_ref": "ghost_candle",
+      "quantity": 1
+    },
+    {
+      "item_ref": "coffin_nail",
+      "quantity": 1
+    },
+    {
+      "item_ref": "red_paper",
+      "quantity": 1
+    }
+  ],
+  "nodes": [
+    {
+      "id": "city_blockade",
+      "name": "封锁线",
+      "tags": [
+        "入口"
+      ],
+      "environment": {
+        "light": "dark",
+        "distance": "close"
+      },
+      "clues": [
+        "警戒线外全是雾气，里面的人还在照常走路。"
+      ]
+    },
+    {
+      "id": "city_street",
+      "name": "长街",
+      "tags": [
+        "遭遇"
+      ],
+      "environment": {
+        "light": "dark",
+        "distance": "close"
+      },
+      "clues": [
+        "街上的婴儿车一辆接一辆地自己往前滑。"
+      ]
+    },
+    {
+      "id": "city_hospital",
+      "name": "市医院",
+      "tags": [
+        "线索"
+      ],
+      "environment": {
+        "light": "dark",
+        "distance": "close"
+      },
+      "clues": [
+        "产房的记录停在同一页，笔迹越写越潦草。"
+      ]
+    },
+    {
+      "id": "city_square",
+      "name": "中心广场",
+      "tags": [
+        "遭遇"
+      ],
+      "environment": {
+        "light": "dark",
+        "distance": "close"
+      },
+      "clues": [
+        "广场中央摆着一口竖起来的棺材，钉子是新的。"
+      ]
+    },
+    {
+      "id": "city_evac",
+      "name": "撤离点",
+      "tags": [
+        "撤离"
+      ],
+      "environment": {
+        "light": "lit",
+        "distance": "far"
+      },
+      "clues": [
+        "高架桥上有军车，车灯是唯一没被雾吃掉的光。"
+      ]
+    }
+  ],
+  "encounters": [
+    {
+      "id": "city_baby",
+      "location_ref": "city_street",
+      "enemy_refs": [
+        {
+          "ghost_ref": "ghost_baby",
+          "quantity": 2
+        }
+      ]
+    },
+    {
+      "id": "city_hungry",
+      "location_ref": "city_square",
+      "enemy_refs": [
+        {
+          "ghost_ref": "hungry_ghost",
+          "quantity": 1
+        },
+        {
+          "ghost_ref": "ghost_hand",
+          "quantity": 1
+        }
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "id": "hungry_ghost_city_rule",
+      "description": "发现鬼婴的杀人规律。",
+      "conditions": [
+        {
+          "type": "rule_discovered",
+          "rule_ref": "hungry_phases"
+        }
+      ]
+    },
+    {
+      "id": "hungry_ghost_city_clues",
+      "description": "调查至少 2 条地点线索。",
+      "conditions": [
+        {
+          "type": "counter_at_least",
+          "counter": "clues_found",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "id": "hungry_ghost_city_exit",
+      "description": "抵达撤离点。",
+      "conditions": [
+        {
+          "type": "location_is",
+          "location_ref": "city_evac"
+        }
+      ]
+    }
+  ],
+  "difficulty_levels": {
+    "normal": {
+      "unlocked_by_default": true,
+      "minimum_party_actions": 2,
+      "rewards": [
+        {
+          "type": "resource_reward",
+          "resource": "soul_shards",
+          "amount": 2
+        }
+      ],
+      "unlocks": [
+        "hard"
+      ]
+    },
+    "hard": {
+      "unlocked_by_default": false,
+      "minimum_party_actions": 2,
+      "rewards": [
+        {
+          "type": "resource_reward",
+          "resource": "soul_shards",
+          "amount": 4
+        }
+      ],
+      "unlocks": []
+    }
+  },
+  "difficulty_variants": {
+    "hard": {
+      "mission_kit_remove": [],
+      "extra_encounters": [
+        {
+          "id": "city_baby_hard",
+          "location_ref": "city_street",
+          "enemy_refs": [
+            {
+              "ghost_ref": "ghost_baby",
+              "quantity": 2
+            }
+          ]
+        }
+      ],
+      "enemy_behavior_overrides": {}
+    }
+  },
+  "unlock": {
+    "optional": false,
+    "requires_completed": [
+      "huanggang_village"
+    ],
+    "unlocks": [
+      "ghost_bus"
+    ],
+    "requires_clues": 0
+  },
+  "extraction": {
+    "location_ref": "city_evac"
+  }
+}

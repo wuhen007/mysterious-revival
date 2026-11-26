@@ -1,0 +1,26 @@
+{
+  "id": "city_supply",
+  "schema_version": 1,
+  "name": "军车补给",
+  "description": "高架桥下有一辆被弃的军车。",
+  "domain_ref": "hungry_ghost_city",
+  "trigger": {
+    "conditions": []
+  },
+  "nodes": [
+    {
+      "id": "city_army",
+      "location_ref": "city_evac",
+      "text": "军车后厢没锁，急救包还在。",
+      "once": true,
+      "conditions": [],
+      "effects": [
+        {
+          "type": "item_add",
+          "item_ref": "holy_water",
+          "quantity": 2
+        }
+      ]
+    }
+  ]
+}

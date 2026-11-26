@@ -1,0 +1,47 @@
+{
+  "id": "ghost_choke",
+  "schema_version": 1,
+  "name": "鬼掐人",
+  "description": "隔着鬼域杀人，第一层鬼域完全无效。",
+  "grade": "C",
+  "stats": {
+    "hp": 100,
+    "attack": 22,
+    "defense": 5,
+    "speed": 9
+  },
+  "capture_threshold": 0.3,
+  "capture_difficulty": 0.5,
+  "base_loyalty": 50,
+  "starter_weight": 1,
+  "skills": [
+    {
+      "id": "choke_hand",
+      "name": "腹中之手",
+      "type": "attack",
+      "power": 1.4,
+      "cooldown_turns": 1
+    }
+  ],
+  "rules": [
+    {
+      "id": "seat_posture",
+      "description": "特定姿势/位置（如特定座位、腹部朝上）即被掐死。",
+      "clues": [
+        "腹部有东西在动",
+        "座位上刻着别人的名字"
+      ],
+      "reveal_after": 2,
+      "discovery_san_cost": 5,
+      "counter_method": "改变姿势；它只在第二层鬼域中显现。",
+      "counteractions": [
+        "damage_resets_counter"
+      ]
+    }
+  ],
+  "behavior": {
+    "kind": "brute",
+    "target_strategy": "weakest",
+    "attack_multiplier": 1.0
+  }
+}

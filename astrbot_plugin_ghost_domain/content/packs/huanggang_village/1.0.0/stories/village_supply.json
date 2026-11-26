@@ -1,0 +1,26 @@
+{
+  "id": "village_supply",
+  "schema_version": 1,
+  "name": "村口供品",
+  "description": "每家每户门口的饭都是新的。",
+  "domain_ref": "huanggang_village",
+  "trigger": {
+    "conditions": []
+  },
+  "nodes": [
+    {
+      "id": "village_rice",
+      "location_ref": "village_road",
+      "text": "你端起一碗饭，碗底压着一张黄纸。",
+      "once": true,
+      "conditions": [],
+      "effects": [
+        {
+          "type": "item_add",
+          "item_ref": "yellow_paper",
+          "quantity": 1
+        }
+      ]
+    }
+  ]
+}

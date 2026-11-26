@@ -1,0 +1,44 @@
+{
+  "id": "sun_rui",
+  "schema_version": 1,
+  "name": "孙瑞",
+  "description": "大汉市负责人，代号病鬼；继承了病鬼的能力。",
+  "domain_ref": "post_office",
+  "location_ref": "post_lobby",
+  "dialogue_nodes": [
+    {
+      "id": "sun_rui_first",
+      "text": "孙瑞把一叠信推过来：“按地址送。别拆，别撕，别在六点之后还在走廊里。”",
+      "conditions": [],
+      "choices": [
+        {
+          "id": "sr_letters",
+          "label": "收下信件",
+          "text": "信封上没有邮戳，收件人一栏是你的名字。",
+          "effects": [
+            {
+              "type": "set_story_flag",
+              "flag": "letter_taken",
+              "value": true
+            },
+            {
+              "type": "san_change",
+              "amount": -5
+            }
+          ]
+        },
+        {
+          "id": "sr_rule",
+          "label": "问撕信的后果",
+          "text": "“这次放过你，下次来的东西更难看。”",
+          "effects": [
+            {
+              "type": "reveal_rule",
+              "rule_ref": "deliver_letter"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

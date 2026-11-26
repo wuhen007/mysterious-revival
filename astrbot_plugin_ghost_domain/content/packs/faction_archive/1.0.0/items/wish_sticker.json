@@ -1,0 +1,16 @@
+{
+  "id": "wish_sticker",
+  "schema_version": 1,
+  "name": "愿望贴纸",
+  "description": "写下愿望贴在指定处，愿望会以扭曲的方式实现。",
+  "target_types": [
+    "player"
+  ],
+  "uses": 1,
+  "effects": [
+    {
+      "type": "san_change",
+      "amount": 20
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "id": "zhang_lei",
+  "schema_version": 1,
+  "name": "张雷",
+  "description": "代号食鬼者；吞食厉鬼，把力量据为己有。",
+  "domain_ref": "faction_forum",
+  "location_ref": "forum_ring",
+  "dialogue_nodes": [
+    {
+      "id": "zhang_lei_first",
+      "text": "张雷嘴角还沾着黑色的碎屑：“你身上那只鬼，闻起来不错。”",
+      "conditions": [],
+      "choices": [
+        {
+          "id": "zl_limit",
+          "label": "问吞鬼的上限",
+          "text": "“吃不下的，会从我身上长出来。”",
+          "effects": [
+            {
+              "type": "reveal_rule",
+              "rule_ref": "eat_absorb"
+            }
+          ]
+        },
+        {
+          "id": "zl_gift",
+          "label": "讨一件压制之物",
+          "text": "他吐出一截布，扔在你脚边。",
+          "effects": [
+            {
+              "type": "item_add",
+              "item_ref": "corpse_shroud",
+              "quantity": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

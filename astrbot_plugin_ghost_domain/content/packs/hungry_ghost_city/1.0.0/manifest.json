@@ -1,0 +1,16 @@
+{
+  "pack_id": "hungry_ghost_city",
+  "version": "1.0.0",
+  "schema_version": 1,
+  "requires_engine_version": ">=0.3.0",
+  "name": "大昌市·封锁区",
+  "description": "整座城市被鬼域封锁，饿死鬼在大街小巷里长大。",
+  "chapter": 4,
+  "optional": false,
+  "starter_ghost_pool": [
+    {
+      "ghost_ref": "ghost_baby",
+      "weight": 1
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "id": "ghost_phase",
+  "schema_version": 1,
+  "name": "鬼相",
+  "description": "沈林的鬼，从记忆入侵现实。",
+  "grade": "A",
+  "stats": {
+    "hp": 170,
+    "attack": 20,
+    "defense": 10,
+    "speed": 7
+  },
+  "capture_threshold": 0.15,
+  "capture_difficulty": 0.65,
+  "base_loyalty": 50,
+  "starter_weight": 1,
+  "skills": [
+    {
+      "id": "phase_memory",
+      "name": "记忆入侵",
+      "type": "attack",
+      "power": 1.35,
+      "cooldown_turns": 2
+    }
+  ],
+  "rules": [
+    {
+      "id": "memory_entry",
+      "description": "顺着他人记忆中的形象进入现实。",
+      "clues": [
+        "镜中的自己比你先眨眼",
+        "有人叫出你从没告诉过别人的名字"
+      ],
+      "reveal_after": 2,
+      "discovery_san_cost": 5,
+      "counter_method": "清除记忆或无记忆者无法被入侵。",
+      "counteractions": [
+        "damage_resets_counter"
+      ]
+    }
+  ],
+  "behavior": {
+    "kind": "brute",
+    "target_strategy": "weakest",
+    "attack_multiplier": 1.0
+  }
+}

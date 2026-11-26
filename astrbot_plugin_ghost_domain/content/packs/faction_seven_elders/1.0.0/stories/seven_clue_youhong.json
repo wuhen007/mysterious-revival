@@ -1,0 +1,35 @@
+{
+  "id": "seven_clue_youhong",
+  "schema_version": 1,
+  "name": "木偶的针脚",
+  "description": "一只半成品木偶躺在邮袋里，衣角绣着「红」字，针脚是新的。",
+  "domain_ref": "faction_seven_elders",
+  "trigger": {
+    "conditions": []
+  },
+  "nodes": [
+    {
+      "id": "seven_clue_youhong_node",
+      "location_ref": "post_office_ruin",
+      "text": "一只半成品木偶躺在邮袋里，衣角绣着「红」字，针脚是新的。",
+      "once": true,
+      "conditions": [],
+      "effects": [
+        {
+          "type": "set_story_flag",
+          "flag": "clue_zhang_youhong",
+          "value": true
+        },
+        {
+          "type": "increment_counter",
+          "counter": "clues_found",
+          "amount": 1
+        },
+        {
+          "type": "san_change",
+          "amount": -5
+        }
+      ]
+    }
+  ]
+}

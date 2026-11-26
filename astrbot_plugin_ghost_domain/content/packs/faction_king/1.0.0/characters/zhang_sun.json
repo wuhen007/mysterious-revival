@@ -1,0 +1,44 @@
+{
+  "id": "zhang_sun",
+  "schema_version": 1,
+  "name": "张隼",
+  "description": "潜入国王组织的卧底；情报比命重要。",
+  "domain_ref": "faction_king",
+  "location_ref": "king_hold",
+  "dialogue_nodes": [
+    {
+      "id": "zhang_sun_first",
+      "text": "张隼压低声音：“方舟计划不是救人，是筛人。名单上没有你。”",
+      "conditions": [],
+      "choices": [
+        {
+          "id": "zs_list",
+          "label": "要一份名单",
+          "text": "他塞给你一张折成小块的纸。",
+          "effects": [
+            {
+              "type": "set_story_flag",
+              "flag": "ark_list",
+              "value": true
+            },
+            {
+              "type": "san_change",
+              "amount": -5
+            }
+          ]
+        },
+        {
+          "id": "zs_plan",
+          "label": "问方舟的终点",
+          "text": "“海上。一艘不会靠岸的船。”",
+          "effects": [
+            {
+              "type": "reveal_rule",
+              "rule_ref": "ship_domain"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

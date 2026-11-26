@@ -1,0 +1,44 @@
+{
+  "id": "bai_jiaoshou",
+  "schema_version": 1,
+  "name": "白教授",
+  "description": "总部智囊，负责档案分析与方案制定。",
+  "domain_ref": "baishui_town",
+  "location_ref": "town_clinic",
+  "dialogue_nodes": [
+    {
+      "id": "bai_jiaoshou_first",
+      "text": "白教授翻着病例：“第三只眼不是眼睛，是媒介。你看见它，它就看见你。”",
+      "conditions": [],
+      "choices": [
+        {
+          "id": "bj_media",
+          "label": "问媒介怎么断",
+          "text": "“遮住、烧掉、或者换一双眼睛。”",
+          "effects": [
+            {
+              "type": "reveal_rule",
+              "rule_ref": "see_truth"
+            }
+          ]
+        },
+        {
+          "id": "bj_archive",
+          "label": "调阅白水镇档案",
+          "text": "他给你一份民国年间的封锁记录。",
+          "effects": [
+            {
+              "type": "san_change",
+              "amount": 5
+            },
+            {
+              "type": "set_story_flag",
+              "flag": "baishui_archive",
+              "value": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

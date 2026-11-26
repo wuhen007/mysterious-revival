@@ -1,0 +1,197 @@
+{
+  "id": "finale",
+  "schema_version": 1,
+  "name": "终局·黄金雕像",
+  "aliases": [
+    "黄金雕像"
+  ],
+  "description": "灵异时代走到尽头。是成为第四种存在，还是让一切再来一次。",
+  "chapter": 15,
+  "supported_modes": [
+    "solo",
+    "party"
+  ],
+  "party_size": {
+    "min": 2,
+    "max": 4
+  },
+  "mission_kit": [
+    {
+      "item_ref": "holy_water",
+      "quantity": 1
+    },
+    {
+      "item_ref": "ghost_candle",
+      "quantity": 1
+    },
+    {
+      "item_ref": "gold_box",
+      "quantity": 1
+    },
+    {
+      "item_ref": "master_chair",
+      "quantity": 1
+    }
+  ],
+  "nodes": [
+    {
+      "id": "final_statue",
+      "name": "黄金雕像",
+      "tags": [
+        "入口"
+      ],
+      "environment": {
+        "light": "dark",
+        "distance": "close"
+      },
+      "clues": [
+        "雕像内部传来心跳，节奏和你的一样。"
+      ]
+    },
+    {
+      "id": "final_city",
+      "name": "废墟城市",
+      "tags": [
+        "线索"
+      ],
+      "environment": {
+        "light": "dark",
+        "distance": "close"
+      },
+      "clues": [
+        "街上的人都在喊同一个名字，声音越来越整齐。"
+      ]
+    },
+    {
+      "id": "final_gate",
+      "name": "阴阳路",
+      "tags": [
+        "遭遇"
+      ],
+      "environment": {
+        "light": "dark",
+        "distance": "close"
+      },
+      "clues": [
+        "路的左边是过去，右边是未来，中间站着一个孩子。"
+      ]
+    },
+    {
+      "id": "final_source",
+      "name": "灵异源头",
+      "tags": [
+        "撤离"
+      ],
+      "environment": {
+        "light": "dim",
+        "distance": "far"
+      },
+      "clues": [
+        "所有鬼域的源头是一道缝，缝里没有光。"
+      ]
+    }
+  ],
+  "encounters": [
+    {
+      "id": "final_child",
+      "location_ref": "final_gate",
+      "enemy_refs": [
+        {
+          "ghost_ref": "ghost_child",
+          "quantity": 1
+        },
+        {
+          "ghost_ref": "ghost_shadow_full",
+          "quantity": 1
+        },
+        {
+          "ghost_ref": "ghost_eye",
+          "quantity": 1
+        }
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "id": "finale_rule",
+      "description": "发现鬼童被唤醒的条件。",
+      "conditions": [
+        {
+          "type": "rule_discovered",
+          "rule_ref": "name_awaken"
+        }
+      ]
+    },
+    {
+      "id": "finale_clues",
+      "description": "调查至少 2 条地点线索。",
+      "conditions": [
+        {
+          "type": "counter_at_least",
+          "counter": "clues_found",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "id": "finale_exit",
+      "description": "抵达撤离点。",
+      "conditions": [
+        {
+          "type": "location_is",
+          "location_ref": "final_source"
+        }
+      ]
+    }
+  ],
+  "difficulty_levels": {
+    "normal": {
+      "unlocked_by_default": true,
+      "minimum_party_actions": 2,
+      "rewards": [
+        {
+          "type": "resource_reward",
+          "resource": "soul_shards",
+          "amount": 2
+        }
+      ],
+      "unlocks": [
+        "hard"
+      ]
+    },
+    "hard": {
+      "unlocked_by_default": false,
+      "minimum_party_actions": 2,
+      "rewards": [
+        {
+          "type": "resource_reward",
+          "resource": "soul_shards",
+          "amount": 4
+        }
+      ],
+      "unlocks": []
+    }
+  },
+  "difficulty_variants": {
+    "hard": {
+      "mission_kit_remove": [],
+      "extra_encounters": [],
+      "enemy_behavior_overrides": {}
+    }
+  },
+  "unlock": {
+    "optional": false,
+    "requires_completed": [
+      "captain_ship"
+    ],
+    "unlocks": [],
+    "requires_clues": 0
+  },
+  "extraction": {
+    "location_ref": "final_source"
+  },
+  "ending": {
+    "text": "你以自身为资粮，把一切都交给了鬼童。\n灵异时代在你手里被短暂终结，六十年后，会有人再喊出你的名字。\n【结局·第四种存在】达成。",
+    "title": "第四种存在"
+  }
+}

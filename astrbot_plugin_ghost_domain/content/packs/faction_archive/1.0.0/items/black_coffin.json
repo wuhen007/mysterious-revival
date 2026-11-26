@@ -1,0 +1,19 @@
+{
+  "id": "black_coffin",
+  "schema_version": 1,
+  "name": "黑棺",
+  "description": "压制力强于红棺，可阻止复苏；张伯华以它自葬。",
+  "target_types": [
+    "player",
+    "controlled_ghost"
+  ],
+  "uses": 1,
+  "effects": [
+    {
+      "type": "apply_status",
+      "status": "sealed",
+      "turns": 3
+    }
+  ],
+  "canon": "明确"
+}

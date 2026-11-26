@@ -1,0 +1,47 @@
+{
+  "id": "ghost_shadow_full",
+  "schema_version": 1,
+  "name": "完整鬼影",
+  "description": "杨间的第四只鬼，补全后可正面压制鬼域级对手。",
+  "grade": "A",
+  "stats": {
+    "hp": 190,
+    "attack": 24,
+    "defense": 14,
+    "speed": 9
+  },
+  "capture_threshold": 0.1,
+  "capture_difficulty": 0.75,
+  "base_loyalty": 50,
+  "starter_weight": 1,
+  "skills": [
+    {
+      "id": "shadow_devour",
+      "name": "吞影",
+      "type": "attack",
+      "power": 1.5,
+      "cooldown_turns": 2
+    }
+  ],
+  "rules": [
+    {
+      "id": "shadow_invade",
+      "description": "可钻进其他鬼或灵异物品内部进行压制。",
+      "clues": [
+        "影子脱离脚下独立行动",
+        "被自己的影子抓住脚踝"
+      ],
+      "reveal_after": 2,
+      "discovery_san_cost": 5,
+      "counter_method": "以鬼眼压制其反噬。",
+      "counteractions": [
+        "damage_resets_counter"
+      ]
+    }
+  ],
+  "behavior": {
+    "kind": "brute",
+    "target_strategy": "ghost_first",
+    "attack_multiplier": 1.0
+  }
+}

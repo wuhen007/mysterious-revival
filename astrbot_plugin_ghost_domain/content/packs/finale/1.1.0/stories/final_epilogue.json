@@ -1,0 +1,40 @@
+{
+  "id": "final_epilogue",
+  "schema_version": 1,
+  "name": "名字与约定",
+  "description": "终点前留下的两句话。",
+  "domain_ref": "finale",
+  "trigger": {
+    "conditions": []
+  },
+  "nodes": [
+    {
+      "id": "final_name_remembered",
+      "location_ref": "final_source",
+      "text": "孩子又念了一遍你的真名，像把它留给了六十年后的某个人。",
+      "once": true,
+      "conditions": [
+        {
+          "type": "story_flag_matches",
+          "flag": "name_given",
+          "value": true
+        }
+      ],
+      "effects": []
+    },
+    {
+      "id": "final_return_promise",
+      "location_ref": "final_source",
+      "text": "江艳的那句“我等你”在记忆里响起。你知道承诺未必能兑现，但它曾让你记得自己仍有所牵挂。",
+      "once": true,
+      "conditions": [
+        {
+          "type": "story_flag_matches",
+          "flag": "promised_return",
+          "value": true
+        }
+      ],
+      "effects": []
+    }
+  ]
+}

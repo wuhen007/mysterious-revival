@@ -1,0 +1,12 @@
+{
+  "render_max_buttons": {
+    "description": "单条消息最多渲染的回调按钮数（QQ 官方上限 5）",
+    "type": "int",
+    "default": 5
+  },
+  "game_max_ghost_slots": {
+    "description": "新档案的初始驭鬼槽位数（1-6）；后续可用道具/结算奖励扩充",
+    "type": "int",
+    "default": 2
+  }
+}

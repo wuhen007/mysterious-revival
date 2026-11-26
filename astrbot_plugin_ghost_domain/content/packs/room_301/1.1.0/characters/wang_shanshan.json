@@ -1,0 +1,49 @@
+{
+  "id": "wang_shanshan",
+  "schema_version": 1,
+  "name": "王珊珊",
+  "description": "杨间的高中同学，后来的守庙人；体内留有鬼眼烙印。",
+  "domain_ref": "room_301",
+  "location_ref": "building_stairs",
+  "dialogue_nodes": [
+    {
+      "id": "wang_shanshan_first",
+      "text": "王珊珊站在楼道口：“这栋楼的灯，是跟着人亮的。你数到三层就别再往上。”",
+      "conditions": [],
+      "choices": [
+        {
+          "id": "wss_count",
+          "label": "记下楼层规律",
+          "text": "你数着台阶，第三层之后确实回到了原点。",
+          "effects": [
+            {
+              "type": "reveal_rule",
+              "rule_ref": "multi_ghost"
+            },
+            {
+              "type": "set_story_flag",
+              "flag": "floor_counted",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": "wss_mark",
+          "label": "请她留下鬼眼烙印",
+          "text": "她把掌心贴在你额头上，一阵刺痛。",
+          "effects": [
+            {
+              "type": "san_change",
+              "amount": -5
+            },
+            {
+              "type": "item_add",
+              "item_ref": "red_paper",
+              "quantity": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

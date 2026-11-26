@@ -1,0 +1,29 @@
+{
+  "id": "room_mirror",
+  "schema_version": 1,
+  "name": "镜中无床",
+  "description": "镜子里的房间少了一张床。",
+  "domain_ref": "room_301",
+  "trigger": {
+    "conditions": []
+  },
+  "nodes": [
+    {
+      "id": "room_mirror",
+      "location_ref": "room_bedroom",
+      "text": "镜子里的房间少了一张床，多了一个站着的人。",
+      "once": true,
+      "conditions": [],
+      "effects": [
+        {
+          "type": "san_change",
+          "amount": -8
+        },
+        {
+          "type": "reveal_rule",
+          "rule_ref": "multi_ghost"
+        }
+      ]
+    }
+  ]
+}

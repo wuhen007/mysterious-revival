@@ -1,0 +1,47 @@
+{
+  "id": "ghost_self_eater",
+  "schema_version": 1,
+  "name": "食鬼者",
+  "description": "张雷的鬼，极少数能以鬼养鬼。",
+  "grade": "A",
+  "stats": {
+    "hp": 140,
+    "attack": 22,
+    "defense": 10,
+    "speed": 7
+  },
+  "capture_threshold": 0.2,
+  "capture_difficulty": 0.6,
+  "base_loyalty": 50,
+  "starter_weight": 1,
+  "skills": [
+    {
+      "id": "eat_ghost",
+      "name": "吞鬼",
+      "type": "attack",
+      "power": 1.35,
+      "cooldown_turns": 2
+    }
+  ],
+  "rules": [
+    {
+      "id": "eat_absorb",
+      "description": "吞食厉鬼并据其力量为己有。",
+      "clues": [
+        "他嘴里有鬼的碎片",
+        "他的影子多出好几只手"
+      ],
+      "reveal_after": 2,
+      "discovery_san_cost": 5,
+      "counter_method": "吃多了会失控；对高等级鬼无法消化。",
+      "counteractions": [
+        "damage_resets_counter"
+      ]
+    }
+  ],
+  "behavior": {
+    "kind": "brute",
+    "target_strategy": "ghost_first",
+    "attack_multiplier": 1.0
+  }
+}

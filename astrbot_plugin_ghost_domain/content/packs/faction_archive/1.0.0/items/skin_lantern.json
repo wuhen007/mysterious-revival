@@ -1,0 +1,18 @@
+{
+  "id": "skin_lantern",
+  "schema_version": 1,
+  "name": "人皮灯笼",
+  "description": "以人皮为罩的灯，可照出鬼的真身。",
+  "target_types": [
+    "ghost"
+  ],
+  "uses": 1,
+  "effects": [
+    {
+      "type": "illuminate",
+      "turns": 3,
+      "skip_actions": 1,
+      "damage_multiplier": 1.5
+    }
+  ]
+}

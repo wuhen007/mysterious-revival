@@ -1,0 +1,48 @@
+{
+  "id": "ghost_child",
+  "schema_version": 1,
+  "name": "鬼童（杨戬）",
+  "description": "继承饿死鬼能力与杨间一切的第四种存在，六十年后以杨戬之名归来。",
+  "grade": "S",
+  "stats": {
+    "hp": 360,
+    "attack": 40,
+    "defense": 24,
+    "speed": 10
+  },
+  "capture_threshold": 0.05,
+  "capture_difficulty": 0.95,
+  "base_loyalty": 50,
+  "starter_weight": 1,
+  "skills": [
+    {
+      "id": "child_call",
+      "name": "名讳",
+      "type": "attack",
+      "power": 1.8,
+      "cooldown_turns": 3
+    }
+  ],
+  "rules": [
+    {
+      "id": "name_awaken",
+      "description": "被封在黄金雕像内的鬼域世界，只有有人呼唤其名时才会苏醒。",
+      "clues": [
+        "有人在梦里叫你的名字",
+        "黄金雕像内传来心跳"
+      ],
+      "reveal_after": 2,
+      "discovery_san_cost": 5,
+      "counter_method": "不可力敌；只能在其苏醒前完成封印或改变因果。",
+      "counteractions": [
+        "damage_resets_counter"
+      ],
+      "story_flag_on_counteraction": "child_countered"
+    }
+  ],
+  "behavior": {
+    "kind": "brute",
+    "target_strategy": "random",
+    "attack_multiplier": 1.2
+  }
+}

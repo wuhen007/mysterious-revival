@@ -1,0 +1,191 @@
+{
+  "id": "faction_headquarters",
+  "schema_version": 1,
+  "name": "国际刑警总部",
+  "aliases": [
+    "国际刑警总部"
+  ],
+  "description": "地下基地、钢门与黄金夹层。十二队长的会议室下面就是灵异物品库。",
+  "chapter": 91,
+  "supported_modes": [
+    "solo",
+    "party"
+  ],
+  "party_size": {
+    "min": 2,
+    "max": 4
+  },
+  "mission_kit": [
+    {
+      "item_ref": "holy_water",
+      "quantity": 1
+    },
+    {
+      "item_ref": "ghost_candle",
+      "quantity": 1
+    },
+    {
+      "item_ref": "gold_box",
+      "quantity": 1
+    },
+    {
+      "item_ref": "ghost_camera",
+      "quantity": 1
+    }
+  ],
+  "nodes": [
+    {
+      "id": "hq_gate",
+      "name": "总部大门",
+      "tags": [
+        "入口"
+      ],
+      "environment": {
+        "light": "dark",
+        "distance": "close"
+      },
+      "clues": [
+        "门禁识别出你，却没有记录你进来过。"
+      ]
+    },
+    {
+      "id": "hq_hall",
+      "name": "会议厅",
+      "tags": [
+        "线索"
+      ],
+      "environment": {
+        "light": "dark",
+        "distance": "close"
+      },
+      "clues": [
+        "长桌上摆着十二把椅子，只有十把有人坐过的痕迹。"
+      ]
+    },
+    {
+      "id": "hq_vault",
+      "name": "灵异物品库",
+      "tags": [
+        "遭遇"
+      ],
+      "environment": {
+        "light": "dark",
+        "distance": "close"
+      },
+      "clues": [
+        "001 号房的钢门虚掩着，里面少了一件东西。"
+      ]
+    },
+    {
+      "id": "hq_deep",
+      "name": "最深处",
+      "tags": [
+        "撤离"
+      ],
+      "environment": {
+        "light": "dim",
+        "distance": "far"
+      },
+      "clues": [
+        "最深处的门用黄金锁链锁死，链子松了一扣。"
+      ]
+    }
+  ],
+  "encounters": [
+    {
+      "id": "hq_vault",
+      "location_ref": "hq_vault",
+      "enemy_refs": [
+        {
+          "ghost_ref": "ghost_hand",
+          "quantity": 1
+        },
+        {
+          "ghost_ref": "door_opener",
+          "quantity": 1
+        }
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "id": "faction_headquarters_rule",
+      "description": "发现鬼手的杀人规律。",
+      "conditions": [
+        {
+          "type": "rule_discovered",
+          "rule_ref": "suppress_three"
+        }
+      ]
+    },
+    {
+      "id": "faction_headquarters_clues",
+      "description": "调查至少 2 条地点线索。",
+      "conditions": [
+        {
+          "type": "counter_at_least",
+          "counter": "clues_found",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "id": "faction_headquarters_exit",
+      "description": "抵达撤离点。",
+      "conditions": [
+        {
+          "type": "location_is",
+          "location_ref": "hq_deep"
+        }
+      ]
+    }
+  ],
+  "difficulty_levels": {
+    "normal": {
+      "unlocked_by_default": true,
+      "minimum_party_actions": 2,
+      "rewards": [
+        {
+          "type": "resource_reward",
+          "resource": "soul_shards",
+          "amount": 2
+        }
+      ],
+      "unlocks": [
+        "hard"
+      ]
+    },
+    "hard": {
+      "unlocked_by_default": false,
+      "minimum_party_actions": 2,
+      "rewards": [
+        {
+          "type": "resource_reward",
+          "resource": "soul_shards",
+          "amount": 4
+        }
+      ],
+      "unlocks": []
+    }
+  },
+  "difficulty_variants": {
+    "hard": {
+      "mission_kit_remove": [],
+      "extra_encounters": [],
+      "enemy_behavior_overrides": {}
+    }
+  },
+  "unlock": {
+    "optional": true,
+    "requires_completed": [],
+    "unlocks": [],
+    "requires_clues": 0
+  },
+  "extraction": {
+    "location_ref": "hq_deep"
+  },
+  "ending": {
+    "text": "你从总部物品库带出了一件不该带走的东西。",
+    "title": "第四种存在"
+  }
+}

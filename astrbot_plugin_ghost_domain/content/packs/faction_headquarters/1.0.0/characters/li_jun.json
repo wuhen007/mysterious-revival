@@ -1,0 +1,45 @@
+{
+  "id": "li_jun",
+  "schema_version": 1,
+  "name": "李军",
+  "description": "十二队长之一，代号鬼火；碧绿鬼火可焚烧灵异，也能形成鬼域。",
+  "domain_ref": "faction_headquarters",
+  "location_ref": "hq_hall",
+  "dialogue_nodes": [
+    {
+      "id": "li_jun_first",
+      "text": "李军把打火机在指间转了一圈：“我的火能烧灵异，也能烧到你。想清楚再靠近。”",
+      "conditions": [],
+      "choices": [
+        {
+          "id": "lj_fire",
+          "label": "请他在走廊留一道火线",
+          "text": "碧绿的火焰沿着墙根铺开，暂时封住了走廊。",
+          "effects": [
+            {
+              "type": "item_add",
+              "item_ref": "oil_lamp",
+              "quantity": 1
+            },
+            {
+              "type": "set_story_flag",
+              "flag": "fire_line",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": "lj_cost",
+          "label": "问鬼火的代价",
+          "text": "“烧得越多，复苏越快。就这么简单。”",
+          "effects": [
+            {
+              "type": "reveal_rule",
+              "rule_ref": "fire_domain"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

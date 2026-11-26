@@ -1,0 +1,44 @@
+{
+  "id": "xiong_wenwen",
+  "schema_version": 1,
+  "name": "熊文文",
+  "description": "代号灵童；能预知未来一小时，但只能预知、不能改变。",
+  "domain_ref": "training_base",
+  "location_ref": "base_dorm",
+  "dialogue_nodes": [
+    {
+      "id": "xiong_wenwen_first",
+      "text": "小孩坐在床沿晃腿：“我看见了。你会在这里死一次，但不是今天。”",
+      "conditions": [],
+      "choices": [
+        {
+          "id": "xw_foresee",
+          "label": "请他预知接下来的路",
+          "text": "他闭上眼，再睁开时脸色白了一层。",
+          "effects": [
+            {
+              "type": "san_change",
+              "amount": -8
+            },
+            {
+              "type": "set_story_flag",
+              "flag": "foreseen",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": "xw_limit",
+          "label": "问预知的限制",
+          "text": "“只能看，不能改。改了，下一次就更难看。”",
+          "effects": [
+            {
+              "type": "reveal_rule",
+              "rule_ref": "foresee_hour"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

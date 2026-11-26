@@ -1,0 +1,226 @@
+{
+  "id": "kaisa_hotel",
+  "schema_version": 1,
+  "name": "中山市·凯撒酒店",
+  "aliases": [
+    "凯撒酒店"
+  ],
+  "description": "酒店走廊上有一串湿脚印，踩中的人会被柴刀砍成两段。",
+  "chapter": 6,
+  "supported_modes": [
+    "solo",
+    "party"
+  ],
+  "party_size": {
+    "min": 2,
+    "max": 4
+  },
+  "mission_kit": [
+    {
+      "item_ref": "holy_water",
+      "quantity": 1
+    },
+    {
+      "item_ref": "ghost_candle",
+      "quantity": 1
+    },
+    {
+      "item_ref": "corpse_shroud",
+      "quantity": 1
+    }
+  ],
+  "nodes": [
+    {
+      "id": "hotel_lobby",
+      "name": "大堂",
+      "tags": [
+        "入口"
+      ],
+      "environment": {
+        "light": "dark",
+        "distance": "close"
+      },
+      "clues": [
+        "前台登记簿最后一页写着你的名字。"
+      ]
+    },
+    {
+      "id": "hotel_corridor",
+      "name": "客房走廊",
+      "tags": [
+        "遭遇"
+      ],
+      "environment": {
+        "light": "dark",
+        "distance": "close"
+      },
+      "clues": [
+        "地毯上有一串湿脚印，从走廊这头走到那头。"
+      ]
+    },
+    {
+      "id": "hotel_room",
+      "name": "客房",
+      "tags": [
+        "遭遇"
+      ],
+      "environment": {
+        "light": "dark",
+        "distance": "close"
+      },
+      "clues": [
+        "房间里的报纸日期是明天，头版是你。"
+      ]
+    },
+    {
+      "id": "hotel_kitchen",
+      "name": "后厨",
+      "tags": [
+        "线索"
+      ],
+      "environment": {
+        "light": "dark",
+        "distance": "close"
+      },
+      "clues": [
+        "后厨的钩子上挂着不属于任何动物的肉。"
+      ]
+    },
+    {
+      "id": "hotel_backdoor",
+      "name": "后门",
+      "tags": [
+        "撤离"
+      ],
+      "environment": {
+        "light": "dim",
+        "distance": "far"
+      },
+      "clues": [
+        "后门通向垃圾站，雨声盖住了脚步声。"
+      ]
+    }
+  ],
+  "encounters": [
+    {
+      "id": "hotel_chopper",
+      "location_ref": "hotel_corridor",
+      "enemy_refs": [
+        {
+          "ghost_ref": "chopper_ghost",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "hotel_news",
+      "location_ref": "hotel_room",
+      "enemy_refs": [
+        {
+          "ghost_ref": "ghost_newspaper",
+          "quantity": 1
+        },
+        {
+          "ghost_ref": "ghost_voice",
+          "quantity": 1
+        }
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "id": "kaisa_hotel_rule",
+      "description": "发现砍人鬼的杀人规律。",
+      "conditions": [
+        {
+          "type": "rule_discovered",
+          "rule_ref": "footprint"
+        }
+      ]
+    },
+    {
+      "id": "kaisa_hotel_clues",
+      "description": "调查至少 2 条地点线索。",
+      "conditions": [
+        {
+          "type": "counter_at_least",
+          "counter": "clues_found",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "id": "kaisa_hotel_exit",
+      "description": "抵达撤离点。",
+      "conditions": [
+        {
+          "type": "location_is",
+          "location_ref": "hotel_backdoor"
+        }
+      ]
+    }
+  ],
+  "difficulty_levels": {
+    "normal": {
+      "unlocked_by_default": true,
+      "minimum_party_actions": 2,
+      "rewards": [
+        {
+          "type": "resource_reward",
+          "resource": "soul_shards",
+          "amount": 2
+        }
+      ],
+      "unlocks": [
+        "hard"
+      ]
+    },
+    "hard": {
+      "unlocked_by_default": false,
+      "minimum_party_actions": 2,
+      "rewards": [
+        {
+          "type": "resource_reward",
+          "resource": "soul_shards",
+          "amount": 4
+        }
+      ],
+      "unlocks": []
+    }
+  },
+  "difficulty_variants": {
+    "hard": {
+      "mission_kit_remove": [],
+      "extra_encounters": [
+        {
+          "id": "hotel_news_hard",
+          "location_ref": "hotel_room",
+          "enemy_refs": [
+            {
+              "ghost_ref": "ghost_newspaper",
+              "quantity": 1
+            },
+            {
+              "ghost_ref": "ghost_voice",
+              "quantity": 1
+            }
+          ]
+        }
+      ],
+      "enemy_behavior_overrides": {}
+    }
+  },
+  "unlock": {
+    "optional": false,
+    "requires_completed": [
+      "ghost_bus"
+    ],
+    "unlocks": [
+      "training_base"
+    ],
+    "requires_clues": 0
+  },
+  "extraction": {
+    "location_ref": "hotel_backdoor"
+  }
+}

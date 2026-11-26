@@ -1,0 +1,40 @@
+{
+  "id": "tong_qian",
+  "schema_version": 1,
+  "name": "童倩",
+  "description": "代号鬼脸；哭笑达到界限即可杀人，第三层鬼域仍挡不住。",
+  "domain_ref": "kaisa_hotel",
+  "location_ref": "hotel_lobby",
+  "dialogue_nodes": [
+    {
+      "id": "tong_qian_first",
+      "text": "童倩戴着口罩，声音闷闷的：“别让我笑，也别让我哭。你自己也别出声。”",
+      "conditions": [],
+      "choices": [
+        {
+          "id": "tq_warn",
+          "label": "请她控制情绪",
+          "text": "她点头，把口罩又按紧了一些。",
+          "effects": [
+            {
+              "type": "set_story_flag",
+              "flag": "tong_qian_calm",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": "tq_rule",
+          "label": "问鬼脸的破解方式",
+          "text": "“层数。一层挡不住就两层，两层不够就三层。总有挡得住的时候。”",
+          "effects": [
+            {
+              "type": "reveal_rule",
+              "rule_ref": "cry_laugh"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

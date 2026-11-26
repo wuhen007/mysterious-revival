@@ -1,0 +1,12 @@
+{
+  "pack_id": "seven_school",
+  "version": "1.0.0",
+  "requires_engine_version": ">=0.2.0",
+  "name": "七中学校序章",
+  "description": "七中学校序章规则与内容。",
+  "starter_ghost_pool": [
+    {"ghost_ref": "door_knocker", "weight": 1},
+    {"ghost_ref": "ghost_baby", "weight": 1},
+    {"ghost_ref": "sick_ghost", "weight": 1}
+  ]
+}

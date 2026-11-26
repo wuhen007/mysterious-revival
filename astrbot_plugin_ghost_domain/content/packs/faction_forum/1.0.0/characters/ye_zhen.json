@@ -1,0 +1,45 @@
+{
+  "id": "ye_zhen",
+  "schema_version": 1,
+  "name": "叶真",
+  "description": "灵异论坛会长，代号替死鬼；后期成为抓鬼人。",
+  "domain_ref": "faction_forum",
+  "location_ref": "forum_desk",
+  "dialogue_nodes": [
+    {
+      "id": "ye_zhen_first",
+      "text": "叶真把排行榜转过来给你看：“第一名的照片是空的。你猜为什么？”",
+      "conditions": [],
+      "choices": [
+        {
+          "id": "yz_rule",
+          "label": "问替死的次数",
+          "text": "“有限。用完就没了，跟你们一样。”",
+          "effects": [
+            {
+              "type": "reveal_rule",
+              "rule_ref": "substitute_death"
+            }
+          ]
+        },
+        {
+          "id": "yz_join",
+          "label": "接受论坛的代号评定",
+          "text": "他提笔在榜上写下你的代号。",
+          "effects": [
+            {
+              "type": "set_story_flag",
+              "flag": "forum_ranked",
+              "value": true
+            },
+            {
+              "type": "resource_reward",
+              "resource": "soul_shards",
+              "amount": 2
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

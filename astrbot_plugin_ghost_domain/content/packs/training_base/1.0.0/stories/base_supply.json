@@ -1,0 +1,26 @@
+{
+  "id": "base_supply",
+  "schema_version": 1,
+  "name": "地下物资柜",
+  "description": "应急物资柜还没被打开。",
+  "domain_ref": "training_base",
+  "trigger": {
+    "conditions": []
+  },
+  "nodes": [
+    {
+      "id": "base_supply",
+      "location_ref": "base_dorm",
+      "text": "宿舍尽头的应急柜里躺着两支封印钉。",
+      "once": true,
+      "conditions": [],
+      "effects": [
+        {
+          "type": "item_add",
+          "item_ref": "coffin_nail",
+          "quantity": 2
+        }
+      ]
+    }
+  ]
+}

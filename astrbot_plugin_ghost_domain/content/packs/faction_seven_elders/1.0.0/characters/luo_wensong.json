@@ -1,0 +1,55 @@
+{
+  "id": "luo_wensong",
+  "schema_version": 1,
+  "name": "罗文松",
+  "description": "敲门鬼的本体，鬼邮局创建者与首任管理者；门系必死规律可无限叠加。",
+  "domain_ref": "faction_seven_elders",
+  "location_ref": "post_office_ruin",
+  "dialogue_nodes": [
+    {
+      "id": "luo_wensong_first",
+      "text": "老人把一封信放在柜台上：“邮局不是邮局，是筛子。你们都是筛下来的。”",
+      "conditions": [],
+      "choices": [
+        {
+          "id": "lws_gate",
+          "label": "请教门系规律",
+          "text": "“敲门、开门、熄灯。三件事，做到一件就够了。”",
+          "effects": [
+            {
+              "type": "unlock_ability",
+              "ability_ref": "legacy_gate"
+            },
+            {
+              "type": "reveal_rule",
+              "rule_ref": "three_knocks"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "story_flag_matches",
+              "flag": "clue_luo_wensong",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": "lws_letter",
+          "label": "收下那封信",
+          "text": "信封上没有邮戳，收件人一栏是你的名字。",
+          "effects": [
+            {
+              "type": "item_add",
+              "item_ref": "lacquer_box",
+              "quantity": 1
+            },
+            {
+              "type": "san_change",
+              "amount": -5
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

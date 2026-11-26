@@ -1,0 +1,16 @@
+{
+  "pack_id": "faction_taiping",
+  "version": "1.0.0",
+  "schema_version": 1,
+  "requires_engine_version": ">=0.3.0",
+  "name": "太平古镇·鬼街",
+  "description": "只有该去的人才能进的集镇。鬼钱用一张少一张。",
+  "chapter": 97,
+  "optional": true,
+  "starter_ghost_pool": [
+    {
+      "ghost_ref": "paper_man",
+      "weight": 1
+    }
+  ]
+}

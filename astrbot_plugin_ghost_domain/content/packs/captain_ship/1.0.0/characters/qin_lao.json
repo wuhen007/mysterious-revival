@@ -1,0 +1,44 @@
+{
+  "id": "qin_lao",
+  "schema_version": 1,
+  "name": "秦老",
+  "description": "天生驭鬼者，娘胎里鬼已死机；总部的镇场底牌。",
+  "domain_ref": "captain_ship",
+  "location_ref": "ship_dock",
+  "dialogue_nodes": [
+    {
+      "id": "qin_lao_first",
+      "text": "秦老坐在码头的石阶上，像个普通老人：“船我见过。上一次，我没上去。”",
+      "conditions": [],
+      "choices": [
+        {
+          "id": "ql_ship",
+          "label": "问船的规则",
+          "text": "“船就是鬼域。上了船，就得按船的规矩来。”",
+          "effects": [
+            {
+              "type": "reveal_rule",
+              "rule_ref": "ship_domain"
+            }
+          ]
+        },
+        {
+          "id": "ql_hand",
+          "label": "请他出手一次",
+          "text": "他抬起手，又放下：“我出手，就回不来了。”",
+          "effects": [
+            {
+              "type": "set_story_flag",
+              "flag": "qin_lao_ready",
+              "value": true
+            },
+            {
+              "type": "san_change",
+              "amount": 10
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

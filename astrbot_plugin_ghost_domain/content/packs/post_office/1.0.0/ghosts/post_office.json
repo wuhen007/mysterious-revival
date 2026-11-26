@@ -1,0 +1,48 @@
+{
+  "id": "post_office",
+  "schema_version": 1,
+  "name": "鬼邮局",
+  "description": "罗文松创建的五层 35 间体系型灵异，豢养信使为鬼送信；晚六点熄灯，未回房间者死。",
+  "grade": "S",
+  "stats": {
+    "hp": 190,
+    "attack": 16,
+    "defense": 14,
+    "speed": 3
+  },
+  "capture_threshold": 0.1,
+  "capture_difficulty": 0.7,
+  "base_loyalty": 50,
+  "starter_weight": 1,
+  "skills": [
+    {
+      "id": "mail_summon",
+      "name": "送信令",
+      "type": "attack",
+      "power": 1.25,
+      "cooldown_turns": 2
+    }
+  ],
+  "rules": [
+    {
+      "id": "deliver_letter",
+      "description": "成为信使后必须按时把信送到，晚六点熄灯未回房间者死。",
+      "clues": [
+        "床头柜上出现没有邮戳的信",
+        "走廊的灯在六点整同时熄灭"
+      ],
+      "reveal_after": 2,
+      "discovery_san_cost": 5,
+      "counter_method": "撕信可拒绝任务但下次更凶险；五楼楼梯可脱离信使身份。",
+      "counteractions": [
+        "damage_resets_counter"
+      ],
+      "story_flag_on_counteraction": "post_countered"
+    }
+  ],
+  "behavior": {
+    "kind": "brute",
+    "target_strategy": "weakest",
+    "attack_multiplier": 1.0
+  }
+}

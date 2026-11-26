@@ -1,0 +1,47 @@
+{
+  "id": "ghost_ram",
+  "schema_version": 1,
+  "name": "鬼撞人",
+  "description": "方铜的鬼，撞击杀人。",
+  "grade": "B",
+  "stats": {
+    "hp": 130,
+    "attack": 24,
+    "defense": 8,
+    "speed": 8
+  },
+  "capture_threshold": 0.2,
+  "capture_difficulty": 0.55,
+  "base_loyalty": 50,
+  "starter_weight": 1,
+  "skills": [
+    {
+      "id": "ram_charge",
+      "name": "冲撞",
+      "type": "attack",
+      "power": 1.4,
+      "cooldown_turns": 1
+    }
+  ],
+  "rules": [
+    {
+      "id": "ram_bones",
+      "description": "撞击杀人，被撞者骨骼尽碎。",
+      "clues": [
+        "走廊尽头有东西开始加速",
+        "地面在轻微震动"
+      ],
+      "reveal_after": 2,
+      "discovery_san_cost": 5,
+      "counter_method": "需要移动空间；限制其助跑距离。",
+      "counteractions": [
+        "damage_resets_counter"
+      ]
+    }
+  ],
+  "behavior": {
+    "kind": "brute",
+    "target_strategy": "weakest",
+    "attack_multiplier": 1.0
+  }
+}

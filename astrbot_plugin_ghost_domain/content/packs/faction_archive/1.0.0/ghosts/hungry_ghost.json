@@ -1,0 +1,49 @@
+{
+  "id": "hungry_ghost",
+  "schema_version": 1,
+  "name": "饿死鬼",
+  "description": "周正死后尸体中的鬼婴逃出，成长为四阶段源头鬼；第四阶段条件原文未明示（待补充）。",
+  "grade": "S",
+  "stats": {
+    "hp": 320,
+    "attack": 30,
+    "defense": 18,
+    "speed": 8
+  },
+  "capture_threshold": 0.1,
+  "capture_difficulty": 0.9,
+  "base_loyalty": 50,
+  "starter_weight": 1,
+  "skills": [
+    {
+      "id": "hunger_devour",
+      "name": "饥饿吞噬",
+      "type": "attack",
+      "power": 1.6,
+      "cooldown_turns": 2
+    }
+  ],
+  "rules": [
+    {
+      "id": "hungry_phases",
+      "description": "睁眼即被杀、触碰即被杀、出声即被杀，阶段条件单独生效。",
+      "clues": [
+        "婴儿的哭声忽远忽近",
+        "被它看过的人当场倒下",
+        "说话的人接连消失"
+      ],
+      "reveal_after": 3,
+      "discovery_san_cost": 5,
+      "counter_method": "鬼烛烛光范围内可暂时不被袭击；棺材钉可将其钉住。",
+      "counteractions": [
+        "damage_resets_counter"
+      ],
+      "story_flag_on_counteraction": "hungry_countered"
+    }
+  ],
+  "behavior": {
+    "kind": "brute",
+    "target_strategy": "weakest",
+    "attack_multiplier": 1.1
+  }
+}

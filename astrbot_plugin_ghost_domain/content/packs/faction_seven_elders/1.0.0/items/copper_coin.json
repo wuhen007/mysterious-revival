@@ -1,0 +1,18 @@
+{
+  "id": "copper_coin",
+  "schema_version": 1,
+  "name": "铜钱",
+  "description": "引鬼、干扰；连船长也难以避免，仅复苏的张洞可无视。",
+  "target_types": [
+    "ghost"
+  ],
+  "uses": 1,
+  "effects": [
+    {
+      "type": "apply_status",
+      "status": "interfere",
+      "turns": 1
+    }
+  ],
+  "canon": "明确"
+}

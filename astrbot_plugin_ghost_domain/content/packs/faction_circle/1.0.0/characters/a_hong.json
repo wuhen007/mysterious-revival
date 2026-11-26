@@ -1,0 +1,44 @@
+{
+  "id": "a_hong",
+  "schema_version": 1,
+  "name": "阿红",
+  "description": "代号鬼妆；用妆容把一个人画成另一个人，从而彻底替代。",
+  "domain_ref": "faction_circle",
+  "location_ref": "circle_room",
+  "dialogue_nodes": [
+    {
+      "id": "a_hong_first",
+      "text": "阿红对着镜子补妆，镜子里的人比她慢了半拍：“你要不要也换一张脸？”",
+      "conditions": [],
+      "choices": [
+        {
+          "id": "ah_face",
+          "label": "请她替你改容",
+          "text": "她替你描了几笔，你觉得镜子里的人陌生了一点。",
+          "effects": [
+            {
+              "type": "san_change",
+              "amount": -5
+            },
+            {
+              "type": "set_story_flag",
+              "flag": "face_changed",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": "ah_rule",
+          "label": "问鬼妆的破绽",
+          "text": "“妆容花了，人就没了。很简单。”",
+          "effects": [
+            {
+              "type": "reveal_rule",
+              "rule_ref": "paint_person"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

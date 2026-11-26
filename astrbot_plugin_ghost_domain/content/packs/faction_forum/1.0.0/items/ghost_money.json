@@ -1,0 +1,16 @@
+{
+  "id": "ghost_money",
+  "schema_version": 1,
+  "name": "鬼钱",
+  "description": "太平古镇鬼街通用货币，可买通厉鬼（交易系统待补充）。",
+  "target_types": [
+    "player"
+  ],
+  "uses": 1,
+  "effects": [
+    {
+      "type": "san_change",
+      "amount": 5
+    }
+  ]
+}

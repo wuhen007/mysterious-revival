@@ -1,0 +1,45 @@
+{
+  "id": "zhao_hunren",
+  "schema_version": 1,
+  "name": "招魂人",
+  "description": "太平古镇的接引者，能招来过去与未来的人。",
+  "domain_ref": "ghost_lake",
+  "location_ref": "town_street",
+  "dialogue_nodes": [
+    {
+      "id": "zhao_hunren_first",
+      "text": "招魂人把三炷香插进香炉：“你要见的人，不一定还认得你。”",
+      "conditions": [],
+      "choices": [
+        {
+          "id": "zhr_ask",
+          "label": "问民国的失败",
+          "text": "“他们只是把灵异压下去了。压，不等于解决。”",
+          "effects": [
+            {
+              "type": "set_story_flag",
+              "flag": "republic_truth",
+              "value": true
+            },
+            {
+              "type": "san_change",
+              "amount": 10
+            }
+          ]
+        },
+        {
+          "id": "zhr_incense",
+          "label": "换一炷招魂香",
+          "text": "他用一张鬼钱换走了你的一样东西。",
+          "effects": [
+            {
+              "type": "item_add",
+              "item_ref": "soul_incense",
+              "quantity": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

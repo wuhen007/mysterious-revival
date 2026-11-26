@@ -1,0 +1,19 @@
+{
+  "id": "gold_box",
+  "schema_version": 1,
+  "name": "黄金制品",
+  "description": "唯一不受鬼力量影响的物质，可封印、隔绝、阻断。",
+  "target_types": [
+    "player",
+    "ghost",
+    "controlled_ghost"
+  ],
+  "uses": 1,
+  "effects": [
+    {
+      "type": "apply_status",
+      "status": "sealed",
+      "turns": 3
+    }
+  ]
+}

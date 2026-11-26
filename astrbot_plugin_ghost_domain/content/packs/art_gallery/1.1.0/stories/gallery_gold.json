@@ -1,0 +1,58 @@
+{
+  "id": "gallery_gold",
+  "schema_version": 1,
+  "name": "黄金箔",
+  "description": "后门的墙上贴着黄金箔。",
+  "domain_ref": "art_gallery",
+  "trigger": {
+    "conditions": []
+  },
+  "nodes": [
+    {
+      "id": "gallery_gold",
+      "location_ref": "gallery_exit",
+      "text": "你揭下一片黄金箔，背面刻着一行外文。",
+      "once": true,
+      "conditions": [],
+      "effects": [
+        {
+          "type": "item_add",
+          "item_ref": "gold_box",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "gallery_recall_hint",
+      "location_ref": "gallery_storage",
+      "text": "你把目光移开，不再回忆画中细节。李阳的提醒在耳边响起：先找出规律，再用黄金封住它。",
+      "once": true,
+      "conditions": [
+        {
+          "type": "rule_discovered",
+          "rule_ref": "recall_painting"
+        }
+      ],
+      "effects": []
+    },
+    {
+      "id": "gallery_countered_reward",
+      "location_ref": "gallery_exit",
+      "text": "黄金箔封住画框后，画中人影终于停下。撤离前，你在箔纸背面发现一枚魂晶。",
+      "once": true,
+      "conditions": [
+        {
+          "type": "rule_countered",
+          "rule_ref": "recall_painting"
+        }
+      ],
+      "effects": [
+        {
+          "type": "resource_reward",
+          "resource": "soul_shards",
+          "amount": 1
+        }
+      ]
+    }
+  ]
+}

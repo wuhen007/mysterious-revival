@@ -1,0 +1,47 @@
+{
+  "id": "ghost_newspaper",
+  "schema_version": 1,
+  "name": "鬼报纸",
+  "description": "篡改记忆，可制造虚假共识。",
+  "grade": "B",
+  "stats": {
+    "hp": 95,
+    "attack": 10,
+    "defense": 6,
+    "speed": 6
+  },
+  "capture_threshold": 0.25,
+  "capture_difficulty": 0.55,
+  "base_loyalty": 50,
+  "starter_weight": 1,
+  "skills": [
+    {
+      "id": "news_smother",
+      "name": "覆面",
+      "type": "attack",
+      "power": 1.2,
+      "cooldown_turns": 2
+    }
+  ],
+  "rules": [
+    {
+      "id": "memory_edit",
+      "description": "被报纸裹脸会窒息，被影响者会记得从未发生的事。",
+      "clues": [
+        "前台的报纸日期是明天",
+        "同伴坚称昨晚发生过另一件事"
+      ],
+      "reveal_after": 2,
+      "discovery_san_cost": 5,
+      "counter_method": "对意志坚定者效果有限；篡改有痕迹可查。",
+      "counteractions": [
+        "damage_resets_counter"
+      ]
+    }
+  ],
+  "behavior": {
+    "kind": "brute",
+    "target_strategy": "weakest",
+    "attack_multiplier": 1.0
+  }
+}

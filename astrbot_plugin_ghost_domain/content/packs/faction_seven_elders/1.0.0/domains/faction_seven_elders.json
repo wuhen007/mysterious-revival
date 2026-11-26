@@ -1,0 +1,233 @@
+{
+  "id": "faction_seven_elders",
+  "schema_version": 1,
+  "name": "七老祠堂·终局前传",
+  "aliases": [
+    "终局前传"
+  ],
+  "description": "七个人，七种把灵异关回去的办法。他们没能根治，只把债推给了后人。",
+  "chapter": 97,
+  "supported_modes": [
+    "solo",
+    "party"
+  ],
+  "party_size": {
+    "min": 2,
+    "max": 4
+  },
+  "mission_kit": [
+    {
+      "item_ref": "holy_water",
+      "quantity": 1
+    },
+    {
+      "item_ref": "ghost_candle",
+      "quantity": 1
+    },
+    {
+      "item_ref": "gold_box",
+      "quantity": 1
+    },
+    {
+      "item_ref": "copper_coin",
+      "quantity": 1
+    },
+    {
+      "item_ref": "medicine_box",
+      "quantity": 1
+    }
+  ],
+  "nodes": [
+    {
+      "id": "elder_hall",
+      "name": "牌位厅",
+      "tags": [
+        "入口"
+      ],
+      "environment": {
+        "light": "dark",
+        "distance": "close"
+      },
+      "clues": [
+        "七块牌位，六块有名字，最左一块是空白的。"
+      ]
+    },
+    {
+      "id": "herb_shop",
+      "name": "药铺",
+      "tags": [
+        "线索"
+      ],
+      "environment": {
+        "light": "dark",
+        "distance": "close"
+      },
+      "clues": [
+        "药柜的抽屉全被拉开，只剩最下面一格是锁着的。"
+      ]
+    },
+    {
+      "id": "post_office_ruin",
+      "name": "邮局旧址",
+      "tags": [
+        "线索"
+      ],
+      "environment": {
+        "light": "dark",
+        "distance": "close"
+      },
+      "clues": [
+        "墙上还留着六点熄灯的告示，墨迹是新的。"
+      ]
+    },
+    {
+      "id": "graveyard",
+      "name": "坟场",
+      "tags": [
+        "遭遇"
+      ],
+      "environment": {
+        "light": "dark",
+        "distance": "close"
+      },
+      "clues": [
+        "坟头没有碑，土却是新翻的。"
+      ]
+    },
+    {
+      "id": "manor_shadow",
+      "name": "古宅影",
+      "tags": [
+        "遭遇"
+      ],
+      "environment": {
+        "light": "dark",
+        "distance": "close"
+      },
+      "clues": [
+        "诡林的每一棵树都朝着同一个方向弯腰。"
+      ]
+    },
+    {
+      "id": "back_door",
+      "name": "后门",
+      "tags": [
+        "撤离"
+      ],
+      "environment": {
+        "light": "lit",
+        "distance": "far"
+      },
+      "clues": [
+        "后门外是公路，路灯亮着。"
+      ]
+    }
+  ],
+  "encounters": [
+    {
+      "id": "seven_graveyard",
+      "location_ref": "graveyard",
+      "enemy_refs": [
+        {
+          "ghost_ref": "grave_field",
+          "quantity": 1
+        },
+        {
+          "ghost_ref": "meng_clone",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "seven_manor",
+      "location_ref": "manor_shadow",
+      "enemy_refs": [
+        {
+          "ghost_ref": "puppet_master",
+          "quantity": 1
+        },
+        {
+          "ghost_ref": "grave_field",
+          "quantity": 1
+        }
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "id": "faction_seven_elders_rule",
+      "description": "发现无尽坟场的杀人规律。",
+      "conditions": [
+        {
+          "type": "rule_discovered",
+          "rule_ref": "puppet_copy"
+        }
+      ]
+    },
+    {
+      "id": "faction_seven_elders_clues",
+      "description": "调查至少 2 条地点线索。",
+      "conditions": [
+        {
+          "type": "counter_at_least",
+          "counter": "clues_found",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "id": "faction_seven_elders_exit",
+      "description": "抵达撤离点。",
+      "conditions": [
+        {
+          "type": "location_is",
+          "location_ref": "back_door"
+        }
+      ]
+    }
+  ],
+  "difficulty_levels": {
+    "normal": {
+      "unlocked_by_default": true,
+      "minimum_party_actions": 3,
+      "rewards": [
+        {
+          "type": "resource_reward",
+          "resource": "soul_shards",
+          "amount": 2
+        }
+      ],
+      "unlocks": [
+        "hard"
+      ]
+    },
+    "hard": {
+      "unlocked_by_default": false,
+      "minimum_party_actions": 2,
+      "rewards": [
+        {
+          "type": "resource_reward",
+          "resource": "soul_shards",
+          "amount": 4
+        }
+      ],
+      "unlocks": []
+    }
+  },
+  "difficulty_variants": {
+    "hard": {
+      "mission_kit_remove": [],
+      "extra_encounters": [],
+      "enemy_behavior_overrides": {}
+    }
+  },
+  "unlock": {
+    "optional": true,
+    "requires_completed": [],
+    "unlocks": [],
+    "requires_clues": 3
+  },
+  "extraction": {
+    "location_ref": "back_door"
+  }
+}

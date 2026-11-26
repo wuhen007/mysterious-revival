@@ -1,0 +1,45 @@
+{
+  "id": "liu_xiaoyu",
+  "schema_version": 1,
+  "name": "刘小雨",
+  "description": "总部接线员，杨间的专属联络员；认真、心软、爱操心。",
+  "domain_ref": "hungry_ghost_city",
+  "location_ref": "city_blockade",
+  "dialogue_nodes": [
+    {
+      "id": "liu_xiaoyu_first",
+      "text": "耳机里传来她的声音：“封锁线内还有活人信号……我只能给你十分钟。”",
+      "conditions": [],
+      "choices": [
+        {
+          "id": "lxy_route",
+          "label": "要一条安全路线",
+          "text": "她念出一串街道名，末尾补了一句“别走广场”。",
+          "effects": [
+            {
+              "type": "set_story_flag",
+              "flag": "safe_route",
+              "value": true
+            },
+            {
+              "type": "san_change",
+              "amount": 5
+            }
+          ]
+        },
+        {
+          "id": "lxy_request",
+          "label": "请总部追加补给",
+          "text": "沉默几秒后，她说：“我尽量。你别死。”",
+          "effects": [
+            {
+              "type": "item_add",
+              "item_ref": "holy_water",
+              "quantity": 2
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

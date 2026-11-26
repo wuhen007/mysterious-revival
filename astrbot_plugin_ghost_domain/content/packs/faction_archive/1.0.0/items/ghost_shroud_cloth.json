@@ -1,0 +1,18 @@
+{
+  "id": "ghost_shroud_cloth",
+  "schema_version": 1,
+  "name": "鬼寿衣",
+  "description": "穿上后几乎免疫鬼的袭击，但防不了规则型必死。",
+  "target_types": [
+    "controlled_ghost",
+    "player"
+  ],
+  "uses": 1,
+  "effects": [
+    {
+      "type": "apply_status",
+      "status": "immune",
+      "turns": 2
+    }
+  ]
+}

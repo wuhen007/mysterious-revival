@@ -1,0 +1,18 @@
+{
+  "id": "puppet_doll",
+  "schema_version": 1,
+  "name": "人偶娃娃",
+  "description": "与它对视即被盯上；会把攻击转移并与袭击者相互对抗。",
+  "target_types": [
+    "ghost"
+  ],
+  "uses": 1,
+  "effects": [
+    {
+      "type": "apply_status",
+      "status": "redirect",
+      "turns": 2
+    }
+  ],
+  "canon": "明确"
+}

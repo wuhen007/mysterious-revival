@@ -1,0 +1,17 @@
+{
+  "id": "yellow_paper",
+  "schema_version": 1,
+  "name": "黄纸",
+  "description": "贴在活人身上可令其沉睡但不死，用于压制被灵异侵蚀者。",
+  "target_types": [
+    "player",
+    "controlled_ghost"
+  ],
+  "uses": 1,
+  "effects": [
+    {
+      "type": "san_change",
+      "amount": 15
+    }
+  ]
+}

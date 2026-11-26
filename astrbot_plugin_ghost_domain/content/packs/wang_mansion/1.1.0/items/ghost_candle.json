@@ -1,0 +1,20 @@
+{
+  "id": "ghost_candle",
+  "schema_version": 1,
+  "name": "鬼烛",
+  "description": "点燃后烛光范围内不被厉鬼袭击；对鬼婴可令其停顿并暴露弱点。",
+  "target_types": [
+    "ghost",
+    "controlled_ghost",
+    "player"
+  ],
+  "uses": 1,
+  "effects": [
+    {
+      "type": "illuminate",
+      "turns": 2,
+      "skip_actions": 1,
+      "damage_multiplier": 1.5
+    }
+  ]
+}

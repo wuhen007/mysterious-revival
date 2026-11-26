@@ -1,0 +1,50 @@
+{
+  "id": "meng_clone",
+  "schema_version": 1,
+  "name": "孟小董分身",
+  "description": "孟小董的无限入侵：七老中最难杀、正面最弱的一位。",
+  "grade": "S",
+  "stats": {
+    "hp": 280,
+    "attack": 26,
+    "defense": 14,
+    "speed": 9
+  },
+  "capture_threshold": 0.1,
+  "capture_difficulty": 0.85,
+  "base_loyalty": 50,
+  "starter_weight": 1,
+  "skills": [
+    {
+      "id": "clone_erase",
+      "name": "抹除",
+      "type": "attack",
+      "power": 1.45,
+      "cooldown_turns": 1
+    }
+  ],
+  "rules": [
+    {
+      "id": "infinite_invade",
+      "description": "过去的每个时间点都有她，可从过去入侵现在；每抹除一人就多一个分身。",
+      "clues": [
+        "门外站着和你一模一样的人",
+        "镜子里的人比你先动"
+      ],
+      "reveal_after": 2,
+      "discovery_san_cost": 5,
+      "counter_method": "在被替代前离开 301 的范围，或用高层鬼域压制。",
+      "counteractions": [
+        "damage_resets_counter"
+      ],
+      "story_flag_on_counteraction": "clone_countered"
+    }
+  ],
+  "behavior": {
+    "kind": "brute",
+    "target_strategy": "random",
+    "attack_multiplier": 1.0
+  },
+  "canon": "明确",
+  "canon_note": "分身层数「九层/十层」两说并存，未写入数值。"
+}

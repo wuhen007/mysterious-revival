@@ -1,0 +1,191 @@
+{
+  "id": "faction_circle",
+  "schema_version": 1,
+  "name": "朋友圈·平安大厦",
+  "aliases": [
+    "平安大厦"
+  ],
+  "description": "资本与灵异勾连的会所。这里的每个人都笑得像同一个人。",
+  "chapter": 92,
+  "supported_modes": [
+    "solo",
+    "party"
+  ],
+  "party_size": {
+    "min": 2,
+    "max": 4
+  },
+  "mission_kit": [
+    {
+      "item_ref": "holy_water",
+      "quantity": 1
+    },
+    {
+      "item_ref": "ghost_candle",
+      "quantity": 1
+    },
+    {
+      "item_ref": "red_paper",
+      "quantity": 1
+    },
+    {
+      "item_ref": "ghost_camera",
+      "quantity": 1
+    }
+  ],
+  "nodes": [
+    {
+      "id": "circle_lobby",
+      "name": "大厦大堂",
+      "tags": [
+        "入口"
+      ],
+      "environment": {
+        "light": "dark",
+        "distance": "close"
+      },
+      "clues": [
+        "前台小姐的微笑从头到尾没有变过。"
+      ]
+    },
+    {
+      "id": "circle_floor",
+      "name": "平安层",
+      "tags": [
+        "线索"
+      ],
+      "environment": {
+        "light": "dark",
+        "distance": "close"
+      },
+      "clues": [
+        "墙上挂着全体合影，每个人的脸都被修过。"
+      ]
+    },
+    {
+      "id": "circle_room",
+      "name": "密室",
+      "tags": [
+        "遭遇"
+      ],
+      "environment": {
+        "light": "dark",
+        "distance": "close"
+      },
+      "clues": [
+        "密室里有人在对着一面空墙说话。"
+      ]
+    },
+    {
+      "id": "circle_exit",
+      "name": "消防梯",
+      "tags": [
+        "撤离"
+      ],
+      "environment": {
+        "light": "dim",
+        "distance": "far"
+      },
+      "clues": [
+        "消防梯通向地下车库。"
+      ]
+    }
+  ],
+  "encounters": [
+    {
+      "id": "circle_boss",
+      "location_ref": "circle_room",
+      "enemy_refs": [
+        {
+          "ghost_ref": "ghost_liar",
+          "quantity": 1
+        },
+        {
+          "ghost_ref": "ghost_makeup",
+          "quantity": 1
+        }
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "id": "faction_circle_rule",
+      "description": "发现鬼骗人的杀人规律。",
+      "conditions": [
+        {
+          "type": "rule_discovered",
+          "rule_ref": "deceive"
+        }
+      ]
+    },
+    {
+      "id": "faction_circle_clues",
+      "description": "调查至少 2 条地点线索。",
+      "conditions": [
+        {
+          "type": "counter_at_least",
+          "counter": "clues_found",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "id": "faction_circle_exit",
+      "description": "抵达撤离点。",
+      "conditions": [
+        {
+          "type": "location_is",
+          "location_ref": "circle_exit"
+        }
+      ]
+    }
+  ],
+  "difficulty_levels": {
+    "normal": {
+      "unlocked_by_default": true,
+      "minimum_party_actions": 2,
+      "rewards": [
+        {
+          "type": "resource_reward",
+          "resource": "soul_shards",
+          "amount": 2
+        }
+      ],
+      "unlocks": [
+        "hard"
+      ]
+    },
+    "hard": {
+      "unlocked_by_default": false,
+      "minimum_party_actions": 2,
+      "rewards": [
+        {
+          "type": "resource_reward",
+          "resource": "soul_shards",
+          "amount": 4
+        }
+      ],
+      "unlocks": []
+    }
+  },
+  "difficulty_variants": {
+    "hard": {
+      "mission_kit_remove": [],
+      "extra_encounters": [],
+      "enemy_behavior_overrides": {}
+    }
+  },
+  "unlock": {
+    "optional": true,
+    "requires_completed": [],
+    "unlocks": [],
+    "requires_clues": 0
+  },
+  "extraction": {
+    "location_ref": "circle_exit"
+  },
+  "ending": {
+    "text": "朋友圈的账本落在了你手里。",
+    "title": "第四种存在"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "id": "ghost_baby",
+  "schema_version": 1,
+  "name": "鬼婴",
+  "description": "饿死鬼的衍生体，条件单独触发、不叠加。",
+  "grade": "B",
+  "stats": {
+    "hp": 85,
+    "attack": 16,
+    "defense": 4,
+    "speed": 11
+  },
+  "capture_threshold": 0.25,
+  "capture_difficulty": 0.45,
+  "base_loyalty": 50,
+  "starter_weight": 1,
+  "skills": [
+    {
+      "id": "baby_lunge",
+      "name": "扑袭",
+      "type": "attack",
+      "power": 1.25,
+      "cooldown_turns": 1
+    }
+  ],
+  "rules": [
+    {
+      "id": "baby_hates_light",
+      "description": "鬼婴在黑暗中追击，照明会令它停顿并暴露弱点。",
+      "clues": [
+        "黑暗中传来急促爬行声",
+        "照明后鬼婴动作明显迟滞"
+      ],
+      "reveal_after": 2,
+      "discovery_san_cost": 5,
+      "counter_method": "对鬼婴使用鬼烛：照明两轮，令其停顿一次且受击伤害提高 50%。",
+      "counteractions": [
+        "illuminate"
+      ],
+      "story_flag_on_counteraction": "baby_countered"
+    }
+  ],
+  "behavior": {
+    "kind": "dark_stalker",
+    "target_strategy": "weakest",
+    "attack_multiplier": 1.0,
+    "attack_multiplier_in_dark": 1.2,
+    "light_damage_multiplier": 1.5
+  }
+}

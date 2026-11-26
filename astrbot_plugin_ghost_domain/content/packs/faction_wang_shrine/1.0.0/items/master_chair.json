@@ -1,0 +1,16 @@
+{
+  "id": "master_chair",
+  "schema_version": 1,
+  "name": "太师椅",
+  "description": "张洞寄身之物，坐上可与民国人物接触。",
+  "target_types": [
+    "player"
+  ],
+  "uses": 1,
+  "effects": [
+    {
+      "type": "san_change",
+      "amount": 25
+    }
+  ]
+}

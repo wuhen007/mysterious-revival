@@ -1,0 +1,50 @@
+{
+  "id": "puppet_master",
+  "schema_version": 1,
+  "name": "木偶人",
+  "description": "张幼红的鬼：完整灵异木偶人拼图，可逐块取走身体把人拆成积木。",
+  "grade": "S",
+  "stats": {
+    "hp": 320,
+    "attack": 30,
+    "defense": 16,
+    "speed": 8
+  },
+  "capture_threshold": 0.08,
+  "capture_difficulty": 0.9,
+  "base_loyalty": 50,
+  "starter_weight": 1,
+  "skills": [
+    {
+      "id": "puppet_hands",
+      "name": "木偶拆解",
+      "type": "attack",
+      "power": 1.5,
+      "cooldown_turns": 2
+    }
+  ],
+  "rules": [
+    {
+      "id": "puppet_copy",
+      "description": "木偶人能复制其余六老六成灵异，数量无上限；弱点是前摇偏长。",
+      "clues": [
+        "木偶的关节声从四面同时响起",
+        "它抬手前会有一次明显的停顿"
+      ],
+      "reveal_after": 2,
+      "discovery_san_cost": 5,
+      "counter_method": "在前摇完成前打断，可阻止这一次复制。",
+      "counteractions": [
+        "damage_resets_counter"
+      ],
+      "story_flag_on_counteraction": "puppet_countered"
+    }
+  ],
+  "behavior": {
+    "kind": "brute",
+    "target_strategy": "weakest",
+    "attack_multiplier": 1.1
+  },
+  "canon": "明确",
+  "canon_note": "能力段可采；「张洞之妹」等同人设定已剔除。"
+}

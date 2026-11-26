@@ -1,0 +1,61 @@
+{
+  "id": "seven_school_story",
+  "schema_version": 1,
+  "name": "七中失踪事件",
+  "description": "调查走廊敲门、幸存者与失踪事件的联系。",
+  "domain_ref": "seven_school",
+  "character_ref": "seven_school_survivor",
+  "trigger": {
+    "conditions": []
+  },
+  "nodes": [
+    {
+      "id": "corridor_supply_cache",
+      "location_ref": "school_corridor",
+      "conditions": [],
+      "text": "走廊储物柜没有上锁，里面留有总部补给。",
+      "once": true,
+      "effects": [
+        {
+          "type": "item_add",
+          "item_ref": "ghost_candle",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "exit_survivor_rescued",
+      "location_ref": "school_playground_exit",
+      "conditions": [
+        {
+          "type": "story_flag_matches",
+          "flag": "survivor_helped",
+          "value": true
+        }
+      ],
+      "text": "幸存者也安全抵达操场。他把找到的灵魂碎片交给了你。",
+      "once": true,
+      "effects": [
+        {
+          "type": "resource_reward",
+          "resource": "soul_shards",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "id": "exit_survivor_missing",
+      "location_ref": "school_playground_exit",
+      "conditions": [
+        {
+          "type": "story_flag_matches",
+          "flag": "survivor_helped",
+          "value": false
+        }
+      ],
+      "text": "操场出口只剩下幸存者留下的求救纸条。",
+      "once": true,
+      "effects": []
+    }
+  ]
+}

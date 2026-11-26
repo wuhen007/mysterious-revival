@@ -1,0 +1,30 @@
+{
+  "id": "village_well_echo",
+  "schema_version": 1,
+  "name": "井底的回声",
+  "description": "井底传来的不是水声。",
+  "domain_ref": "huanggang_village",
+  "trigger": {
+    "conditions": []
+  },
+  "nodes": [
+    {
+      "id": "village_echo",
+      "location_ref": "village_well",
+      "text": "你朝井里喊了一声，回声比你晚了两秒，而且不是你的声音。",
+      "once": true,
+      "conditions": [],
+      "effects": [
+        {
+          "type": "san_change",
+          "amount": -5
+        },
+        {
+          "type": "increment_counter",
+          "counter": "clues_found",
+          "amount": 1
+        }
+      ]
+    }
+  ]
+}

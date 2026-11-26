@@ -1,0 +1,16 @@
+{
+  "id": "ghost_mirror_item",
+  "schema_version": 1,
+  "name": "鬼镜",
+  "description": "照镜留影，可让人复活，但必须释放镜中一只鬼作为交换（复活机制待补充）。",
+  "target_types": [
+    "player"
+  ],
+  "uses": 1,
+  "effects": [
+    {
+      "type": "heal",
+      "amount": 25
+    }
+  ]
+}

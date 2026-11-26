@@ -1,0 +1,26 @@
+{
+  "id": "gallery_gold",
+  "schema_version": 1,
+  "name": "黄金箔",
+  "description": "后门的墙上贴着黄金箔。",
+  "domain_ref": "art_gallery",
+  "trigger": {
+    "conditions": []
+  },
+  "nodes": [
+    {
+      "id": "gallery_gold",
+      "location_ref": "gallery_exit",
+      "text": "你揭下一片黄金箔，背面刻着一行外文。",
+      "once": true,
+      "conditions": [],
+      "effects": [
+        {
+          "type": "item_add",
+          "item_ref": "gold_box",
+          "quantity": 1
+        }
+      ]
+    }
+  ]
+}

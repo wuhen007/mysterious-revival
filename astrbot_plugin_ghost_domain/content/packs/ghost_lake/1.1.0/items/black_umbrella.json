@@ -1,0 +1,18 @@
+{
+  "id": "black_umbrella",
+  "schema_version": 1,
+  "name": "黑色雨伞",
+  "description": "撑开后形成伞下世界，雨中的灵异无法侵入。",
+  "target_types": [
+    "player",
+    "controlled_ghost"
+  ],
+  "uses": 1,
+  "effects": [
+    {
+      "type": "apply_status",
+      "status": "sheltered",
+      "turns": 3
+    }
+  ]
+}

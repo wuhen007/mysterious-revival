@@ -1,0 +1,45 @@
+{
+  "id": "liu_qingqing",
+  "schema_version": 1,
+  "name": "柳青青",
+  "description": "信使之一；在邮局体系里活得比多数人久。",
+  "domain_ref": "post_office",
+  "location_ref": "post_floor2",
+  "dialogue_nodes": [
+    {
+      "id": "liu_qingqing_first",
+      "text": "柳青青压低声音：“203 是空的。别进去，也别在门口停。”",
+      "conditions": [],
+      "choices": [
+        {
+          "id": "lqq_tip",
+          "label": "记住 203 的禁忌",
+          "text": "你在心里把 203 划掉。",
+          "effects": [
+            {
+              "type": "set_story_flag",
+              "flag": "room203_avoided",
+              "value": true
+            },
+            {
+              "type": "san_change",
+              "amount": 5
+            }
+          ]
+        },
+        {
+          "id": "lqq_map",
+          "label": "要一张楼层图",
+          "text": "她撕下半张纸，背面是手绘的楼梯位置。",
+          "effects": [
+            {
+              "type": "item_add",
+              "item_ref": "yellow_paper",
+              "quantity": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

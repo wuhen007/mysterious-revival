@@ -1,0 +1,191 @@
+{
+  "id": "faction_forum",
+  "schema_version": 1,
+  "name": "灵异论坛·大海市",
+  "aliases": [
+    "大海市"
+  ],
+  "description": "民间驭鬼者的据点，有排行榜、有擂台，也有替死鬼。",
+  "chapter": 93,
+  "supported_modes": [
+    "solo",
+    "party"
+  ],
+  "party_size": {
+    "min": 2,
+    "max": 4
+  },
+  "mission_kit": [
+    {
+      "item_ref": "holy_water",
+      "quantity": 1
+    },
+    {
+      "item_ref": "ghost_candle",
+      "quantity": 1
+    },
+    {
+      "item_ref": "ghost_money",
+      "quantity": 1
+    },
+    {
+      "item_ref": "substitute_doll",
+      "quantity": 1
+    }
+  ],
+  "nodes": [
+    {
+      "id": "forum_desk",
+      "name": "论坛前台",
+      "tags": [
+        "入口"
+      ],
+      "environment": {
+        "light": "dark",
+        "distance": "close"
+      },
+      "clues": [
+        "前台的排行榜上，第一名的照片是空白的。"
+      ]
+    },
+    {
+      "id": "forum_archive",
+      "name": "档案室",
+      "tags": [
+        "线索"
+      ],
+      "environment": {
+        "light": "dark",
+        "distance": "close"
+      },
+      "clues": [
+        "档案柜按代号排序，最厚的一格写着你的名字。"
+      ]
+    },
+    {
+      "id": "forum_ring",
+      "name": "地下擂台",
+      "tags": [
+        "遭遇"
+      ],
+      "environment": {
+        "light": "dark",
+        "distance": "close"
+      },
+      "clues": [
+        "擂台上没有人，但绳子还在晃。"
+      ]
+    },
+    {
+      "id": "forum_exit",
+      "name": "后巷",
+      "tags": [
+        "撤离"
+      ],
+      "environment": {
+        "light": "dim",
+        "distance": "far"
+      },
+      "clues": [
+        "后巷通向码头，海风很咸。"
+      ]
+    }
+  ],
+  "encounters": [
+    {
+      "id": "forum_boss",
+      "location_ref": "forum_ring",
+      "enemy_refs": [
+        {
+          "ghost_ref": "substitute_ghost",
+          "quantity": 1
+        },
+        {
+          "ghost_ref": "ghost_voice",
+          "quantity": 1
+        }
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "id": "faction_forum_rule",
+      "description": "发现替死鬼的杀人规律。",
+      "conditions": [
+        {
+          "type": "rule_discovered",
+          "rule_ref": "substitute_death"
+        }
+      ]
+    },
+    {
+      "id": "faction_forum_clues",
+      "description": "调查至少 2 条地点线索。",
+      "conditions": [
+        {
+          "type": "counter_at_least",
+          "counter": "clues_found",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "id": "faction_forum_exit",
+      "description": "抵达撤离点。",
+      "conditions": [
+        {
+          "type": "location_is",
+          "location_ref": "forum_exit"
+        }
+      ]
+    }
+  ],
+  "difficulty_levels": {
+    "normal": {
+      "unlocked_by_default": true,
+      "minimum_party_actions": 2,
+      "rewards": [
+        {
+          "type": "resource_reward",
+          "resource": "soul_shards",
+          "amount": 2
+        }
+      ],
+      "unlocks": [
+        "hard"
+      ]
+    },
+    "hard": {
+      "unlocked_by_default": false,
+      "minimum_party_actions": 2,
+      "rewards": [
+        {
+          "type": "resource_reward",
+          "resource": "soul_shards",
+          "amount": 4
+        }
+      ],
+      "unlocks": []
+    }
+  },
+  "difficulty_variants": {
+    "hard": {
+      "mission_kit_remove": [],
+      "extra_encounters": [],
+      "enemy_behavior_overrides": {}
+    }
+  },
+  "unlock": {
+    "optional": true,
+    "requires_completed": [],
+    "unlocks": [],
+    "requires_clues": 0
+  },
+  "extraction": {
+    "location_ref": "forum_exit"
+  },
+  "ending": {
+    "text": "论坛承认了你的代号。",
+    "title": "第四种存在"
+  }
+}

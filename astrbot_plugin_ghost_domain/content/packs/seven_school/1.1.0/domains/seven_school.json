@@ -1,0 +1,210 @@
+{
+  "id": "seven_school",
+  "schema_version": 1,
+  "name": "七中学校",
+  "aliases": [
+    "七中",
+    "第七中学"
+  ],
+  "description": "调查七中学校失踪事件，发现并利用敲门鬼规律，救助幸存者并安全撤离。",
+  "chapter": 1,
+  "supported_modes": [
+    "solo",
+    "party"
+  ],
+  "party_size": {
+    "min": 2,
+    "max": 4
+  },
+  "mission_kit": [
+    {
+      "item_ref": "holy_water",
+      "quantity": 1
+    },
+    {
+      "item_ref": "grave_soil",
+      "quantity": 1
+    },
+    {
+      "item_ref": "ghost_candle",
+      "quantity": 1
+    }
+  ],
+  "nodes": [
+    {
+      "id": "school_gate",
+      "name": "校门",
+      "tags": [
+        "入口"
+      ],
+      "environment": {
+        "light": "dark",
+        "distance": "close"
+      },
+      "clues": [
+        "校门旁留有刚被拖过的痕迹，方向指向走廊。"
+      ]
+    },
+    {
+      "id": "school_corridor",
+      "name": "走廊",
+      "tags": [
+        "黑暗",
+        "线索"
+      ],
+      "environment": {
+        "light": "dark",
+        "distance": "close"
+      },
+      "clues": [
+        "走廊尽头的第三间教室里，传来不规则的敲门声。"
+      ]
+    },
+    {
+      "id": "school_classroom",
+      "name": "教室",
+      "tags": [
+        "遭遇"
+      ],
+      "environment": {
+        "light": "dark",
+        "distance": "close"
+      },
+      "clues": [
+        "黑板上的字迹被反复擦去，只留下“第三次不要回应”。"
+      ]
+    },
+    {
+      "id": "school_playground_exit",
+      "name": "操场出口",
+      "tags": [
+        "撤离"
+      ],
+      "environment": {
+        "light": "lit",
+        "distance": "far"
+      },
+      "clues": [
+        "操场边的雾气正在散去，出口暂时安全。"
+      ]
+    }
+  ],
+  "encounters": [
+    {
+      "id": "classroom_knocker",
+      "location_ref": "school_classroom",
+      "enemy_refs": [
+        {
+          "ghost_ref": "door_knocker",
+          "quantity": 1
+        }
+      ],
+      "mode_variants": {
+        "party": {
+          "enemy_refs": [
+            {
+              "ghost_ref": "door_knocker",
+              "quantity": 1
+            },
+            {
+              "ghost_ref": "ghost_baby",
+              "quantity": 1
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "goals": [
+    {
+      "id": "investigate_incident",
+      "description": "发现敲门鬼的三次敲门规律。",
+      "conditions": [
+        {
+          "type": "rule_discovered",
+          "rule_ref": "three_knocks"
+        }
+      ]
+    },
+    {
+      "id": "counter_rule",
+      "description": "成功打断一次敲门鬼的强攻。",
+      "conditions": [
+        {
+          "type": "story_flag_matches",
+          "flag": "knock_countered",
+          "value": true
+        }
+      ]
+    },
+    {
+      "id": "escape_school",
+      "description": "抵达操场出口。",
+      "conditions": [
+        {
+          "type": "location_is",
+          "location_ref": "school_playground_exit"
+        }
+      ]
+    }
+  ],
+  "difficulty_levels": {
+    "normal": {
+      "unlocked_by_default": true,
+      "minimum_party_actions": 2,
+      "rewards": [
+        {
+          "type": "resource_reward",
+          "resource": "soul_shards",
+          "amount": 1
+        }
+      ],
+      "unlocks": [
+        "hard"
+      ]
+    },
+    "hard": {
+      "unlocked_by_default": false,
+      "minimum_party_actions": 2,
+      "rewards": [
+        {
+          "type": "resource_reward",
+          "resource": "soul_shards",
+          "amount": 2
+        }
+      ],
+      "unlocks": []
+    }
+  },
+  "difficulty_variants": {
+    "hard": {
+      "mission_kit_remove": [
+        "holy_water"
+      ],
+      "enemy_behavior_overrides": {
+        "door_knocker": {
+          "knocks_before_attack": 2
+        }
+      },
+      "extra_encounters": [
+        {
+          "id": "hard_corridor_baby",
+          "location_ref": "school_corridor",
+          "enemy_refs": [
+            {
+              "ghost_ref": "ghost_baby",
+              "quantity": 1
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "unlock": {
+    "optional": false,
+    "requires_completed": [],
+    "unlocks": [
+      "mall_headswap"
+    ]
+  }
+}

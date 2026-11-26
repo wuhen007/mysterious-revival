@@ -1,0 +1,48 @@
+{
+  "id": "room_301",
+  "schema_version": 1,
+  "name": "301 室",
+  "description": "杨间老家旧宅，孟小董常驻于此；屋内多鬼共存，可顺媒介反向入侵现实。",
+  "grade": "S",
+  "stats": {
+    "hp": 200,
+    "attack": 20,
+    "defense": 14,
+    "speed": 4
+  },
+  "capture_threshold": 0.1,
+  "capture_difficulty": 0.7,
+  "base_loyalty": 50,
+  "starter_weight": 1,
+  "skills": [
+    {
+      "id": "room_devour",
+      "name": "门后之手",
+      "type": "attack",
+      "power": 1.4,
+      "cooldown_turns": 2
+    }
+  ],
+  "rules": [
+    {
+      "id": "multi_ghost",
+      "description": "屋内多鬼共存，按房间与楼层分布，时间与外界不同。",
+      "clues": [
+        "门牌号在你不注意时变了",
+        "屋里的钟比外面慢了两个小时"
+      ],
+      "reveal_after": 2,
+      "discovery_san_cost": 5,
+      "counter_method": "用鬼剪刀剪断其杀人连线，或从外部终结媒介。",
+      "counteractions": [
+        "damage_resets_counter"
+      ],
+      "story_flag_on_counteraction": "room_countered"
+    }
+  ],
+  "behavior": {
+    "kind": "brute",
+    "target_strategy": "weakest",
+    "attack_multiplier": 1.0
+  }
+}

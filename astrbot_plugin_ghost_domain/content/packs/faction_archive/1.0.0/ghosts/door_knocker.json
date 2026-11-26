@@ -1,0 +1,52 @@
+{
+  "id": "door_knocker",
+  "schema_version": 1,
+  "name": "敲门鬼",
+  "description": "罗文松（民国七老之一、鬼邮局首任管理者）死后厉鬼复苏；鬼域笼罩第七中学，敲门声可顺楼梯、电话线传递。",
+  "grade": "A",
+  "stats": {
+    "hp": 120,
+    "attack": 18,
+    "defense": 8,
+    "speed": 7
+  },
+  "capture_threshold": 0.3,
+  "capture_difficulty": 0.55,
+  "base_loyalty": 50,
+  "starter_weight": 1,
+  "skills": [
+    {
+      "id": "knocker_strike",
+      "name": "敲门回响",
+      "type": "attack",
+      "power": 1.4,
+      "cooldown_turns": 1
+    }
+  ],
+  "rules": [
+    {
+      "id": "three_knocks",
+      "description": "第三次敲门后会发动强攻。",
+      "clues": [
+        "敲门次数逐渐增加",
+        "第三次敲门前出现强攻预兆"
+      ],
+      "reveal_after": 2,
+      "discovery_san_cost": 5,
+      "counter_method": "在第三次敲门前造成伤害，打断强攻并清空敲门计数。",
+      "counteractions": [
+        "damage_resets_counter"
+      ],
+      "story_flag_on_counteraction": "knock_countered"
+    }
+  ],
+  "behavior": {
+    "kind": "knock_counter",
+    "target_strategy": "weakest",
+    "attack_multiplier": 1.0,
+    "counter_name": "knocks",
+    "knocks_before_attack": 3,
+    "strong_attack_multiplier": 1.8,
+    "damage_resets_counter": "knocks"
+  }
+}

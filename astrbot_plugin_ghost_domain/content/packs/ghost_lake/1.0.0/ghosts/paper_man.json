@@ -1,0 +1,47 @@
+{
+  "id": "paper_man",
+  "schema_version": 1,
+  "name": "纸人",
+  "description": "太平古镇与墓园常见，可替死、可伪装。",
+  "grade": "C",
+  "stats": {
+    "hp": 70,
+    "attack": 12,
+    "defense": 4,
+    "speed": 5
+  },
+  "capture_threshold": 0.3,
+  "capture_difficulty": 0.45,
+  "base_loyalty": 50,
+  "starter_weight": 1,
+  "skills": [
+    {
+      "id": "paper_cut",
+      "name": "纸刃",
+      "type": "attack",
+      "power": 1.1,
+      "cooldown_turns": 1
+    }
+  ],
+  "rules": [
+    {
+      "id": "paper_substitute",
+      "description": "纸人能替人赴死，也能冒充活人。",
+      "clues": [
+        "房间里多了一个不出声的人",
+        "纸人的脸被雨水泡开"
+      ],
+      "reveal_after": 2,
+      "discovery_san_cost": 5,
+      "counter_method": "以火或黄金标记真身。",
+      "counteractions": [
+        "damage_resets_counter"
+      ]
+    }
+  ],
+  "behavior": {
+    "kind": "brute",
+    "target_strategy": "random",
+    "attack_multiplier": 1.0
+  }
+}

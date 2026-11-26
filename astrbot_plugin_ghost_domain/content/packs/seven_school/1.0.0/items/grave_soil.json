@@ -1,0 +1,9 @@
+{
+  "id": "grave_soil",
+  "schema_version": 1,
+  "name": "坟土",
+  "description": "用于封印目标，提高 20% 捕获成功率。",
+  "target_types": ["ghost"],
+  "uses": 1,
+  "effects": [{"type": "capture_bonus", "amount": 0.2}]
+}

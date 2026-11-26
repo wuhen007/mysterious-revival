@@ -1,0 +1,44 @@
+{
+  "id": "feng_quan",
+  "schema_version": 1,
+  "name": "冯全",
+  "description": "大昌市负责人，代号鬼雾；雾之鬼域可隔绝灵异。",
+  "domain_ref": "hungry_ghost_city",
+  "location_ref": "city_hospital",
+  "dialogue_nodes": [
+    {
+      "id": "feng_quan_first",
+      "text": "冯全站在雾里，只有声音是清楚的：“我的雾能挡住它三分钟。三分钟之后，靠你。”",
+      "conditions": [],
+      "choices": [
+        {
+          "id": "fq_fog",
+          "label": "请他展开鬼雾",
+          "text": "雾漫过街道，婴儿的哭声被隔在雾外。",
+          "effects": [
+            {
+              "type": "set_story_flag",
+              "flag": "fog_cover",
+              "value": true
+            },
+            {
+              "type": "san_change",
+              "amount": 10
+            }
+          ]
+        },
+        {
+          "id": "fq_truth",
+          "label": "问饿死鬼的第四阶段",
+          "text": "冯全摇头：“王小明说缺少材料，没法确定。别去赌。”",
+          "effects": [
+            {
+              "type": "reveal_rule",
+              "rule_ref": "hungry_phases"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "id": "ghost_fire",
+  "schema_version": 1,
+  "name": "鬼火",
+  "description": "李军的鬼，火焰鬼域。",
+  "grade": "A",
+  "stats": {
+    "hp": 160,
+    "attack": 26,
+    "defense": 10,
+    "speed": 8
+  },
+  "capture_threshold": 0.15,
+  "capture_difficulty": 0.6,
+  "base_loyalty": 50,
+  "starter_weight": 1,
+  "skills": [
+    {
+      "id": "fire_burn",
+      "name": "碧火",
+      "type": "attack",
+      "power": 1.45,
+      "cooldown_turns": 2
+    }
+  ],
+  "rules": [
+    {
+      "id": "fire_domain",
+      "description": "碧绿鬼火可焚烧灵异，也能形成鬼域。",
+      "clues": [
+        "墙角燃起没有温度的绿火",
+        "火焰里有人影走动"
+      ],
+      "reveal_after": 2,
+      "discovery_san_cost": 5,
+      "counter_method": "水系/鬼湖类灵异克制；火势会失控。",
+      "counteractions": [
+        "damage_resets_counter"
+      ]
+    }
+  ],
+  "behavior": {
+    "kind": "brute",
+    "target_strategy": "weakest",
+    "attack_multiplier": 1.0
+  }
+}

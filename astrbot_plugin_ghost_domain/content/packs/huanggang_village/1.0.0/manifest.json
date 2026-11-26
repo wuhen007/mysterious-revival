@@ -1,0 +1,16 @@
+{
+  "pack_id": "huanggang_village",
+  "version": "1.0.0",
+  "schema_version": 1,
+  "requires_engine_version": ">=0.3.0",
+  "name": "黄岗村",
+  "description": "会模仿人的村子，病鬼在咳嗽，停棺棚里少了一具尸体。",
+  "chapter": 3,
+  "optional": false,
+  "starter_ghost_pool": [
+    {
+      "ghost_ref": "sick_ghost",
+      "weight": 1
+    }
+  ]
+}

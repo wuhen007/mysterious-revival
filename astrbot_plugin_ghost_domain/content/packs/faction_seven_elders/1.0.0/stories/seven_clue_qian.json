@@ -1,0 +1,35 @@
+{
+  "id": "seven_clue_qian",
+  "schema_version": 1,
+  "name": "坟场的铁锹",
+  "description": "坟场中央插着一把铁锹，锹柄上刻着「罗」字，泥土永远是湿的。",
+  "domain_ref": "faction_seven_elders",
+  "trigger": {
+    "conditions": []
+  },
+  "nodes": [
+    {
+      "id": "seven_clue_qian_node",
+      "location_ref": "graveyard",
+      "text": "坟场中央插着一把铁锹，锹柄上刻着「罗」字，泥土永远是湿的。",
+      "once": true,
+      "conditions": [],
+      "effects": [
+        {
+          "type": "set_story_flag",
+          "flag": "clue_luo_qian",
+          "value": true
+        },
+        {
+          "type": "increment_counter",
+          "counter": "clues_found",
+          "amount": 1
+        },
+        {
+          "type": "san_change",
+          "amount": -5
+        }
+      ]
+    }
+  ]
+}

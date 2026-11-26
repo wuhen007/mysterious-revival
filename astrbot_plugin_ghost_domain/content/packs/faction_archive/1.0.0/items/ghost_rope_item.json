@@ -1,0 +1,17 @@
+{
+  "id": "ghost_rope_item",
+  "schema_version": 1,
+  "name": "鬼绳",
+  "description": "缠住目标后将其吊死，驭鬼者也极难挣脱；对鬼寿衣无效。",
+  "target_types": [
+    "ghost"
+  ],
+  "uses": 1,
+  "effects": [
+    {
+      "type": "apply_status",
+      "status": "bound",
+      "turns": 2
+    }
+  ]
+}

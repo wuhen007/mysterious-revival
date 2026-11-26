@@ -1,0 +1,35 @@
+{
+  "id": "seven_clue_bohua",
+  "schema_version": 1,
+  "name": "药方上的落款",
+  "description": "药柜最下层压着一叠药方，落款全是「张伯华」，最晚一张写着「压不住了」。",
+  "domain_ref": "faction_seven_elders",
+  "trigger": {
+    "conditions": []
+  },
+  "nodes": [
+    {
+      "id": "seven_clue_bohua_node",
+      "location_ref": "herb_shop",
+      "text": "药柜最下层压着一叠药方，落款全是「张伯华」，最晚一张写着「压不住了」。",
+      "once": true,
+      "conditions": [],
+      "effects": [
+        {
+          "type": "set_story_flag",
+          "flag": "clue_zhang_bohua",
+          "value": true
+        },
+        {
+          "type": "increment_counter",
+          "counter": "clues_found",
+          "amount": 1
+        },
+        {
+          "type": "san_change",
+          "amount": -5
+        }
+      ]
+    }
+  ]
+}

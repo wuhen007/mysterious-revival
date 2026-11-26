@@ -1,0 +1,16 @@
+{
+  "pack_id": "art_gallery",
+  "version": "1.1.0",
+  "schema_version": 1,
+  "requires_engine_version": ">=0.3.0",
+  "name": "艺术馆·鬼画",
+  "description": "看过那幅画的人，只要在脑中回忆一次画面就会被拉进去。",
+  "chapter": 8,
+  "optional": false,
+  "starter_ghost_pool": [
+    {
+      "ghost_ref": "ghost_painting",
+      "weight": 1
+    }
+  ]
+}

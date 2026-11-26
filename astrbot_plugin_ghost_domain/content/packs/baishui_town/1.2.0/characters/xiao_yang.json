@@ -1,0 +1,40 @@
+{
+  "id": "xiao_yang",
+  "schema_version": 1,
+  "name": "萧阳",
+  "description": "大山市负责人，代号鬼雨；以雨为鬼域，最终因复苏失联。",
+  "domain_ref": "baishui_town",
+  "location_ref": "town_rain",
+  "dialogue_nodes": [
+    {
+      "id": "xiao_yang_first",
+      "text": "萧阳站在雨里，皮肤已经开始透明：“雨停之前走。雨不会停。”",
+      "conditions": [],
+      "choices": [
+        {
+          "id": "xy_umbrella",
+          "label": "借一把伞",
+          "text": "他递给你一把黑伞，伞骨是凉的。",
+          "effects": [
+            {
+              "type": "item_add",
+              "item_ref": "black_umbrella",
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "id": "xy_rule",
+          "label": "问鬼雨的破绽",
+          "text": "“伞下就是伞下。别让雨落在皮肤上。”",
+          "effects": [
+            {
+              "type": "reveal_rule",
+              "rule_ref": "rain_domain"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

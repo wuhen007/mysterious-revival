@@ -1,0 +1,16 @@
+{
+  "pack_id": "faction_wang_shrine",
+  "version": "1.0.0",
+  "schema_version": 1,
+  "requires_engine_version": ">=0.3.0",
+  "name": "王家祠堂",
+  "description": "四代人的牌位，一块空白。王家的亡魂只认全家福。",
+  "chapter": 96,
+  "optional": true,
+  "starter_ghost_pool": [
+    {
+      "ghost_ref": "wang_ancestor",
+      "weight": 1
+    }
+  ]
+}

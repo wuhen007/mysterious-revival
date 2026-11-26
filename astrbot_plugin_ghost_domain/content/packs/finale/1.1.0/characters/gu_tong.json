@@ -1,0 +1,44 @@
+{
+  "id": "gu_tong",
+  "schema_version": 1,
+  "name": "鬼童",
+  "description": "杨间以自身喂养的第四种存在，六十年后以杨戬之名归来。",
+  "domain_ref": "finale",
+  "location_ref": "final_gate",
+  "dialogue_nodes": [
+    {
+      "id": "gu_tong_first",
+      "text": "孩子抬起头，眼睛很干净：“你叫什么名字？”",
+      "conditions": [],
+      "choices": [
+        {
+          "id": "gt_name",
+          "label": "报出真名",
+          "text": "孩子重复了一遍你的名字，像在记住一件很重要的东西。",
+          "effects": [
+            {
+              "type": "set_story_flag",
+              "flag": "name_given",
+              "value": true
+            },
+            {
+              "type": "san_change",
+              "amount": -10
+            }
+          ]
+        },
+        {
+          "id": "gt_ask",
+          "label": "问它想不想活",
+          "text": "“想。但得有人先把自己交出去。”",
+          "effects": [
+            {
+              "type": "reveal_rule",
+              "rule_ref": "name_awaken"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

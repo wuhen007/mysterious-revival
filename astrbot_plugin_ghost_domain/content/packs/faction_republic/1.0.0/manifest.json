@@ -1,0 +1,16 @@
+{
+  "pack_id": "faction_republic",
+  "version": "1.0.0",
+  "schema_version": 1,
+  "requires_engine_version": ">=0.3.0",
+  "name": "民国线·弘法寺地下室",
+  "description": "民国年间修建的地下室，关着一道高大的黑影。",
+  "chapter": 98,
+  "optional": true,
+  "starter_ghost_pool": [
+    {
+      "ghost_ref": "headless_shadow",
+      "weight": 1
+    }
+  ]
+}

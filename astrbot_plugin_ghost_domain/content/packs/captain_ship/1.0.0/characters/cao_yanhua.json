@@ -1,0 +1,46 @@
+{
+  "id": "cao_yanhua",
+  "schema_version": 1,
+  "name": "曹延华",
+  "description": "总部副部长，后任部长；全局决策者。",
+  "domain_ref": "captain_ship",
+  "location_ref": "ship_cabin",
+  "dialogue_nodes": [
+    {
+      "id": "cao_yanhua_first",
+      "text": "曹延华的声音从卫星电话里传来：“船上的东西不能靠岸。你需要什么，报给我。”",
+      "conditions": [],
+      "choices": [
+        {
+          "id": "cyh_supply",
+          "label": "申请补给",
+          "text": "两小时后，一只防水箱被吊上甲板。",
+          "effects": [
+            {
+              "type": "item_add",
+              "item_ref": "gold_box",
+              "quantity": 1
+            },
+            {
+              "type": "item_add",
+              "item_ref": "holy_water",
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "id": "cyh_order",
+          "label": "要求总部封锁海域",
+          "text": "“已经在做了。你只有这一次机会。”",
+          "effects": [
+            {
+              "type": "set_story_flag",
+              "flag": "sea_blocked",
+              "value": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

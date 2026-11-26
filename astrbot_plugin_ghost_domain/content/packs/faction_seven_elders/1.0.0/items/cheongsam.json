@@ -1,0 +1,19 @@
+{
+  "id": "cheongsam",
+  "schema_version": 1,
+  "name": "旗袍",
+  "description": "张幼红的衣物，可阻挡灵异力量的袭击。",
+  "target_types": [
+    "player",
+    "controlled_ghost"
+  ],
+  "uses": 1,
+  "effects": [
+    {
+      "type": "apply_status",
+      "status": "immune",
+      "turns": 2
+    }
+  ],
+  "canon": "明确"
+}

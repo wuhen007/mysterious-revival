@@ -1,0 +1,18 @@
+{
+  "id": "ghost_porcelain",
+  "schema_version": 1,
+  "name": "鬼瓷",
+  "description": "把写有名字的物品压在鬼瓷下，可将人登记为受庇护者。",
+  "target_types": [
+    "player",
+    "controlled_ghost"
+  ],
+  "uses": 1,
+  "effects": [
+    {
+      "type": "apply_status",
+      "status": "sheltered",
+      "turns": 3
+    }
+  ]
+}

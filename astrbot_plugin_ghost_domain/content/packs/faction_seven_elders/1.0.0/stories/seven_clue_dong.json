@@ -1,0 +1,35 @@
+{
+  "id": "seven_clue_dong",
+  "schema_version": 1,
+  "name": "红棺旁的名字",
+  "description": "红棺内侧刻着一个名字：张洞。刻痕很深，像是自己刻的。",
+  "domain_ref": "faction_seven_elders",
+  "trigger": {
+    "conditions": []
+  },
+  "nodes": [
+    {
+      "id": "seven_clue_dong_node",
+      "location_ref": "manor_shadow",
+      "text": "红棺内侧刻着一个名字：张洞。刻痕很深，像是自己刻的。",
+      "once": true,
+      "conditions": [],
+      "effects": [
+        {
+          "type": "set_story_flag",
+          "flag": "clue_zhang_dong",
+          "value": true
+        },
+        {
+          "type": "increment_counter",
+          "counter": "clues_found",
+          "amount": 1
+        },
+        {
+          "type": "san_change",
+          "amount": -5
+        }
+      ]
+    }
+  ]
+}

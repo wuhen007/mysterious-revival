@@ -1,0 +1,48 @@
+{
+  "id": "ghost_coffin",
+  "schema_version": 1,
+  "name": "鬼棺",
+  "description": "王小明用以孕育天生驭鬼者的实验体，最终产出 S 级鬼差（第 438–480 章）。",
+  "grade": "S",
+  "stats": {
+    "hp": 240,
+    "attack": 22,
+    "defense": 18,
+    "speed": 3
+  },
+  "capture_threshold": 0.1,
+  "capture_difficulty": 0.85,
+  "base_loyalty": 50,
+  "starter_weight": 1,
+  "skills": [
+    {
+      "id": "coffin_pull",
+      "name": "棺中拉扯",
+      "type": "attack",
+      "power": 1.5,
+      "cooldown_turns": 2
+    }
+  ],
+  "rules": [
+    {
+      "id": "coffin_breed",
+      "description": "棺内孕育的鬼会不断成长。",
+      "clues": [
+        "棺材内壁有新的抓痕",
+        "抬棺的人越来越少"
+      ],
+      "reveal_after": 2,
+      "discovery_san_cost": 5,
+      "counter_method": "在鬼域之外以另一片更强鬼域压制其范围。",
+      "counteractions": [
+        "golden_seal"
+      ],
+      "story_flag_on_counteraction": "coffin_countered"
+    }
+  ],
+  "behavior": {
+    "kind": "brute",
+    "target_strategy": "weakest",
+    "attack_multiplier": 1.0
+  }
+}

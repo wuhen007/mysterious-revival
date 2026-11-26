@@ -1,0 +1,45 @@
+{
+  "id": "yang_jian",
+  "schema_version": 1,
+  "name": "杨间",
+  "description": "鬼眼刑警，后来的十二队长之一；极度务实，先谈价码再谈理想。",
+  "domain_ref": "ghost_bus",
+  "location_ref": "bus_cabin",
+  "dialogue_nodes": [
+    {
+      "id": "yang_jian_first",
+      "text": "杨间坐在最后一排，眼皮都没抬：“规矩很简单：别坐多出来的座位，熄火就下车。”",
+      "conditions": [],
+      "choices": [
+        {
+          "id": "yj_rules",
+          "label": "问清下车时机",
+          "text": "他伸出两根手指：“熄火。只有熄火。”",
+          "effects": [
+            {
+              "type": "reveal_rule",
+              "rule_ref": "board_and_off"
+            },
+            {
+              "type": "set_story_flag",
+              "flag": "bus_rule_known",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": "yj_deal",
+          "label": "和他谈条件",
+          "text": "杨间笑了一下：“活下来再说价。”",
+          "effects": [
+            {
+              "type": "item_add",
+              "item_ref": "ghost_candle",
+              "quantity": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

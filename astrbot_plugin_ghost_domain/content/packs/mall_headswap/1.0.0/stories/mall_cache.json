@@ -1,0 +1,26 @@
+{
+  "id": "mall_cache",
+  "schema_version": 1,
+  "name": "商场补给点",
+  "description": "消防栓后面藏着一只总部补给箱。",
+  "domain_ref": "mall_headswap",
+  "trigger": {
+    "conditions": []
+  },
+  "nodes": [
+    {
+      "id": "mall_supply",
+      "location_ref": "mall_entrance",
+      "text": "消防栓后面有一只落灰的补给箱，锁是总部制式。",
+      "once": true,
+      "conditions": [],
+      "effects": [
+        {
+          "type": "item_add",
+          "item_ref": "holy_water",
+          "quantity": 1
+        }
+      ]
+    }
+  ]
+}

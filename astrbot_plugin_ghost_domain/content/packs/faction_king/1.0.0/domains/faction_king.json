@@ -1,0 +1,191 @@
+{
+  "id": "faction_king",
+  "schema_version": 1,
+  "name": "国王组织·方舟",
+  "aliases": [
+    "方舟"
+  ],
+  "description": "港口的货轮、封死的货舱，以及一份叫诺亚方舟的计划。",
+  "chapter": 94,
+  "supported_modes": [
+    "solo",
+    "party"
+  ],
+  "party_size": {
+    "min": 2,
+    "max": 4
+  },
+  "mission_kit": [
+    {
+      "item_ref": "holy_water",
+      "quantity": 1
+    },
+    {
+      "item_ref": "ghost_candle",
+      "quantity": 1
+    },
+    {
+      "item_ref": "gold_box",
+      "quantity": 1
+    },
+    {
+      "item_ref": "satellite_phone",
+      "quantity": 1
+    }
+  ],
+  "nodes": [
+    {
+      "id": "king_port",
+      "name": "港口",
+      "tags": [
+        "入口"
+      ],
+      "environment": {
+        "light": "dark",
+        "distance": "close"
+      },
+      "clues": [
+        "集装箱的编号全是同一个。"
+      ]
+    },
+    {
+      "id": "king_hold",
+      "name": "货舱",
+      "tags": [
+        "线索"
+      ],
+      "environment": {
+        "light": "dark",
+        "distance": "close"
+      },
+      "clues": [
+        "货舱里码着成排的睡眠舱，一半是空的。"
+      ]
+    },
+    {
+      "id": "king_bridge",
+      "name": "舰桥",
+      "tags": [
+        "遭遇"
+      ],
+      "environment": {
+        "light": "dark",
+        "distance": "close"
+      },
+      "clues": [
+        "舰桥的航海日志只写了一句话：不要靠岸。"
+      ]
+    },
+    {
+      "id": "king_boat",
+      "name": "救生艇",
+      "tags": [
+        "撤离"
+      ],
+      "environment": {
+        "light": "dim",
+        "distance": "far"
+      },
+      "clues": [
+        "救生艇的钥匙插在锁上。"
+      ]
+    }
+  ],
+  "encounters": [
+    {
+      "id": "king_boss",
+      "location_ref": "king_bridge",
+      "enemy_refs": [
+        {
+          "ghost_ref": "ghost_call",
+          "quantity": 1
+        },
+        {
+          "ghost_ref": "ghost_eater",
+          "quantity": 1
+        }
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "id": "faction_king_rule",
+      "description": "发现鬼来电的杀人规律。",
+      "conditions": [
+        {
+          "type": "rule_discovered",
+          "rule_ref": "ring_death"
+        }
+      ]
+    },
+    {
+      "id": "faction_king_clues",
+      "description": "调查至少 2 条地点线索。",
+      "conditions": [
+        {
+          "type": "counter_at_least",
+          "counter": "clues_found",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "id": "faction_king_exit",
+      "description": "抵达撤离点。",
+      "conditions": [
+        {
+          "type": "location_is",
+          "location_ref": "king_boat"
+        }
+      ]
+    }
+  ],
+  "difficulty_levels": {
+    "normal": {
+      "unlocked_by_default": true,
+      "minimum_party_actions": 2,
+      "rewards": [
+        {
+          "type": "resource_reward",
+          "resource": "soul_shards",
+          "amount": 2
+        }
+      ],
+      "unlocks": [
+        "hard"
+      ]
+    },
+    "hard": {
+      "unlocked_by_default": false,
+      "minimum_party_actions": 2,
+      "rewards": [
+        {
+          "type": "resource_reward",
+          "resource": "soul_shards",
+          "amount": 4
+        }
+      ],
+      "unlocks": []
+    }
+  },
+  "difficulty_variants": {
+    "hard": {
+      "mission_kit_remove": [],
+      "extra_encounters": [],
+      "enemy_behavior_overrides": {}
+    }
+  },
+  "unlock": {
+    "optional": true,
+    "requires_completed": [],
+    "unlocks": [],
+    "requires_clues": 0
+  },
+  "extraction": {
+    "location_ref": "king_boat"
+  },
+  "ending": {
+    "text": "方舟计划的一页被撕了下来。",
+    "title": "第四种存在"
+  }
+}

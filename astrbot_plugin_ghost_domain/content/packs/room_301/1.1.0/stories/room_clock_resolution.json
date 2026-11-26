@@ -1,0 +1,45 @@
+{
+  "id": "room_clock_resolution",
+  "schema_version": 1,
+  "name": "挂钟房的回声",
+  "description": "挂钟终于追上了外界的时间。",
+  "domain_ref": "room_301",
+  "trigger": {
+    "conditions": []
+  },
+  "nodes": [
+    {
+      "id": "mother_safe_closure",
+      "location_ref": "room_clock",
+      "text": "挂钟的秒针终于走动。楼道深处传来门锁合上的声音，张芬已经离开这间屋子。",
+      "once": true,
+      "conditions": [
+        {
+          "type": "story_flag_matches",
+          "flag": "mother_safe",
+          "value": true
+        }
+      ],
+      "effects": []
+    },
+    {
+      "id": "room_countered_reward",
+      "location_ref": "room_clock",
+      "text": "屋里的时钟追上了外界。你在表盘背后找到一枚魂晶。",
+      "once": true,
+      "conditions": [
+        {
+          "type": "rule_countered",
+          "rule_ref": "multi_ghost"
+        }
+      ],
+      "effects": [
+        {
+          "type": "resource_reward",
+          "resource": "soul_shards",
+          "amount": 1
+        }
+      ]
+    }
+  ]
+}

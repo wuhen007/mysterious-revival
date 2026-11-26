@@ -1,0 +1,45 @@
+{
+  "id": "lake_source_memory",
+  "schema_version": 1,
+  "name": "湖源的回声",
+  "description": "太平古镇旧事在湖源重现。",
+  "domain_ref": "ghost_lake",
+  "trigger": {
+    "conditions": []
+  },
+  "nodes": [
+    {
+      "id": "lake_republic_truth",
+      "location_ref": "lake_source",
+      "text": "泉水倒映出一条旧时封锁线。招魂人说过的话在水声里重现：他们只是把灵异压了下去。水流依旧向上，源头没有消失。",
+      "once": true,
+      "conditions": [
+        {
+          "type": "story_flag_matches",
+          "flag": "republic_truth",
+          "value": true
+        }
+      ],
+      "effects": []
+    },
+    {
+      "id": "lake_countered_reward",
+      "location_ref": "lake_source",
+      "text": "你已经在源头压住闭眼沉湖的规律。倒流的泉水终于停住片刻，一枚魂晶从水面浮起。",
+      "once": true,
+      "conditions": [
+        {
+          "type": "rule_countered",
+          "rule_ref": "closed_eyes"
+        }
+      ],
+      "effects": [
+        {
+          "type": "resource_reward",
+          "resource": "soul_shards",
+          "amount": 1
+        }
+      ]
+    }
+  ]
+}
