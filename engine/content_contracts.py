@@ -24,6 +24,7 @@ SUPPORTED_CAMPAIGN_REWARD_TYPES = frozenset({"resource_reward", "unlock_difficul
 SUPPORTED_STORY_EFFECT_TYPES = frozenset(
     {
         "set_story_flag",
+        "counter_rule",
         "reveal_rule",
         "item_add",
         "item_remove",

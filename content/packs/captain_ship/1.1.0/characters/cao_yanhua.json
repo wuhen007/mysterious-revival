@@ -39,6 +39,22 @@
               "value": true
             }
           ]
+        },
+        {
+          "id": "cyh_destroy_chart",
+          "label": "请求总部摧毁航海图",
+          "text": "卫星电话那头传来一声爆响。航海图上的坐标化为灰烬，船的规则出现了一道裂隙。",
+          "effects": [
+            {
+              "type": "counter_rule",
+              "rule_ref": "ship_domain"
+            },
+            {
+              "type": "set_story_flag",
+              "flag": "captain_countered",
+              "value": true
+            }
+          ]
         }
       ]
     }

@@ -73,6 +73,8 @@ def apply_run_effects(
         amount = int(effect.get("amount", 0))
         if kind == "set_story_flag":
             flags[str(effect["flag"])] = effect.get("value", True)
+        elif kind == "counter_rule":
+            shared.setdefault("rule_counteractions", {})[str(effect["rule_ref"])] = True
         elif kind == "reveal_rule":
             rule_id = str(effect["rule_ref"])
             shared_rules = shared.setdefault("discovered_rules", [])

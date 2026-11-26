@@ -723,6 +723,7 @@ class ContentRegistry:
             "item_add": ("item_ref",),
             "item_remove": ("item_ref",),
             "reveal_rule": ("rule_ref",),
+            "counter_rule": ("rule_ref",),
             "loyalty_change": ("amount",),
             "set_story_flag": ("flag",),
             "increment_counter": ("counter",),
