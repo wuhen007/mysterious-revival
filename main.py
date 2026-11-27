@@ -3,9 +3,8 @@ from pathlib import Path
 import astrbot.api.message_components as Comp
 from astrbot.api import AstrBotConfig, logger
 from astrbot.api.event import AstrMessageEvent, filter
-from astrbot.api.star import Context, Star
+from astrbot.api.star import Context, Star, StarTools
 from astrbot.core.star.filter.command import GreedyStr
-from astrbot.core.utils.astrbot_path import get_astrbot_data_path
 from .content_registry import ContentRegistry
 from .engine.models import GameResponse, Identity
 from .handlers.buttons import ButtonHandler
@@ -81,7 +80,7 @@ class Main(Star):
         max_slots = self._config_int('game_max_ghost_slots', 2, 1, 6)
         _install_qq_command_button_patch()
         plugin_root = Path(__file__).resolve().parent
-        data_root = Path(get_astrbot_data_path()) / 'plugin_data' / _PLUGIN_ID
+        data_root = StarTools.get_data_dir(_PLUGIN_ID)
         self.repository = GameRepository(data_root / 'campaign.sqlite3')
         self.registry = ContentRegistry(plugin_root / 'content' / 'packs')
         self.content_issues = self.registry.load()
